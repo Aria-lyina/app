@@ -1,0 +1,91 @@
+:root {
+    // --primary-color-text-header: rgba(26,26,26); 
+    --primary-color-text-header: rgb(90, 90, 90); 
+    --font-header: 12;
+    }
+
+.default 
+{
+  border: 1px solid #b9e39e;
+  /* padding: 100px; */
+  /* position: relative; */
+
+  /* position: absolute; */
+  height: 200%;
+  /* width: 99%; */
+
+  height: 2000px;
+  background-color: #3df5ff46;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 1%;
+  /* top: 11%; */
+}
+
+
+.app-header
+{
+    /* background: rgba(182, 255, 231, 0.48); */
+    height: 50px;
+    margin-left: 2%;
+    display: flex;
+    margin-right: 2%;
+}
+.app-header-container
+{
+    display: flex;
+    flex-direction: row;
+    /* background-color:rgb(106, 248, 255); */
+    width:100%;
+    height:100%;
+    /* justify-content: center; */
+    align-items: center;
+}
+.content-button
+{
+    display: flex;
+}
+
+.center
+{
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ic
+    {
+        width: auto;
+        height: 15px;
+    }
+
+.header-right-buttons
+{
+    margin-left: auto;
+}
+
+.text-head
+{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5px;
+    /* background-color:aqua; */
+    font-size: 13px;
+}
+
+#last-text-head
+{
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+.button-header
+{
+    color: var(--primary-color-text-header);
+    background-color:white;
+    border:0px;
+    padding-left: 0px;
+    cursor: pointer;
+    margin-right: 20px;
+}
