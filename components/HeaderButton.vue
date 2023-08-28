@@ -47,6 +47,11 @@ export default {
         font-size: 13px;
     }
 
+    .header-right-buttons
+    {
+        margin-left: auto;
+    }
+
 </style>
 
 <template>
