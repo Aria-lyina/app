@@ -1,3 +1,18 @@
+<script setup>
+import AppHeader from '@/components/AppHeader.vue';
+
+//   export default {
+//     components: {
+//         AppHeader // новое имя компонента
+//     },
+//     methods: {
+//       submitForm() {
+//         // ...
+//       }
+//     }
+//   }
+</script>
+
 <template>
  
     <AppHeader/>
@@ -7,17 +22,3 @@
   </template>
 
   
-  <script>
-  import AppHeader from '@/components/AppHeader.vue';
-  
-  export default {
-    components: {
-        AppHeader // новое имя компонента
-    },
-    methods: {
-      submitForm() {
-        // ...
-      }
-    }
-  }
-  </script>

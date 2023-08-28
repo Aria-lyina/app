@@ -18,33 +18,12 @@
   background-color: #3df5ff46;
   margin-left: 2%;
   margin-right: 2%;
-  margin-top: 1%;
+  margin-top: 0.5%;
   /* top: 11%; */
 }
 
 
-.app-header
-{
-    /* background: rgba(182, 255, 231, 0.48); */
-    height: 50px;
-    margin-left: 2%;
-    display: flex;
-    margin-right: 2%;
-}
-.app-header-container
-{
-    display: flex;
-    flex-direction: row;
-    /* background-color:rgb(106, 248, 255); */
-    width:100%;
-    height:100%;
-    /* justify-content: center; */
-    align-items: center;
-}
-.content-button
-{
-    display: flex;
-}
+
 
 .center
 {
@@ -65,14 +44,7 @@
     margin-left: auto;
 }
 
-.text-head
-{
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 5px;
-    /* background-color:aqua; */
-    font-size: 13px;
-}
+
 
 #last-text-head
 {
@@ -80,12 +52,3 @@
     padding-right: 0px;
 }
 
-.button-header
-{
-    color: var(--primary-color-text-header);
-    background-color:white;
-    border:0px;
-    padding-left: 0px;
-    cursor: pointer;
-    margin-right: 20px;
-}
