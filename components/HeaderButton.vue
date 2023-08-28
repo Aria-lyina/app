@@ -25,7 +25,7 @@ export default {
 
     .button-header
     {
-        color: var(--primary-color-text-header);
+        color: var(--primary-color-text);
         background-color:white;
         border:0px;
         padding-left: 0px;
@@ -44,7 +44,7 @@ export default {
         margin-bottom: auto;
         margin-left: 5px;
         /* background-color:aqua; */
-        font-size: 13px;
+        font-size: var(--fontsize-small-default);
     }
 
     .header-right-buttons

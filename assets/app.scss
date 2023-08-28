@@ -1,7 +1,10 @@
 :root {
     // --primary-color-text-header: rgba(26,26,26); 
-    --primary-color-text-header: rgb(90, 90, 90); 
-    --font-header: 12;
+    --primary-color-text: rgb(90, 90, 90); 
+    --light-color-text: rgb(160, 160, 160); 
+    --fontsize-small-default: 13px;
+    --fontsize-light-small-default: 11px;
+    font-family: Roboto,Arial,sans-serif;
     }
 
 .default 
@@ -11,10 +14,10 @@
   /* position: relative; */
 
   /* position: absolute; */
-  height: 200%;
+//   height: 100%;
   /* width: 99%; */
 
-  height: 2000px;
+  height: 1000px;
   background-color: #3df5ff46;
   margin-left: 2%;
   margin-right: 2%;
@@ -43,3 +46,15 @@
     padding-right: 0px;
 }
 
+.name-info
+{
+    font-weight: bold;
+    font-size: var(--fontsize-small-default);
+    margin-bottom: 15px;
+}
+
+.light-text
+{
+    color:var(--light-color-text);
+    font-size: var(--fontsize-light-small-default);
+}
