@@ -36,14 +36,6 @@
         background-color:#ffffff;
     }
 
-    .top-text
-    {
-        font-size: var(--fontsize-big-default);
-        margin-bottom: 3%;
-        display: flex;
-        align-items: center
-    }
-
     .go-look
     {
         display: flex;
@@ -60,12 +52,15 @@
 
 <script setup>
     import Product from '@/components/Product.vue';
+    import HeaderProducts from '@/components/HeaderProducts.vue';
 </script>
 
 <template>
 
 <div class="container">
-    <div class="top-text">Топ продаж <NuxtLink class="go-look" to="/">Смотреть все <img class="icon-in-text" src="img/icon/arrow-2.svg"></NuxtLink> </div>
+    <!-- <div class="top-text">Топ продаж <NuxtLink class="go-look" to="/">Смотреть все <img class="icon-in-text" src="img/icon/arrow-2.svg"></NuxtLink> </div> -->
+    <header-products title="Топ продаж"/>
+    
     <div class="top-sales">
 
         <product image="img/headphones_PNG7638.png" classification="Наушники" 
