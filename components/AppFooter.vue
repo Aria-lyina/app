@@ -89,8 +89,6 @@
     {
         color:var(--primary-color-text);
         font-size: var(--fontsize-small-default);
-        outline: none;
-        text-decoration: none;
         text-align: left;
     }
 

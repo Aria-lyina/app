@@ -2,10 +2,22 @@
     // --primary-color-text-header: rgba(26,26,26); 
     --primary-color-text: rgb(90, 90, 90); 
     --light-color-text: rgb(160, 160, 160); 
+    --fontsize-big-default: 25px;
     --fontsize-small-default: 13px;
     --fontsize-light-small-default: 11px;
     font-family: Roboto,Arial,sans-serif;
     }
+
+
+
+a
+{
+    color:var(--primary-color-text);
+    font-size: var(--fontsize-small-default);
+    outline: none;
+    text-decoration: none;
+    // text-align: left;
+}
 
 .default 
 {
@@ -19,6 +31,9 @@
 
   height: 1000px;
   background-color: #3df5ff46;
+  display: flex;
+  flex-direction: column;
+
   margin-left: 2%;
   margin-right: 2%;
   margin-top: 0.5%;
@@ -38,6 +53,12 @@
         width: auto;
         height: 15px;
     }
+
+.icon-in-text
+{
+    width: auto;
+    height: 10px;
+}
 
 
 #last-text-head
