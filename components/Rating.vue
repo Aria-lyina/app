@@ -32,11 +32,9 @@ defineProps({
     }
 </style> -->
 
-
-
 <script setup>
 defineProps({
-  stars: String,
+  stars: Number,
   colorActive: 
   {
     String,

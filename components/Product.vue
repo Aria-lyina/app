@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
  import Rating from '@/components/Rating.vue';
  defineProps({
   image: String,
@@ -9,9 +9,11 @@
   price: String,
   countRevievs: String,
   valuta: String
-})
+}) -->
 
-
+<script setup>
+ import Rating from '@/components/Rating.vue';
+ defineProps({ item: Object})
 </script>
 
 <template>
@@ -19,24 +21,22 @@
 
         <div class="image">
 
-            <img class="image2" :src="image"> 
-            <img  v-if="statusIcon" :src="statusIcon" class="status">
+            <img class="image2" :src="item.image"> 
+            <img  v-if="item.statusIcon" :src="item.statusIcon" class="status">
 
         </div>
     
         <div class="text">
 
-            <div class="class-container">{{ classification }}</div>
+            <div class="class-container">{{ item.classification }}</div>
             <div style="display: flex; align-items: center;">
                 <p style="margin: -5% 0px 0px 0px;">
-                     {{ name }}
+                     {{ item.nameProduct }}
                 </p>
             </div>
-            <div class="rating-container"><rating :stars="rating" color-active='#00dfef'/> &ensp; {{ countRevievs }}  отзывов</div>
-            <div class="price-container">{{ price }}&nbsp;{{ valuta }}</div>
-
+            <div class="rating-container"><rating :stars="item.rating" color-active='#00ffff'/> &ensp; {{ item.countRevievs }}  отзывов</div>
+            <div class="price-container">{{ item.price }}&nbsp;{{ item.valuta }}</div>
         </div>
-
 
     </div>
 </template>
