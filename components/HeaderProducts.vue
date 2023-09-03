@@ -11,7 +11,7 @@
 
 
 <template>
-     <div class="top-text">{{ title }} <NuxtLink class="go-look" :to="link">Смотреть все <img class="icon-in-text" src="img/icon/arrow-2.svg"></NuxtLink> </div>
+     <div class="top-text">{{ title }} <NuxtLink class="go-look" :to="link">Смотреть все <img class="icon-in-text" src="img/icon/arrow-2.svg"></NuxtLink></div>
 </template>
 
 <style lang="scss" scoped>

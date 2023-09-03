@@ -28,8 +28,12 @@
                 
              <!-- <product v-for="i in products.length" :item="products[i]"/> -->
              <!-- <product v-for="i in 10" :item="products[i]"/> -->
-             <product v-for="(item, index) in products" :key="index" :item="item"/>
 
+             <!-- <product v-for="(item, index) in products" :key="index" :item="item"/> -->
+
+             <div v-for="(item, index) in products" class="product">
+                <product :key="index" :item="item"/>
+            </div>
             <!-- 
              <product :item="products[1]"/> 
              <product :item="products[1]"/>  -->
@@ -46,10 +50,14 @@
         background-color:aquamarine;
     }
 
-    product
-        {
-            background-color:rgb(0, 255, 191);
-        }
+    .product
+    {
+        // width: 20%;
+        min-width: 250px;
+        // background-color:aqua;
+        display: flex;
+        // margin-right: 15px;
+    }
 
     // .container
     // {

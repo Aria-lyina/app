@@ -1,5 +1,6 @@
 <script setup>
 import GridTovar from '@/components/GridTovar.vue';
+import ListTovar from '@/components/ListTovar.vue';
 
 class ProductItem 
     {
@@ -19,6 +20,7 @@ class ProductItem
     let classification="Наушники" 
     let countRevievs=25 
     let rating=2 
+    // let nameProduct="HayuHnKM HyperX Cloud Core (KHX-HSCC-BK)"
     let nameProduct="HayuHnKM HyperX Cloud Core (KHX-HSCC-BK)"
     let price=2000 
     let valuta="р"
@@ -28,6 +30,7 @@ class ProductItem
     let items2 = [];
     let items3 = [];
     let items4 = [];
+    let items5 = [];
 
     for(let i = 0; i < 5; i++) {
         items.push(new ProductItem(image, statusIcon, classification, nameProduct, rating, price, countRevievs, valuta));
@@ -36,6 +39,11 @@ class ProductItem
 
         items4.push(new ProductItem("img/asus.png", statusIcon, classification, nameProduct, rating, price, countRevievs, valuta));
         items4.push(new ProductItem(image, statusIcon, classification, nameProduct, rating, price, countRevievs, valuta));
+        
+        items5.push(new ProductItem("img/asus.png", "", classification, nameProduct, "", price, "", valuta));
+        items5.push(new ProductItem(image, "", classification, nameProduct, "", price, "", valuta));
+
+   
     }    
 
 </script>
@@ -43,9 +51,12 @@ class ProductItem
 <template>
     <!-- <h2>Welcome to Layouts example</h2> -->
     <grid-tovar class="tovar-carts" :products="items" :title="'Последние просмотренные товары'" height-grid="400px"/>
-    <grid-tovar class="tovar-carts" :products="items2" :title="'Горячие новинки'" height-grid="400px"/>
+    <grid-tovar class="tovar-carts" :products="items2" :title="'Горячие новинки'" height-grid="400px"/> 
     <grid-tovar class="tovar-carts" :products="items3" :title="'Чаще всего добавляют в список желаний'" height-grid="400px"/>
-    <grid-tovar class="tovar-carts" :products="items4" :title="'Топ продаж'" height-grid="800px"/>
+
+    <list-tovar class="tovar-carts" :products="items5" :title="'Только в Розетке'" height-grid="670px" width-item="400px" size-image="300px"/>
+    <grid-tovar class="tovar-carts" :products="items4" :title="'Топ продаж'" height-grid="800px"/> 
+
 </template>
   
 <style>

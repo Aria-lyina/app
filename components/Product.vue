@@ -13,7 +13,29 @@
 
 <script setup>
  import Rating from '@/components/Rating.vue';
- defineProps({ item: Object})
+ defineProps({ 
+    item: Object,
+    fontSizeLarge:
+    {
+        type: String,
+        default: "13px"
+    },
+    fontSizeLight:
+    {
+        type: String,
+        default: "11px"
+    },
+    sizeImage:
+    {
+        type: String,
+        default: "160px"
+    },
+    link:
+    {
+        type: String,
+        default: "/"
+    }
+    })
 </script>
 
 <template>
@@ -21,21 +43,24 @@
 
         <div class="image">
 
-            <img class="image2" :src="item.image"> 
+            <img class="image2" :src="item.image" :style="{height: sizeImage, maxWidth: sizeImage}"> 
             <img  v-if="item.statusIcon" :src="item.statusIcon" class="status">
 
         </div>
     
-        <div class="text">
+        <div class="text" :style="{fontSize: fontSizeLarge}">
 
-            <div class="class-container">{{ item.classification }}</div>
+            <div class="class-container" :style="{fontSize: fontSizeLight}">{{ item.classification }}</div>
             <div style="display: flex; align-items: center;">
                 <p style="margin: -5% 0px 0px 0px;">
                      {{ item.nameProduct }}
                 </p>
             </div>
-            <div class="rating-container"><rating :stars="item.rating" color-active='#00ffff'/> &ensp; {{ item.countRevievs }}  отзывов</div>
-            <div class="price-container">{{ item.price }}&nbsp;{{ item.valuta }}</div>
+            <div v-if="item.rating" class="rating-container" :style="{fontSize: fontSizeLight}"><rating :stars="item.rating" color-active='#00ffff'/> &ensp; {{ item.countRevievs }}  отзывов</div>
+            <div v-else style=""></div>
+            <div class="price-container">{{ item.price }}&nbsp;{{ item.valuta }}
+                <NuxtLink class="go-buy" :style="{fontSize: fontSizeLight}" :to="link">Купить&nbsp;&nbsp;<img class="icon-in-text2" src="img/icon/long-arrow.svg"></NuxtLink>
+            </div>
         </div>
 
     </div>
@@ -62,27 +87,36 @@
         // background-color:bisque;
         margin-top: 10%;
         height: 35%;
-        font-size: var(--fontsize-small-default);
     }
     .class-container
         {
             color: var(--light-color-text);
-            font-size: var(--fontsize-light-small-default);
             text-transform: uppercase;
             // font-variant: ;
         }
 
+    .go-buy
+    {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        font-weight: lighter;
+        color: var(--dark-color-text);
+    }
+
     .price-container
     {
         font-weight: bold;
+        display: flex;
+        align-items: center
     }
     .rating-container
     {
         display: flex;
         // justify-content: center;
         align-items:center;
+        height: 50%;
         color: var(--light-color-text);
-        font-size: var(--fontsize-light-small-default);
     }
 
     .image
@@ -102,8 +136,8 @@
 
     .image2
     {
-        width: 160px;
-        height: 160px;
+        // width: 160px;
+        // height: 160px;
 
         // background-color:blue; 
         margin: 10% 10% 10% 10%;
@@ -120,6 +154,7 @@
         padding: 10% 10% 10% 10%;
         display: flex;
         flex-direction: column;
+        // width: 200px;
     }
 
 </style>
