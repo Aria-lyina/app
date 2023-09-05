@@ -29,7 +29,7 @@
     fontSizeLight:
     {
         type: String,
-        default: "13px"
+        default: "15px"
     },
     sizeImage:
     {
@@ -86,24 +86,27 @@
 
     // .container
     // {
+    //     overflow: hidden;
+    //     display: flex;
+    //     flex-direction: column;
 
     // }
+
     .product-carts
     {
         display: grid;
-        // --webkit-scrollbar:#000000;
-
-        // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ 
 
         grid-column-gap: 15px;
         grid-row-gap: 15px;
         overflow: auto;
-
+        overflow-y: hidden;
 
         grid-auto-flow: column;
-        // height: 400px;
-        // background-color:blue;
+        
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+
         &::-webkit-scrollbar {
                 height: 5px;
                 width: 5px;
