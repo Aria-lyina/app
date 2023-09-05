@@ -20,7 +20,7 @@ export default {
 
 <template>
     <NuxtLink to="/">
-        <img src="img/rozetka-logo_1.png" :style="{ height: height }">
+        <img src="/img/rozetka-logo_1.png" :style="{ height: height }">
     </NuxtLink>
 </template>
 

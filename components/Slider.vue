@@ -175,7 +175,7 @@ onMounted(() =>
         <div class="period">Период проведения акции:<br> с 29 мая 2022 по 18 июня 2022</div>
         <div class="price" id="action-">от 21 999 $</div> -->
         <div class="status" id="status"></div>
-        <NuxtLink class="go-look" :to="link">Все акции ({{countAction }})&nbsp;&nbsp;<img class="icon" src="img/icon/long-arrow.svg"></NuxtLink>
+        <NuxtLink class="go-look" :to="link">Все акции ({{countAction }})&nbsp;&nbsp;<img class="icon" src="/img/icon/long-arrow.svg"></NuxtLink>
 
 
 

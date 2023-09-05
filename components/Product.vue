@@ -13,7 +13,7 @@
 
 <script setup>
  import Rating from '@/components/Rating.vue';
- defineProps({ 
+ defineProps({
     item: Object,
     fontSizeLarge:
     {
@@ -43,11 +43,11 @@
 
         <div class="image">
 
-            <img class="image2" :src="item.image" :style="{height: sizeImage, maxWidth: sizeImage}"> 
+            <img class="image2" :src="item.image" :style="{height: sizeImage, maxWidth: sizeImage}">
             <img  v-if="item.statusIcon" :src="item.statusIcon" class="status">
 
         </div>
-    
+
         <div class="text" :style="{fontSize: fontSizeLarge}">
 
             <div class="class-container" :style="{fontSize: fontSizeLight}">{{ item.classification }}</div>
@@ -60,7 +60,7 @@
             <div v-else style=""></div>
             <div class="price-container">{{ item.price }}&nbsp;{{ item.valuta }}
                 <!-- <NuxtLink v-if="!item.rating" class="go-buy" :style="{fontSize: fontSizeLight}" :to="link">Купить&nbsp;&nbsp;<img class="icon-in-text2" src="img/icon/long-arrow.svg"></NuxtLink> -->
-                <NuxtLink v-if="sizeImage > '200px'" class="go-buy" :style="{fontSize: fontSizeLight}" :to="link">Купить&nbsp;&nbsp;<img class="icon-in-text2" src="img/icon/long-arrow.svg"></NuxtLink>
+                <NuxtLink v-if="sizeImage > '200px'" class="go-buy" :style="{fontSize: fontSizeLight}" :to="link">Купить&nbsp;&nbsp;<img class="icon-in-text2" src="/img/icon/long-arrow.svg"></NuxtLink>
             </div>
         </div>
 
@@ -74,7 +74,7 @@
         position: absolute;
         top: 0%;
         left: 0%;
-        
+
         height: 25px;
         width: auto;
         // background-color:blue;
@@ -140,7 +140,7 @@
         // width: 160px;
         // height: 160px;
 
-        // background-color:blue; 
+        // background-color:blue;
         margin: 10% 10% 10% 10%;
 
         width: 100%;

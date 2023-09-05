@@ -1,9 +1,9 @@
 <script setup>
 
 const props = defineProps({
-    image: 
+    image:
     {   type:String,
-        defolt:"img/act1.jpg"
+        defolt:"/img/act1.jpg"
     },
     actionType:
     {
@@ -39,7 +39,7 @@ const props = defineProps({
 })
 import { onMounted, ref } from 'vue';
 
-onMounted(() => 
+onMounted(() =>
 {
     let cond = document.getElementById('condition');
     cond.innerHTML = props.condition;
@@ -57,7 +57,7 @@ onMounted(() =>
 
         <div id="condition" :style="{fontSize:fontSizeLight, color:colorSizeLight}"></div>
 
-        <NuxtLink class="go-look" :to="link">Узнать больше &nbsp;&nbsp;<img class="icon" src="img/icon/long-arrow.svg"></NuxtLink>
+        <NuxtLink class="go-look" :to="link">Узнать больше &nbsp;&nbsp;<img class="icon" src="/img/icon/long-arrow.svg"></NuxtLink>
     </div>
 </template>
 
