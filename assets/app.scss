@@ -4,6 +4,9 @@
     --light-color-text: rgb(160, 160, 160); 
     --dark-color-text: rgb(0, 0, 0); 
     --fontsize-big-default: 25px;
+
+    --fontsize-default: 20px;
+
     --fontsize-small-default: 13px;
     --fontsize-light-small-default: 11px;
     font-family: Roboto,Arial,sans-serif;
@@ -12,6 +15,11 @@
     }
 
 
+
+.slider-elem
+{
+    margin-bottom: 40px;
+}
 
 a
 {
@@ -33,7 +41,7 @@ a
   /* width: 99%; */
 
 //   height: 3000px;
-  background-color: #3df5ff46;
+//   background-color: #3df5ff46;
   display: flex;
   flex-direction: column;
 

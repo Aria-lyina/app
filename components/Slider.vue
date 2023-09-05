@@ -28,6 +28,11 @@ const props = defineProps({
     {
         type: String,
         default: "17px"
+    },
+    countAction:
+    {
+        type: String,
+        default: "400"
     }
 
 })
@@ -170,6 +175,8 @@ onMounted(() =>
         <div class="period">Период проведения акции:<br> с 29 мая 2022 по 18 июня 2022</div>
         <div class="price" id="action-">от 21 999 $</div> -->
         <div class="status" id="status"></div>
+        <NuxtLink class="go-look" :to="link">Все акции ({{countAction }})&nbsp;&nbsp;<img class="icon" src="img/icon/long-arrow.svg"></NuxtLink>
+
 
 
         <div id="content-left">
@@ -201,7 +208,29 @@ onMounted(() =>
 
 
 <style lang="scss" scoped>
+    .go-look
+    {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        position: absolute;
 
+        display: flex;
+        align-items: center;
+        // margin-left: auto;
+        font-weight: lighter;
+        color: var(--dark-color-text);
+
+        bottom: var(--margin-slider);
+        right: var(--margin-slider);
+
+        // background-color:aqua;
+        // width: 300px;
+        font-size: var(--fontsize-small-default);
+    }
+    .icon
+    {
+        height: 20px;
+        width: auto;
+    }
     .holster {
         height: 680px;
         width: 100%;
