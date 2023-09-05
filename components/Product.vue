@@ -144,6 +144,7 @@
         margin: 10% 10% 10% 10%;
 
         width: 100%;
+        //@TODO FIX ME
         height: 100;
         object-fit: contain;
 

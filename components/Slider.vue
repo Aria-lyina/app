@@ -39,12 +39,12 @@ const props = defineProps({
 
 import { onMounted, ref } from 'vue';
 
-onMounted(() => 
+onMounted(() =>
 {
-    let slider = document.getElementById('slider');
+    let slider = document.getElementById('slider');//@TODO add ref -> sliderRef.value <div id="slider" ref="sliderRef">
     let height = slider.offsetHeight;
 
-    let status = document.getElementById('status');
+    let status = document.getElementById('status');//@TODO add ref -> statusRef.value <div id="status" ref="statusRef">
     let countCarts = props.products.length;
     console.log(countCarts);
 
@@ -77,20 +77,22 @@ onMounted(() =>
     SetData();
 
     slider.addEventListener("scroll", () => {
-        
+
+        // @TODO у тебя стоит таймер, но когда ты скролишь тебе нужно его сбрасывать через clearTimeout, clearInterval
         const scrolled = slider.scrollTop;
 
         let numberCart = Math.round(scrolled / height);
 
-        if (numberCart != current) 
+        if (numberCart != current)
         {
             List(numberCart);
         }
     })
-    
-    
-    function List(number) 
+
+
+    function List(number)
     {
+            // @TODO так ты знаешь кол-во слайдов, тебе просто нужно в template вывести их кол-во через v-for, а потом добавлять class active если индекс совпадает с текущим
             console.log('Listing!')
             console.log('old curr = ' + current)
 
@@ -110,6 +112,22 @@ onMounted(() =>
 
     function SetData()
     {
+        // @TODO используй вместо этого computed
+        /*
+            const sliderActive = ref(0);
+
+
+            const currentSlider = computed(() => {
+                const product = props.products[sliderActive.value];
+
+                return {
+                    action: product.action,
+                    nameAction: product.nameAction,
+                    period: product.period,
+                    price: product.price
+                }
+            });
+         */
         action.innerHTML=props.products[current].action;
         nameAction.innerHTML=props.products[current].nameAction;
         period.innerHTML="Период проведения акции:<br>"+props.products[current].period;
@@ -143,7 +161,7 @@ onMounted(() =>
             () => {
                 console.log('TIMER '+props.timerSlide)
                 console.log('curr '+current);
-                if (current != countCarts-1) 
+                if (current != countCarts-1)
                 {
                     console.log('tick1')
                     slider.scroll(0, height * (current + 1));
@@ -167,11 +185,11 @@ onMounted(() =>
     <div class="holster">
 
         <!-- <div class="status" id="status"><span style='color:red'>⬤</span> ◯ ◯ ◯ ◯ ◯ </div>● -->
-        <!-- 
+        <!--
     :id="'star-'+i"
     -->
-        
-        <!-- 
+
+        <!--
         <div class="period">Период проведения акции:<br> с 29 мая 2022 по 18 июня 2022</div>
         <div class="price" id="action-">от 21 999 $</div> -->
         <div class="status" id="status"></div>
@@ -295,7 +313,7 @@ onMounted(() =>
 
         scroll-snap-type: y mandatory;
 
-        &::-webkit-scrollbar 
+        &::-webkit-scrollbar
         {
             height: 0px;
             width: 0px;

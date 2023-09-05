@@ -1,6 +1,8 @@
 <script>
+//    @TODO use composition api, и убери height props
 export default {
   name: 'LinkLogo', // новое имя компонента
+
 
   props: {
       height: {

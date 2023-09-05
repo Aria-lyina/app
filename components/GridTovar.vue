@@ -2,6 +2,8 @@
     import Product from '@/components/Product.vue';
     import HeaderProducts from '@/components/HeaderProducts.vue';
 
+    // @TODO Rename GridTovar -> GridProduct
+
     defineProps({
     title: String,
     products: Array,
@@ -21,11 +23,11 @@
 
 
 <template>
-    
+
     <div class="container">
         <header-products :title="title"/>
         <div class="product-carts" :style="{height: heightGrid}">
-                
+
              <!-- <product v-for="i in products.length" :item="products[i]"/> -->
              <!-- <product v-for="i in 10" :item="products[i]"/> -->
 
@@ -34,8 +36,8 @@
              <div v-for="(item, index) in products" class="product">
                 <product :key="index" :item="item"/>
             </div>
-            <!-- 
-             <product :item="products[1]"/> 
+            <!--
+             <product :item="products[1]"/>
              <product :item="products[1]"/>  -->
 
         </div>
