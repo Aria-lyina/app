@@ -35,6 +35,7 @@
 </script>
 
 <style lang="scss" scoped>
+//@TODO    Style обычно идет после <template></template>
     .app-header
     {
         /* background: rgba(182, 255, 231, 0.48); */
@@ -68,7 +69,7 @@
             <header-button icon="img/icon/heart-3.svg">0</header-button>
             <header-button icon="img/icon/fi-rr-shopping-bag.svg">{{ countInCart }}</header-button>
             <header-button id="last-text-head" @click="changeLang" margin="0px">{{ currentLang }}</header-button>
-        </div> 
+        </div>
     </header>
 </template>
 

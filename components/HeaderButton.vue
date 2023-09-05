@@ -1,4 +1,5 @@
 <script>
+//    @TODO если спользуешь composition api в других, тогда используй его везде
 export default {
   name: 'header-button', // новое имя компонента
 
@@ -60,7 +61,7 @@ export default {
                 <img v-if="icon" :src ="icon" class="ic">
                 <div class="text-head" :style="{ marginLeft: margin }">
                     <slot/>
-                </div> 
+                </div>
         </div>
     </button>
   </template>

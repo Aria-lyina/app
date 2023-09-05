@@ -2,6 +2,8 @@
     import Product from '@/components/ProductLarge.vue';
     import HeaderProducts from '@/components/HeaderProducts.vue';
 
+    // @TODO rename ListTovarLarge -> ListProductLarge
+
     defineProps({
     title: String,
     products: Array,
@@ -42,25 +44,25 @@
 </script>
 
 <template>
-    
+
     <div class="container">
         <header-products :title="title"/>
         <div class="product-carts" :style="{height: heightGrid}">
-                
-             <!-- <product v-for="i in products.length" :item="products[i]"/> 
+
+             <!-- <product v-for="i in products.length" :item="products[i]"/>
             , gridTemplateColumns: repeat(auto-fit, minmax(widthItem, 1fr))
             -->
              <!-- <product v-for="i in 10" :item="products[i]" :style="{minWidth:widthItem, marginLeft:'30px'}"/> -->
-             
+
              <div v-for="(item, index) in products" :style="{minWidth:widthItem, display: flex, height: '100%'}">
                 <product :key="index" :font-size-large="fontSizeLarge" :font-size-light="fontSizeLight" :size-image="sizeImage"
                 :item="item" :style="{height: heightGrid}"/>
             </div>
-             
+
              <!-- <product v-for="(item, index) in products" :key="index" :item="item" class="product"/> -->
 
-            <!-- 
-             <product :item="products[1]"/> 
+            <!--
+             <product :item="products[1]"/>
              <product :item="products[1]"/>  -->
 
         </div>
@@ -101,7 +103,7 @@
         overflow-y: hidden;
 
         grid-auto-flow: column;
-        
+
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
 

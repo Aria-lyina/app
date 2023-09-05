@@ -1,5 +1,7 @@
 <script setup>
-
+import { onMounted, ref } from 'vue';
+// @TODO import всегда сверху
+//    @TODO defolt -> default
 const props = defineProps({
     image:
     {   type:String,
@@ -37,14 +39,20 @@ const props = defineProps({
     },
 
 })
-import { onMounted, ref } from 'vue';
 
 onMounted(() =>
 {
-    let cond = document.getElementById('condition');
-    cond.innerHTML = props.condition;
-
+    // @TODO bad
+    // let cond = document.getElementById('condition');
+    // cond.innerHTML = props.condition;
+    //Если нужно вставить html блок в используй v-html
 })
+
+/*
+    @TODO
+    fontSize:fontSizeLight, color:colorSizeLight - это нужно убрать, переведи в классы, а через прос ты можешь редактировать
+    Например - type -> default, min, max etc. и менять класс type-default, type-min, type-max
+ */
 </script>
 
 
@@ -54,9 +62,8 @@ onMounted(() =>
         <!-- <div class="act">frebx</div> -->
         <div class="act" :style="{fontSize:fontSizeLight, color:colorSizeLight}">{{ actionType }}</div>
         <div class="name" :style="{fontSize:fontSizeLarge, color:colorSizeLarge}"><slot/></div>
-
-        <div id="condition" :style="{fontSize:fontSizeLight, color:colorSizeLight}"></div>
-
+        <div id="condition" :style="{fontSize:fontSizeLight, color:colorSizeLight}" v-html="condition"></div>
+        <!--        @TODO NuxtLink -> nuxt-link-->
         <NuxtLink class="go-look" :to="link">Узнать больше &nbsp;&nbsp;<img class="icon" src="/img/icon/long-arrow.svg"></NuxtLink>
     </div>
 </template>
