@@ -1,6 +1,6 @@
 <script setup>
  import Rating from '@/components/Rating.vue';
- defineProps({ 
+ defineProps({
     item: Object,
     fontSizeLarge:
     {
@@ -34,7 +34,7 @@
             <img  v-if="item.statusIcon" :src="item.statusIcon" class="status">
 
         </div>
-    
+
         <div class="container-text">
 
             <div class="container-class" :style="{fontSize: fontSizeLight}">{{ item.classification }}</div>
@@ -47,7 +47,7 @@
             <div v-else style=""></div>
             <div class="container-price" style="font-size: 20px;">{{ item.price }}&nbsp;{{ item.valuta }}
                 <!-- <NuxtLink v-if="!item.rating" class="go-buy" :style="{fontSize: fontSizeLight}" :to="link">Купить&nbsp;&nbsp;<img class="icon-in-text2" src="img/icon/long-arrow.svg"></NuxtLink> -->
-                <NuxtLink v-if="sizeImage > '200px'" class="go-buy" :style="{fontSize: fontSizeLight}" :to="link">Купить&nbsp;&nbsp;<img class="icon-in-text2" src="img/icon/long-arrow.svg"></NuxtLink>
+                <NuxtLink v-if="sizeImage > '200px'" class="go-buy" :style="{fontSize: fontSizeLight}" :to="link">Купить&nbsp;&nbsp;<img class="icon-in-text2" src="/img/icon/long-arrow.svg"></NuxtLink>
             </div>
         </div>
 

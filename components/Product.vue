@@ -1,7 +1,6 @@
 <script setup>
  import Rating from '@/components/Rating.vue';
-
- const props = defineProps({ 
+ defineProps({
     item: Object,
     fontSizeLarge:
     {
@@ -25,33 +24,24 @@
     }
     })
 
-    import { onMounted, ref } from 'vue';
-
-onMounted(() => 
-{
-    let image = document.getElementById('imageProduct');
-
-})
-
-
 </script>
 
 <template>
     <div class="container">
         
         <div class="image">
-            <img class="image2"  :class="{ zoom: sizeImage > '200px'}" :src="item.image" :style="{height: sizeImage, maxWidth: sizeImage}" id="imageProduct"> 
+            <img class="image2"  :class="{ zoom: sizeImage > '200px'}" :src="item.image" :style="{height: sizeImage, maxWidth: sizeImage}"> 
             <img  v-if="item.statusIcon" :src="item.statusIcon" class="status"/>
         </div>
     
         <div class="container-text" :style="{fontSize: fontSizeLarge}">
-<!-- style="display: flex; align-items: center;" -->
+
             <div class="container-class" :style="{fontSize: fontSizeLight}" style="height: 15%;">{{ item.classification }}</div>
             <div style="height: 40%; display: flex; align-items: center;">{{ item.nameProduct }} </div>
             <div v-if="item.rating" style="height: 25%;" class="container-rating" :style="{fontSize: fontSizeLight}">
                 <rating :stars="item.rating" color-active='#00ffff'/> &ensp; {{ item.countRevievs }}  отзывов</div>
+            
             <div v-else style=""></div>
-            <!-- margin-bottom: auto; -->
             <div class="container-price" style="height: 10%; margin-top: auto; ">{{ item.price }}&nbsp;{{ item.valuta }}
                 <NuxtLink v-if="sizeImage > '250px'" class="go-buy" :style="{fontSize: fontSizeLight}" :to="link">Купить&nbsp;&nbsp;<img class="icon-in-text2" src="img/icon/long-arrow.svg"></NuxtLink>
             </div>

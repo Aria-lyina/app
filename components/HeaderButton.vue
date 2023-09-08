@@ -1,8 +1,6 @@
-<script>
-export default {
-  name: 'header-button', // новое имя компонента
-
-  props: {
+<script setup>
+//    @TODO если спользуешь composition api в других, тогда используй его везде
+defineProps ({
       icon: {
           type: String
       },
@@ -10,15 +8,7 @@ export default {
           type: String,
           default: "5px",
           },
-  },
-
-  methods: {
-      onClick() {
-      this.$emit('click');
-      }
-  }
-
-}
+  })
 </script>
 
 <style lang="scss" scoped>
@@ -60,7 +50,7 @@ export default {
                 <img v-if="icon" :src ="icon" class="ic">
                 <div class="text-head" :style="{ marginLeft: margin }">
                     <slot/>
-                </div> 
+                </div>
         </div>
     </button>
   </template>

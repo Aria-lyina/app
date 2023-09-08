@@ -36,7 +36,7 @@
                     <li><NuxtLink to="/">Перевод денег с карты на карту</NuxtLink></li>
                     <li><NuxtLink to="/">Туры и отдых</NuxtLink></li>
                 </ul>
-            </div>            
+            </div>
             <div class="container-info">
                 <ul class="info-list">
                     <li class="name-info">Партнерам</li>
@@ -44,7 +44,7 @@
                     <li><NuxtLink to="/">Сотрудничество с нами</NuxtLink></li>
                     <li><NuxtLink to="/">Логотип и стайлгайд</NuxtLink></li>
                 </ul>
-            </div>            
+            </div>
             <div class="container-info">
                 <ul class="info-list">
                     <li class="name-info">Call-центр</li>
@@ -55,17 +55,17 @@
                     <li class="light-text">Воскресенье с 10:00 до 19:00</li>
                     <li>
                         <div class="icons-footer">
-                            <NuxtLink to="/"><img class="icon-social" src="img/icon/fi-fi-brands-facebook.svg"></NuxtLink>
-                            <NuxtLink to="/"><img class="icon-social" src="img/icon/fi-fi-brands-twitter.svg"></NuxtLink>
-                            <NuxtLink to="/"><img class="icon-social" src="img/icon/fi-fi-brands-youtube.svg"></NuxtLink>
-                            <NuxtLink to="/"><img class="icon-social" src="img/icon/fi-fi-brands-instagram.svg"></NuxtLink>
-                            <NuxtLink to="/"><img class="icon-social" src="img/icon/fi-fi-brands-whatsapp.svg"></NuxtLink>
-                        </div>    
+                            <NuxtLink to="/"><img class="icon-social" src="/img/icon/fi-fi-brands-facebook.svg"></NuxtLink>
+                            <NuxtLink to="/"><img class="icon-social" src="/img/icon/fi-fi-brands-twitter.svg"></NuxtLink>
+                            <NuxtLink to="/"><img class="icon-social" src="/img/icon/fi-fi-brands-youtube.svg"></NuxtLink>
+                            <NuxtLink to="/"><img class="icon-social" src="/img/icon/fi-fi-brands-instagram.svg"></NuxtLink>
+                            <NuxtLink to="/"><img class="icon-social" src="/img/icon/fi-fi-brands-whatsapp.svg"></NuxtLink>
+                        </div>
                     </li>
                 </ul>
             </div>
         </div>
-        
+
         <!-- <hr style="{color:black; size:10px}"/> -->
         <div class="bot-footer">
 
@@ -74,8 +74,8 @@
             <div class="container-info"></div>
             <div class="container-info"><NuxtLink>Устанавливайте наши приложения&ensp; ––––– </NuxtLink></div>
             <div class="container-info">
-                <NuxtLink to="/"><img class="link-img" src="img/icon/google-play.png"></NuxtLink>
-                <NuxtLink to="/"><img class="link-img" src="img/icon/Download_on_the_App_Store_Badge_RU_RGB_blk_100317.svg"></NuxtLink>
+                <NuxtLink to="/"><img class="link-img" src="/img/icon/google-play.png"></NuxtLink>
+                <NuxtLink to="/"><img class="link-img" src="/img/icon/Download_on_the_App_Store_Badge_RU_RGB_blk_100317.svg"></NuxtLink>
             </div>
 
 
@@ -115,7 +115,7 @@
         width:100%;
         height:100%;
         align-items: center;
-    } 
+    }
 
     .icon-social
     {
@@ -132,13 +132,13 @@
 
     .app-footer
     {
-        /* 
+        /*
         position: absolute;
 
         left: 0;
-        right: 0; 
+        right: 0;
 
-        height: 30%; 
+        height: 30%;
         */
 
         height: 420px;
@@ -164,7 +164,7 @@
         width:20%;
         display: flex;
     }
-    
+
     .info-list
     {
         margin-left: 0; /* Отступ слева в браузере IE и Opera */

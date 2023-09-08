@@ -34,6 +34,21 @@
 
 </script>
 
+<template>
+    <header class="app-header">
+        <div class="app-header__container">
+            <header-button icon="img/icon/fi-rr-apps.svg" margin="20px">{{ nameCatalog }}</header-button>
+            <link-logo class="center"/>
+            <header-button class="header-right-buttons" icon="img/icon/fi-rr-search.svg">Поиск</header-button>
+            <header-button icon="img/icon/fi-rr-user.svg"/>
+            <header-button icon="img/icon/fi-rr-arrows-retween-re.svg">0</header-button>
+            <header-button icon="img/icon/heart-3.svg">0</header-button>
+            <header-button icon="img/icon/fi-rr-shopping-bag.svg">{{ countInCart }}</header-button>
+            <header-button id="last-text-head" @click="changeLang" margin="0px">{{ currentLang }}</header-button>
+        </div>
+    </header>
+</template>
+
 <style lang="scss" scoped>
     .app-header
     {
@@ -56,19 +71,3 @@
     }
 
 </style>
-
-<template>
-    <header class="app-header">
-        <div class="app-header__container">
-            <header-button icon="img/icon/fi-rr-apps.svg" margin="20px">{{ nameCatalog }}</header-button>
-            <link-logo class="center"/>
-            <header-button class="header-right-buttons" icon="img/icon/fi-rr-search.svg">Поиск</header-button>
-            <header-button icon="img/icon/fi-rr-user.svg"/>
-            <header-button icon="img/icon/fi-rr-arrows-retween-re.svg">0</header-button>
-            <header-button icon="img/icon/heart-3.svg">0</header-button>
-            <header-button icon="img/icon/fi-rr-shopping-bag.svg">{{ countInCart }}</header-button>
-            <header-button id="last-text-head" @click="changeLang" margin="0px">{{ currentLang }}</header-button>
-        </div> 
-    </header>
-</template>
-

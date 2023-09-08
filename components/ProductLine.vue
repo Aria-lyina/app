@@ -15,23 +15,17 @@
     {
         type: String,
         default: '400px'
-    },
-    sizeImage:
-    {
-        type: String,
-        default: "160px"
-    },
+    }
     })
 </script>
 
 
 <template>
-    
     <div class="container">
         <header-products :title="title"/>
         <div class="product-carts" :style="{height: heightGrid}">
              <div v-for="(item, index) in products" class="product">
-                <product :key="index" :item="item" :size-image="sizeImage"/>
+                <product :key="index" :item="item"/>
             </div>
         </div>
     </div>
@@ -40,12 +34,18 @@
 
 <style lang="scss" scoped>
 
+    .test
+    {
+        background-color:aquamarine;
+    }
+
     .product
     {
+        // width: 20%;
         min-width: 250px;
-        // background-color:rgb(119, 0, 255);
-        background-color:var(--background-product);
+        // background-color:aqua;
         display: flex;
+        // margin-right: 15px;
     }
 
     .product-carts

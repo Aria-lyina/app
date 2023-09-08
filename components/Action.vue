@@ -1,19 +1,23 @@
 <script setup>
 
+import { onMounted, ref } from 'vue';
+// @TODO import всегда сверху
+//    @TODO defolt -> default
 const props = defineProps({
-    image: 
+    
+    image:
     {   type:String,
-        defolt:"img/act1.jpg"
+        default:"/img/act1.jpg"
     },
     actionType:
     {
         type:String,
-        defolt:'Акция'
+        default:'Акция'
     },
     condition:
     {
         type:String,
-        defolt:'До 30 мая для заказов<br> от 30$'
+        default:'До 30 мая для заказов<br> от 30$'
     },
     fontSizeLarge:
     {
@@ -37,14 +41,20 @@ const props = defineProps({
     },
 
 })
-import { onMounted, ref } from 'vue';
 
-onMounted(() => 
+onMounted(() =>
 {
-    let cond = document.getElementById('condition');
-    cond.innerHTML = props.condition;
-
+    // @TODO bad
+    // let cond = document.getElementById('condition');
+    // cond.innerHTML = props.condition;
+    //Если нужно вставить html блок в используй v-html
 })
+
+/*
+    @TODO
+    fontSize:fontSizeLight, color:colorSizeLight - это нужно убрать, переведи в классы, а через прос ты можешь редактировать
+    Например - type -> default, min, max etc. и менять класс type-default, type-min, type-max
+ */
 </script>
 
 
@@ -54,10 +64,9 @@ onMounted(() =>
         <!-- <div class="act">frebx</div> -->
         <div class="act" :style="{fontSize:fontSizeLight, color:colorSizeLight}">{{ actionType }}</div>
         <div class="name" :style="{fontSize:fontSizeLarge, color:colorSizeLarge}"><slot/></div>
-
-        <div id="condition" :style="{fontSize:fontSizeLight, color:colorSizeLight}"></div>
-
-        <NuxtLink class="go-look" :to="link">Узнать больше &nbsp;&nbsp;<img class="icon" src="img/icon/long-arrow.svg"></NuxtLink>
+        <div id="condition" :style="{fontSize:fontSizeLight, color:colorSizeLight}" v-html="condition"></div>
+        <!--        @TODO NuxtLink -> nuxt-link-->
+        <NuxtLink class="go-look" :to="link">Узнать больше &nbsp;&nbsp;<img class="icon" src="/img/icon/long-arrow.svg"></NuxtLink>
     </div>
 </template>
 
@@ -75,10 +84,6 @@ onMounted(() =>
         font-size: var(--fontsize-small-default);
         bottom: var(--margin-slider);
         right: var(--margin-slider);
-
-        // background-color:aqua;
-        // width: 300px;
-        // font-size: 10px;
     }
     .icon
     {

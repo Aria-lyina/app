@@ -1,5 +1,7 @@
 <script setup>
 
+import { onMounted, ref } from 'vue';
+
 const props = defineProps({
     title: String,
     products: Array,
@@ -37,14 +39,12 @@ const props = defineProps({
 
 })
 
-import { onMounted, ref } from 'vue';
-
-onMounted(() => 
+onMounted(() =>
 {
-    let slider = document.getElementById('slider');
+    let slider = document.getElementById('slider');//@TODO add ref -> sliderRef.value <div id="slider" ref="sliderRef">
     let height = slider.offsetHeight;
 
-    let status = document.getElementById('status');
+    let status = document.getElementById('status');//@TODO add ref -> statusRef.value <div id="status" ref="statusRef">
     let countCarts = props.products.length;
     console.log(countCarts);
 
@@ -75,22 +75,44 @@ onMounted(() =>
     dLeft.style.transformOrigin = `bottom right`;
 
     SetData();
+    var lis = setTimeout( AutoList,  props.timerSlide);;
+    slider.addEventListener("scroll", () => 
+    {
 
-    slider.addEventListener("scroll", () => {
-        
+        // @TODO у тебя стоит таймер, но когда ты скролишь тебе нужно его сбрасывать через clearTimeout, clearInterval
         const scrolled = slider.scrollTop;
 
         let numberCart = Math.round(scrolled / height);
 
-        if (numberCart != current) 
+        clearTimeout(lis);
+
+        if (numberCart != current)
         {
             List(numberCart);
         }
+        
+        lis = setTimeout( AutoList,  props.timerSlide);
     })
-    
-    
-    function List(number) 
+
+    function AutoList()
     {
+        console.log('TIMER '+props.timerSlide)
+                console.log('curr '+current);
+                if (current != countCarts-1)
+                {
+                    console.log('tick1')
+                    slider.scroll(0, height * (current + 1));
+
+                }
+                else {
+                    console.log('tick2')
+                    slider.scroll(0, 0);
+                }
+    }
+
+    function List(number)
+    {
+            // @TODO так ты знаешь кол-во слайдов, тебе просто нужно в template вывести их кол-во через v-for, а потом добавлять class active если индекс совпадает с текущим
             // console.log('Listing!')
             // console.log('old curr = ' + current)
 
@@ -106,6 +128,22 @@ onMounted(() =>
 
     function SetData()
     {
+        // @TODO используй вместо этого computed
+        /*
+            const sliderActive = ref(0);
+
+
+            const currentSlider = computed(() => {
+                const product = props.products[sliderActive.value];
+
+                return {
+                    action: product.action,
+                    nameAction: product.nameAction,
+                    period: product.period,
+                    price: product.price
+                }
+            });
+         */
         action.innerHTML=props.products[current].action;
         nameAction.innerHTML=props.products[current].nameAction;
         period.innerHTML="Период проведения акции:<br>"+props.products[current].period;
@@ -135,23 +173,23 @@ onMounted(() =>
                 }, 1000);
     }
 
-    setInterval(
-            () => {
-                console.log('TIMER '+props.timerSlide)
-                console.log('curr '+current);
-                if (current != countCarts-1) 
-                {
-                    console.log('tick1')
-                    slider.scroll(0, height * (current + 1));
+    // var autoListing = setInterval(
+    //         () => {
+    //             console.log('TIMER '+props.timerSlide)
+    //             console.log('curr '+current);
+    //             if (current != countCarts-1)
+    //             {
+    //                 console.log('tick1')
+    //                 slider.scroll(0, height * (current + 1));
 
-                }
-                else {
-                    console.log('tick2')
-                    slider.scroll(0, 0);
-                }
-            },
-            props.timerSlide
-    );
+    //             }
+    //             else {
+    //                 console.log('tick2')
+    //                 slider.scroll(0, 0);
+    //             }
+    //         },
+    //         props.timerSlide
+    // );
 
 });
 
@@ -163,15 +201,16 @@ onMounted(() =>
     <div class="holster">
 
         <!-- <div class="status" id="status"><span style='color:red'>⬤</span> ◯ ◯ ◯ ◯ ◯ </div>● -->
-        <!-- 
+        <!--
     :id="'star-'+i"
     -->
-        
-        <!-- 
+
+        <!--
         <div class="period">Период проведения акции:<br> с 29 мая 2022 по 18 июня 2022</div>
         <div class="price" id="action-">от 21 999 $</div> -->
         <div class="status" id="status"></div>
-        <NuxtLink class="go-look" :to="link">Все акции ({{countAction }})&nbsp;&nbsp;<img class="icon" src="img/icon/long-arrow.svg"></NuxtLink>
+        <NuxtLink class="go-look" :to="link">Все акции ({{countAction }})&nbsp;&nbsp;<img class="icon" src="/img/icon/long-arrow.svg"></NuxtLink>
+
 
         <div id="content-left">
                 <div id="action" :style="{fontSize:fontSizeLight}"></div>
@@ -190,11 +229,6 @@ onMounted(() =>
                 <img :src="item.image" :style="{height: item.sizeImage}">
             </div>
 
-           <!-- <div style="background-color: #edfffd;"><img src="img/headphones_PNG7638.png"></div>
-            <div style="background-color: #c4fff8;">2</div>
-            <div style="background-color: #abffed;">3</div>
-            <div style="background-color: #eeb6ff;">4</div>
-            <div style="background-color: #ff579a;">5</div> -->
         </div>
     </div>
 </template>
@@ -288,7 +322,7 @@ onMounted(() =>
 
         scroll-snap-type: y mandatory;
 
-        &::-webkit-scrollbar 
+        &::-webkit-scrollbar
         {
             height: 0px;
             width: 0px;
