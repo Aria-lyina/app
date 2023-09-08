@@ -1,10 +1,18 @@
 <script setup>
-import GridTovar from '@/components/GridTovar.vue';
-import ListTovar from '@/components/ListTovar.vue';
-import ListTovarLarge from '@/components/ListTovarLarge.vue';
+import ProductLine from '@/components/ProductLine.vue';
 import Slider from '@/components/Slider.vue'; 
 import Action from '@/components/Action.vue'; 
 
+import TestSwiper from '@/components/TestSwiper.vue'; 
+
+import ListProducts from '@/components/ListProducts.vue'; 
+import ListProductsLarge from '@/components/ListProductsLarge.vue';
+
+import Product from '@/components/Product.vue';
+
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 class ProductItem 
     {
@@ -78,6 +86,8 @@ class ProductItemSlide
     let items5 = [];
     let items6 = [];
 
+    let prod = new ProductItem(image, statusIcon, classification, nameProduct, rating, price, countRevievs, valuta);
+
     for(let i = 0; i < 5; i++) {
         items.push(new ProductItem(image, statusIcon, classification, nameProduct, rating, price, countRevievs, valuta));
         items2.push(new ProductItem(image, "img/icon/new-1.svg", classification, nameProduct, rating, price, countRevievs, valuta));
@@ -90,25 +100,33 @@ class ProductItemSlide
         items5.push(new ProductItem(image, "", classification, nameProduct, "", price, "", valuta));
 
         items6.push(new ProductItem("img/Apple-iphone-se.png", "", 'Мобильные телефоны',
-                                    "Apple iPhone 64GB", rating, '14 999', countRevievs, '₴'));
+                                    "Apple iPhone SE 64GB", rating, '14 999', countRevievs, '₴'));
 
         items6.push(new ProductItem("img/totw_promo.png", "", 'Мобильные телефоны',
-                                    "Apple iPhone 64GB", rating, '14 999', countRevievs, '₴'));
+                                    "Apple iPhone SE 64GB", rating, '14 999', countRevievs, '₴'));
     }    
 
 </script>
 
 <template>
-    <!-- <h2>Welcome to Layouts example</h2> -->
+
+<!-- <div style="height: 380px; width: 250px; position: relative; background-color:blueviolet">
+    <Product1 :item="prod" size-image="200px" />
+</div> -->
+
+    <!-- <h2>Welcome to Layouts example</h2>    -->
 
     <slider class="slider-elem" :products="itemsSlide" timer-slide="8000"/>
-    <grid-tovar style="margin-top: 60px;" class="tovar-carts" :products="items" :title="'Последние просмотренные товары'" height-grid="400px"/>
-    <list-tovar-large class="tovar-carts" :products="items6" :title="'Больше товаров для выбора'" height-grid="470px" width-item="800px" size-image="300px"/>
-    <grid-tovar class="tovar-carts" :products="items2" :title="'Горячие новинки'" height-grid="400px"/>
+    <product-line style="margin-top: 60px;" class="tovar-carts" :products="items" :title="'Последние просмотренные товары'" height-grid="400px" size-image="200px"/>
+    <list-products-large class="tovar-carts" font-size-light="12px" font-size-large="40px" :products="items6" :title="'Больше товаров для выбора'" height-list="500px" width-item="800px" size-image="250px"/>
+    
+    <product-line class="tovar-carts" :products="items2" :title="'Горячие новинки'" height-grid="400px"/>
     <action class="tovar-carts" image="img/act3.png" action-type="Акция" condition="До 30 мая для заказов<br> от 30$">Бесплатная доставка<br> в отделения укрпочты</action> 
-    <grid-tovar class="tovar-carts" :products="items3" :title="'Чаще всего добавляют в список желаний'" height-grid="400px"/>
-    <list-tovar class="tovar-carts" :products="items5" :title="'Только в Розетке'" height-grid="670px" width-item="400px" size-image="300px"/>
-    <grid-tovar class="tovar-carts" :products="items4" :title="'Топ продаж'" height-grid="800px"/> 
+    <product-line class="tovar-carts" :products="items3" :title="'Чаще всего добавляют в список желаний'" height-grid="400px"/>
+    <list-products :products="items5" class="tovar-list" :title="'Только в Розетке'" height-list="680px" width-item="400px" size-image="280px"/>
+    <!-- <grid-tovar class="tovar-carts" :products="items4" :title="'Топ продаж'" height-grid="800px"/>  -->
+    <!-- <TestSwiper/> -->
+
 
 </template>
   
@@ -118,6 +136,13 @@ class ProductItemSlide
 {
     margin-top: 40px;
     margin-bottom: 40px;
+    /* background-color: blue; */
+}
+
+.tovar-list
+{
+    margin-top: 40px;
+    margin-bottom: 80px;
     /* background-color: blue; */
 }
 </style>

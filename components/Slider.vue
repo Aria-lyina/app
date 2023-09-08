@@ -48,8 +48,8 @@ onMounted(() =>
     let countCarts = props.products.length;
     console.log(countCarts);
 
-    console.log('VALUE!!');
-    console.log(status.innerHTML);
+    // console.log('VALUE!!');
+    // console.log(status.innerHTML);
 
     let current = 0;
     let carts = [];
@@ -57,8 +57,8 @@ onMounted(() =>
     for (let i = 1; i < countCarts; i++) carts.push('◯');
     status.innerHTML = carts.join(" ");
 
-    console.log('VALUE!!');
-    console.log(status.innerHTML);
+    // console.log('VALUE!!');
+    // console.log(status.innerHTML);
 
     let action = document.getElementById('action');
     let nameAction = document.getElementById('name');
@@ -91,8 +91,8 @@ onMounted(() =>
     
     function List(number) 
     {
-            console.log('Listing!')
-            console.log('old curr = ' + current)
+            // console.log('Listing!')
+            // console.log('old curr = ' + current)
 
             carts[current] = '◯';
             carts[number] = "<span class='current-cart'>●</span>";
@@ -101,11 +101,7 @@ onMounted(() =>
             console.log('new curr = ' + current)
 
             status.innerHTML = carts.join(" ");
-
-            console.log(carts.join(" "));
-
             AnimationText();
-
     }
 
     function SetData()
@@ -177,8 +173,6 @@ onMounted(() =>
         <div class="status" id="status"></div>
         <NuxtLink class="go-look" :to="link">Все акции ({{countAction }})&nbsp;&nbsp;<img class="icon" src="img/icon/long-arrow.svg"></NuxtLink>
 
-
-
         <div id="content-left">
                 <div id="action" :style="{fontSize:fontSizeLight}"></div>
                 <div id="name" :style="{fontSize:fontSizeLarge}" style="margin-top: 10%;"></div>
@@ -196,7 +190,6 @@ onMounted(() =>
                 <img :src="item.image" :style="{height: item.sizeImage}">
             </div>
 
-            <!-- <div><img src="img/apple-iphone-11-green.png"></div>
             <div style="background-color: #edfffd;"><img src="img/headphones_PNG7638.png"></div>
             <div style="background-color: #c4fff8;">2</div>
             <div style="background-color: #abffed;">3</div>

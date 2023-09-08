@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   // vite: {
@@ -15,6 +17,16 @@ export default defineNuxtConfig({
     '@/assets/app.scss'
   ]
 })
+
+
+
+
+
+
+// import function to register Swiper custom elements
+// import { register } from 'swiper/element/bundle';
+// // register Swiper custom elements
+// register();
 
 // import { defineCustomElement } from 'vue'
 // import CurrentTime from './components/HeaderButton.vue'
