@@ -190,7 +190,7 @@ onMounted(() =>
                 <img :src="item.image" :style="{height: item.sizeImage}">
             </div>
 
-            <div style="background-color: #edfffd;"><img src="img/headphones_PNG7638.png"></div>
+           <!-- <div style="background-color: #edfffd;"><img src="img/headphones_PNG7638.png"></div>
             <div style="background-color: #c4fff8;">2</div>
             <div style="background-color: #abffed;">3</div>
             <div style="background-color: #eeb6ff;">4</div>

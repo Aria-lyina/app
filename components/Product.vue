@@ -1,7 +1,7 @@
 <script setup>
  import Rating from '@/components/Rating.vue';
 
- defineProps({ 
+ const props = defineProps({ 
     item: Object,
     fontSizeLarge:
     {
@@ -24,13 +24,23 @@
         default: "/"
     }
     })
+
+    import { onMounted, ref } from 'vue';
+
+onMounted(() => 
+{
+    let image = document.getElementById('imageProduct');
+
+})
+
+
 </script>
 
 <template>
     <div class="container">
         
         <div class="image">
-            <img class="image2" :src="item.image" :style="{height: sizeImage, maxWidth: sizeImage}"> 
+            <img class="image2"  :class="{ zoom: sizeImage > '200px'}" :src="item.image" :style="{height: sizeImage, maxWidth: sizeImage}" id="imageProduct"> 
             <img  v-if="item.statusIcon" :src="item.statusIcon" class="status"/>
         </div>
     
@@ -126,11 +136,20 @@
         width: 80%;
         display: flex;
         position: relative;
-        // background-color:beige;
+        // background-color:beige; 
         &2
         {
             object-fit: contain;
             margin: auto;
+        }
+    }
+
+    .zoom
+    {
+        transition: transform 0.5s;
+        &:hover 
+        {
+             transform: scale(1.1);
         }
     }
 

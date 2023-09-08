@@ -30,7 +30,7 @@
 
         <div class="image">
 
-            <img class="image2" :src="item.image" :style="{height: sizeImage, maxWidth: sizeImage}"> 
+            <img class="image2 zoom" :src="item.image" :style="{height: sizeImage, maxWidth: sizeImage}"> 
             <img  v-if="item.statusIcon" :src="item.statusIcon" class="status">
 
         </div>
@@ -128,6 +128,15 @@
             height: 55%;
             width: 37%;
             margin-left: 3%;
+        }
+    }
+
+    .zoom
+    {
+        transition: transform 0.5s;
+        &:hover 
+        {
+             transform: scale(1.1);
         }
     }
 

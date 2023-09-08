@@ -123,8 +123,8 @@ class ProductItemSlide
     <product-line class="tovar-carts" :products="items2" :title="'Горячие новинки'" height-grid="400px"/>
     <action class="tovar-carts" image="img/act3.png" action-type="Акция" condition="До 30 мая для заказов<br> от 30$">Бесплатная доставка<br> в отделения укрпочты</action> 
     <product-line class="tovar-carts" :products="items3" :title="'Чаще всего добавляют в список желаний'" height-grid="400px"/>
-    <list-products :products="items5" class="tovar-list" :title="'Только в Розетке'" height-list="680px" width-item="400px" size-image="280px"/>
-    <!-- <grid-tovar class="tovar-carts" :products="items4" :title="'Топ продаж'" height-grid="800px"/>  -->
+    <list-products :products="items5" class="tovar-list" :title="'Только в Розетке'" height-list="670px" width-item="400px" size-image="280px"/>
+    <product-line class="tovar-carts" :products="items4" :title="'Топ продаж'" height-grid="800px"/> 
     <!-- <TestSwiper/> -->
 
 

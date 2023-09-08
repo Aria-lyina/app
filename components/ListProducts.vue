@@ -73,13 +73,11 @@ const { modules } = {
         :spaceBetween="15"
         :modules="modules"
         class="mySwiper"
-
-
         >
 
         <swiper-slide v-for="(item, index) in products" >
                 <product :key="index" :font-size-large="fontSizeLarge" :font-size-light="fontSizeLight" :size-image="sizeImage"
-                :item="item" :style="{height: '85%'}"/>
+                :item="item"/>
         </swiper-slide>
         </swiper>
     </div>
@@ -96,7 +94,7 @@ const { modules } = {
 
 .swiper {
   width: 100%;
-  // background-color:aqua;  
+//   background-color:red;  
   height: 90%;
   padding-bottom: 40px;
 
