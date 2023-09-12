@@ -33,7 +33,7 @@ const components = {
 };
 
 const { modules } = {
-    modules: [Navigation, Pagination, Mousewheel, Keyboard],
+    modules: [Navigation, Pagination, Mousewheel, Keyboard, Scrollbar],
 };
 </script>
 
@@ -41,7 +41,9 @@ const { modules } = {
     <div class="container" :style="{ height: heightList }">
 
         <header-products :title="title"  nameLink="YouTube" style="height: 20%; font-size: 30px; margin-bottom:0" />
-        <swiper :scrollbar="{
+        <swiper
+            :mousewheel="true"
+            :scrollbar="{
             draggable: true,
             snapOnRelease: true,
             scrollbarClickable: true
