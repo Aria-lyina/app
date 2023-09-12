@@ -8,7 +8,10 @@ import TestSwiper from '@/components/TestSwiper.vue';
 import ListProducts from '@/components/ListProducts.vue'; 
 import ListProductsLarge from '@/components/ListProductsLarge.vue';
 
-import Product from '@/components/Product.vue';
+import VideoBox from '@/components/VideoBox.vue';
+import VideoList from '@/components/VideoList.vue';
+
+import ButtonPlay from '@/components/ButtonPlay.vue';
 
 import { register } from 'swiper/element/bundle';
 // register Swiper custom elements
@@ -42,6 +45,27 @@ class ProductItemSlide
         this.valuta = valuta;
     }
 }
+
+class Video 
+{
+    constructor(preview, date, description, link )
+    {
+        this.preview = preview;
+        this.date = date;
+        this.description = description;
+        this.link = link;
+    }
+}
+
+let butPlay = 
+{
+    diametr:"100px",
+    radius:"50px",
+    color1: "violet",
+    color2: "green"
+}
+
+  
     let image="img/headphones_PNG7638.png"
     let classification="Наушники" 
     let countRevievs=25 
@@ -86,6 +110,18 @@ class ProductItemSlide
     let items5 = [];
     let items6 = [];
 
+    let itemsVideo = [];
+
+    let vid = new Video("img/mafia-2.jpeg", "29 мая", "Джаз, гангстеры и золтой век! Играем в Mafia II: Definitive Edition","/")
+
+
+    itemsVideo.push(vid);
+    itemsVideo.push(vid);
+    itemsVideo.push(vid);
+
+    itemsVideo.push(new Video("img/mafia-2.jpeg", "29 мая", "Джаз, гангстеры и золтой век! Играем в Mafia II: Definitive Edition","/"));
+    // itemsVideo.push(new Video("img/mafia-2.jpeg", "29 мая", "Джаз, гангстеры и золтой век! Играем в Mafia II: Definitive Edition","/"));
+
     let prod = new ProductItem(image, statusIcon, classification, nameProduct, rating, price, countRevievs, valuta);
 
     for(let i = 0; i < 5; i++) {
@@ -106,6 +142,8 @@ class ProductItemSlide
                                     "Apple iPhone SE 64GB", rating, '14 999', countRevievs, '₴'));
     }    
 
+
+
 </script>
 
 <template>
@@ -116,7 +154,7 @@ class ProductItemSlide
 
     <!-- <h2>Welcome to Layouts example</h2>    -->
 
-    <slider class="slider-elem" :products="itemsSlide" timer-slide="8000"/>
+    <!-- <slider class="slider-elem" :products="itemsSlide" timer-slide="8000"/>
     <product-line style="margin-top: 60px;" class="tovar-carts" :products="items" :title="'Последние просмотренные товары'" height-grid="400px" size-image="200px"/>
     <list-products-large class="tovar-carts" font-size-light="12px" font-size-large="40px" :products="items6" :title="'Больше товаров для выбора'" height-list="500px" width-item="800px" size-image="250px"/>
     
@@ -124,7 +162,16 @@ class ProductItemSlide
     <action class="tovar-carts" image="img/act3.png" action-type="Акция" condition="До 30 мая для заказов<br> от 30$">Бесплатная доставка<br> в отделения укрпочты</action> 
     <product-line class="tovar-carts" :products="items3" :title="'Чаще всего добавляют в список желаний'" height-grid="400px"/>
     <list-products :products="items5" class="tovar-list" :title="'Только в Розетке'" height-list="670px" width-item="400px" size-image="280px"/>
-    <product-line class="tovar-carts" :products="items4" :title="'Топ продаж'" height-grid="800px"/> 
+    <product-line class="tovar-carts" :products="items4" :title="'Топ продаж'" height-grid="800px"/>  -->
+
+    <!-- <button-play :params="butPlay"/>
+    <button-play :params="butPlay"/>
+    <button-play :params="butPlay"/>
+    <div style="height: 300px; width: 380px; background-color:aqua">
+        <video-box :video="vid"/>
+    </div> -->
+
+    <video-list :videos="itemsVideo" height-list="400px" title="Новые видео на канале"/>
     <!-- <TestSwiper/> -->
 
 

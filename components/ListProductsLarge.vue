@@ -74,8 +74,6 @@ const { modules } = {
         :spaceBetween="15"
         :modules="modules"
         class="mySwiper"
-
-
         >
 
         <swiper-slide v-for="(item, index) in products" >

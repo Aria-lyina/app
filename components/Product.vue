@@ -78,7 +78,7 @@
             font-weight: bold;
             display: flex;
             align-items: center;
-            width: 80%;
+            // width: 80%;
         }
 
         &-class

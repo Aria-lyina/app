@@ -43,7 +43,7 @@
     {
         // width: 20%;
         min-width: 250px;
-        // background-color:aqua;
+        background-color:var(--background-product);
         display: flex;
         // margin-right: 15px;
     }
