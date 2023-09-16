@@ -17,7 +17,8 @@
 
 
     --color1-btn-play: white;
-    --color2-btn-play: green;
+    // --color2-btn-play: #05a148;
+    --color2-btn-play: rgb(0, 184, 187);
 
     }
 
@@ -35,28 +36,6 @@ a
     outline: none;
     text-decoration: none;
     // text-align: left;
-}
-
-.default 
-{
-//   border: 1px solid #b9e39e;
-  /* padding: 100px; */
-  /* position: relative; */
-
-  /* position: absolute; */
-//   height: 100%;
-  /* width: 99%; */
-
-//   height: 3000px;
-//   background-color: #3df5ff46;
-  display: flex;
-  flex-direction: column;
-
-  margin-left: 2%;
-  margin-right: 2%;
-  margin-top: 0.5%;
-  position: relative;
-  /* top: 11%; */
 }
 
 .center

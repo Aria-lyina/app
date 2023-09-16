@@ -1,6 +1,7 @@
 <script setup>
     import HeaderButton from '@/components/HeaderButton.vue';
     import LinkLogo from '@/components/Logo.vue';
+    import MenuCast from '@/components/MenuCast.vue';
 
     const DEFAULT_LANG = "Ru";
 
@@ -12,6 +13,15 @@
     const countInCart = ref(0);
 
     const currentLang = ref(DEFAULT_LANG);
+    
+    const buttonMenu = ref();
+
+    const showMenu = ref(false);
+    
+    // const showMenu = computed(() =>
+    //  {
+    // return false
+    // });
 
     const changeLang = () => {
         if (currentLang.value == DEFAULT_LANG) {
@@ -20,6 +30,12 @@
             currentLang.value = DEFAULT_LANG;
         }
     }
+
+    // const Sh = () =>
+    // {
+    //     if (showMenu) showMenu = false; 
+    //     else showComponent = true
+    // }
 
     // setInterval(() => {
     // countInCart.value++
@@ -31,13 +47,14 @@
     //     HeaderButton, // новое имя компонента
     //     LinkLogo }
     // }
-
 </script>
 
-<template>
-    <header class="app-header">
+<template >
+    <header class="app-header" ref="buttonMenu">
         <div class="app-header__container">
-            <header-button icon="img/icon/fi-rr-apps.svg" margin="20px">{{ nameCatalog }}</header-button>
+            <header-button icon="img/icon/fi-rr-apps.svg" 
+             @click="showMenu = !showMenu"
+             margin="20px">{{ nameCatalog }}</header-button>
             <link-logo class="center"/>
             <header-button class="header-right-buttons" icon="img/icon/fi-rr-search.svg">Поиск</header-button>
             <header-button icon="img/icon/fi-rr-user.svg"/>
@@ -47,27 +64,78 @@
             <header-button id="last-text-head" @click="changeLang" margin="0px">{{ currentLang }}</header-button>
         </div>
     </header>
+    <menu-cast v-if="showMenu" class="menu-style"></menu-cast>
+    <!-- <menu-cast class="menu-style"></menu-cast> -->
 </template>
 
 <style lang="scss" scoped>
+    
+    
+    // .app-header
+    // {
+    //     background: rgba(182, 255, 231, 0.48); 
+    //     height: 50px;
+    //     margin-left: 2%;
+    //     display: flex;
+    //     margin-right: 2%;
+    //     // position: fixed;
+
+    //     &__container
+    //     {
+    //         display: flex;
+    //         flex-direction: row;
+    //         /* background-color:rgb(106, 248, 255); */
+    //         width:100%;
+    //         height:100%;
+    //         /* justify-content: center; */
+    //         align-items: center;
+    //     }
+    // }
+
+ 
+
     .app-header
     {
-        /* background: rgba(182, 255, 231, 0.48); */
-        height: 50px;
-        margin-left: 2%;
+        background: white;  
+        // background: rgba(0, 8, 8, 0.296); 
+        height: 70px;
+        // margin-left: 0px;
+        // margin-left: 2%;
         display: flex;
-        margin-right: 2%;
+        // margin-right: 2%;
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+
+        z-index: 100;
+
 
         &__container
         {
             display: flex;
             flex-direction: row;
-            /* background-color:rgb(106, 248, 255); */
+            // background-color:rgb(106, 248, 255); 
             width:100%;
             height:100%;
+            margin-right: 2.5%;
+            margin-left: 2.5%;
             /* justify-content: center; */
             align-items: center;
         }
     }
+
+// .menu-style
+// {
+//     // box-sizing:border-box;
+//     width: 95%;
+//     height: 750px;
+//     top:43px;
+//     // position: absolute;
+//     background-color:rgba(2, 2, 2, 0.476);
+//     // left:0px;
+//     // z-index: 99;
+
+// }
 
 </style>
