@@ -46,7 +46,7 @@ onMounted(() =>
 
     let status = document.getElementById('status');//@TODO add ref -> statusRef.value <div id="status" ref="statusRef">
     let countCarts = props.products.length;
-    console.log(countCarts);
+    // console.log(countCarts);
 
     // console.log('VALUE!!');
     // console.log(status.innerHTML);
@@ -96,16 +96,16 @@ onMounted(() =>
 
     function AutoList()
     {
-        console.log('TIMER '+props.timerSlide)
-                console.log('curr '+current);
+        // console.log('TIMER '+props.timerSlide)
+                // console.log('curr '+current);
                 if (current != countCarts-1)
                 {
-                    console.log('tick1')
+                    // console.log('tick1')
                     slider.scroll(0, height * (current + 1));
 
                 }
                 else {
-                    console.log('tick2')
+                    // console.log('tick2')
                     slider.scroll(0, 0);
                 }
     }
@@ -120,7 +120,7 @@ onMounted(() =>
             carts[number] = "<span class='current-cart'>●</span>";
 
             current = number;
-            console.log('new curr = ' + current)
+            // console.log('new curr = ' + current)
 
             status.innerHTML = carts.join(" ");
             AnimationText();
