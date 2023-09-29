@@ -1,112 +1,48 @@
 <script setup>
-// import data from './data.json';
-
-// defineProps({
-//     title: String,
-//     description: String,
-//     items: Array
-// })
-
-const currAct = ref("2416");
-
-import { reactive } from 'vue';
-
-// import data from '@/public/data.json';
-
-// const state = reactive({
-//   title: data.title,
-//   description: data.description,
-//   items: data.items
-// });
-
-// console.log(state.title)
 
 import data from '@/src/full.json';
 
-const items = reactive({
-    date: data.data
-})
+const items = data.data;
 
-// console.log(items.date)
+const currAct = ref(Object.keys(items)[0]);
 
-// for (const prop in items.date) {
-//     console.log(prop);
-//     // for (const prop in items.date) {
-//     // console.log(prop);
-//     // }
-// }
+const items_links = computed(()=>
+{
+    if(!currAct.value)
+    {
+        return {
+            childrenOne: [],
+            childrenTwo: [],
+            childrenThree: []
+        }
+    }
 
-const hov = ref(false);
+    let CategoryActiveChildren = data.data[currAct.value].children;
 
-const listItems = ref([]);
-
-// const listCategory = ref([])
-
-const items_links = reactive({
-    // // date: data.data[currAct.value].children.one
-    // date: data.data["10515"].children.one,
-    // // children: data.data["2416"].children.one.map(child => child) // получаем массив "children"
-    // children: data.data[currAct.value].children.one.map(child => child) // получаем массив "children"
-
-    childrenOne: data.data[currAct.value].children.one.map(child => child),
-    childrenTwo: data.data[currAct.value].children.two.map(child => child),
-    childrenThree: data.data[currAct.value].children.three.map(child => child)
+    return {
+        childrenOne: CategoryActiveChildren.one.map(child=>child),
+        childrenTwo: CategoryActiveChildren.two.map(child=>child),
+        childrenThree: CategoryActiveChildren.three.map(child=>child)
+    }
 })
 
 const activateItem = (index) => 
-{
-  
-  //console.log(index);
-
-  let listItemOld = document.getElementById(currAct.value);
-  listItemOld.classList.remove('IsActive');
-
-  currAct.value = index;
-
-  let listItemNew = document.getElementById(index);
-  //console.log(listItemNew);
-  listItemNew.classList.add('IsActive');
-
-//   currDate.children = items.date[currAct.value].children.one.map(child => child);
-
-    items_links.childrenOne = items.date[currAct.value].children.one.map(child => child);
-    items_links.childrenTwo = items.date[currAct.value].children.two.map(child => child);
-    items_links.childrenThree = items.date[currAct.value].children.three.map(child => child);
-
-//   const listItem = listItems.value[index];
-// const listItem = listItems.value[1];
+{ 
+    currAct.value = index;
 };
-
-onMounted(() => 
-{
-    //   listItems.value = $refs.listItem;
-    listItems.value = document.querySelector('.left-li');
-    console.log(listItems.value)
-    currAct.value = listItems.value.id;
-    console.log("curr=",currAct.value);
-    
-});
-
 
 </script>
 
 <template>
   <div class="container">
-    <!-- <h1>{{ title }}</h1>
-    <p>{{ description }}</p>-->
-                
-    <!-- @mouseover="console.log(index)"   
-            @mouseout="deactivateItem(index)"@mouseout="deactivateItem(index)"
-        @mouseover="activateItem(index)"
-        ref="listItem" ref="listItems"
-        @click = "$refs.index.classList.toggle('IsActive')"
-        :ref="item.id"
-        -->
+
         <div class="left-container">
             <div class="left-container-content">
                 <ul ul class="left-ul">
                     <li class="left-li" :id="item.id" 
-                    v-for="(item, index) in items.date" :key="item.title" 
+                    v-for="(item, index) in items" :key="item.title" 
+                    :class="{IsActive: index===currAct}"
+
                     @mouseover="activateItem(index)"
                     >
                         {{ item.title }}<img class="icon-in-text arrow-in-ul" src="/img/icon/arrow-2.svg">
@@ -144,9 +80,6 @@ onMounted(() =>
                     </ul>
                 </div>
             </div>
-
-            
-
 
         </div>
   </div>
@@ -271,7 +204,7 @@ li
 
     &-li2
     {
-        margin-bottom: -10px;
+        margin-bottom: -7px;
         // margin-top: -10px;
         // background-color:bisque;
     }
@@ -340,7 +273,6 @@ li
     width: 101vw;
     margin-left: -0.5%;
 
-
     //обязательные стили
     position: fixed;
     box-sizing:border-box;
@@ -349,16 +281,7 @@ li
     height: 93vh;
     z-index: 9;
 
-
-    // width: 95%;
-
-    // position: sticky;
-
     background-color:rgb(255, 255, 255);
-
-    
-    // height: 740px;
-    // overflow-y: scroll;
 }
 
 
