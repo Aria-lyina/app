@@ -5,6 +5,7 @@ import data from '@/src/full.json';
 const items = data.data;
 
 const currAct = ref(Object.keys(items)[0]);
+const currOldAct = ref(Object.keys(items)[0]);
 
 const items_links = computed(()=>
 {
@@ -18,6 +19,10 @@ const items_links = computed(()=>
     }
 
     let CategoryActiveChildren = data.data[currAct.value].children;
+
+    
+    if(CategoryActiveChildren===undefined) CategoryActiveChildren = data.data[currOldAct.value].children;
+    else currOldAct.value = currAct.value;
 
     return {
         childrenOne: CategoryActiveChildren.one.map(child=>child),
@@ -45,7 +50,9 @@ const activateItem = (index) =>
 
                     @mouseover="activateItem(index)"
                     >
-                        {{ item.title }}<img class="icon-in-text arrow-in-ul" src="/img/icon/arrow-2.svg">
+                        <NuxtLink :to="item.manual_url" class="left-link">
+                            {{ item.title }}<img class="icon-in-text arrow-in-ul" src="/img/icon/arrow-2.svg">
+                        </NuxtLink>
                     </li>
                 </ul>
             </div>
@@ -109,6 +116,11 @@ li
 
 .left
 {
+    &-link 
+    {
+        color:black;
+    }
+
     &-container
     {
         box-sizing:border-box;
@@ -259,7 +271,7 @@ li
     display: block;
     margin: 0 auto;  
     margin-right: 25px;
-    // margin-top: 4px;
+    margin-top: 4px;
 }
 
 .container
