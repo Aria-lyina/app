@@ -16,10 +16,7 @@ defineProps ({
     .button-header
     {
         color: var(--primary-color-text);
-        background-color:white;
-        border:0px;
         padding-left: 0px;
-        cursor: pointer;
         margin-right: 20px;
     }
 
@@ -35,6 +32,7 @@ defineProps ({
         margin-left: 5px;
         /* background-color:aqua; */
         font-size: var(--fontsize-small-default);
+        // font-family: Roboto,Arial,sans-serif;
     }
 
     .header-right-buttons

@@ -1,0 +1,43 @@
+{
+    "valuta":"$",
+    "data":
+    {
+        "12333": {
+            "id":12333,
+            "count":1,
+            "title": "Puma RS-x3 <br> super",
+            "img":"img/puma-rs-x3.png",
+            "seller_logo":"img/icon/new-1.svg",
+            "seller_title":"Rozetka",
+            "price":"200"
+        },
+        "12334": {
+            "id":12334,
+            "count":2,
+            "title": "Apple iPhone SE 64GB",
+            "img":"img/Apple-iphone-se.png",
+            "seller_logo":"img/icon/new-1.svg",
+            "seller_title":"Rozetka",
+            "price":"1000"
+        },
+        "12335": {
+            "id":12335,
+            "count":1,
+            "title": "HayuHnKM HyperX Cloud Core (KHX-HSCC-BK)",
+            "img":"img/headphones_PNG7638.png",
+            "seller_logo":"img/icon/new-1.svg",
+            "seller_title":"Rozetka",
+            "price":"300"
+        },
+        "12336":
+        {
+            "id":12336,
+            "count":2,
+            "title":"Мужские кроссовки Nike Jordan Jumpman 2020",
+            "img":"img/Nike_Jordan_Jumpman_2020.png",
+            "seller_logo":"img/icon/new-1.svg",
+            "seller_title":"Rozetka",
+            "price":"500"
+        }
+    }
+}

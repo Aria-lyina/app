@@ -39,6 +39,14 @@ a
     text-decoration: none;
     // text-align: left;
 }
+button
+{
+    background-color:#ffffff00;
+    border: none;
+    font-size: var(--fontsize-default);
+    font-weight:100;
+    cursor: pointer;
+}   
 
 .center
 {
@@ -54,18 +62,34 @@ a
         height: 15px;
     }
 
-.icon-in-text
+
+img
 {
     width: auto;
-    height: 10px;
 }
 
-.icon-in-text2
+.icon 
 {
-    width: auto;
-    height: 13px;
-}
+    &-in-text
+    {
+        height: 10px;
+    }
 
+    &-in-text2
+    {
+        height: 13px;
+    }
+    &-in-text3
+    {
+        height: 7px;
+        padding-top: -4px;
+    }
+
+    &-large 
+    {
+        height: 20px;
+    }
+}    
 
 #last-text-head
 {

@@ -2,6 +2,7 @@
     import HeaderButton from '@/components/HeaderButton.vue';
     import LinkLogo from '@/components/Logo.vue';
     import MenuCast from '@/components/MenuCast.vue';
+    import ShoppingСart from '@/components/ShoppingСart.vue';
 
     const DEFAULT_LANG = "Ru";
 
@@ -17,6 +18,7 @@
     const buttonMenu = ref();
 
     const showMenu = ref(false);
+    const showShopCart = ref(false);
     
     // const showMenu = computed(() =>
     //  {
@@ -60,17 +62,77 @@
             <header-button icon="img/icon/fi-rr-user.svg"/>
             <header-button icon="img/icon/fi-rr-arrows-retween-re.svg">0</header-button>
             <header-button icon="img/icon/heart-3.svg">0</header-button>
-            <header-button icon="img/icon/fi-rr-shopping-bag.svg">{{ countInCart }}</header-button>
+            <header-button @click="showShopCart = true"
+            icon="img/icon/fi-rr-shopping-bag.svg">{{ countInCart }} </header-button>
             <header-button id="last-text-head" @click="changeLang" margin="0px">{{ currentLang }}</header-button>
         </div>
     </header>
-    <menu-cast v-if="showMenu" class="menu-style"></menu-cast>
+    <menu-cast v-if="showMenu"></menu-cast>
+    <div v-if="showShopCart" class="container-shops">
+        <shopping-сart>
+            <button class="button-exit" @click="showShopCart = false">
+                <img class="icon-large" src="img/icon/fi-rr-cross.svg"/>
+            </button>
+            <button class="button-continue" @click="showShopCart = false">
+                <img class="icon-in-text" src="/img/icon/arrow-2-2.svg">
+                Продолжить покупки
+            </button>
+        </shopping-сart>
+
+    </div>
     <!-- <menu-cast class="menu-style"></menu-cast> -->
 </template>
 
 <style lang="scss" scoped>
     
-    
+    .button
+    {
+        &-exit
+        {
+            position: absolute;
+            // color: var(--primary-color-text);
+            background-color:rgba(255, 255, 255, 0);
+            border:0px;
+            padding-left: 0px;
+            cursor: pointer;
+            margin-right: 20px;
+
+            top: 30px;
+            right: 20px;
+            z-index: 13;
+        }
+
+        &-continue
+        {
+            position: absolute;
+            color: black;
+            background-color:rgba(255, 255, 255, 0);
+            border:0px;
+            padding-left: 0px;
+            cursor: pointer;
+            margin-right: 20px;
+
+            font-size: var(--fontsize-medium);
+            bottom: 55px;
+            left: 40px;
+            z-index: 13;
+        }
+
+    }
+
+    .container-shops
+    {
+        background-color:rgba(0, 0, 0, 0.373);
+        width: 101vw;
+        height: 100vh;
+        z-index:11;
+
+        top: 0;
+        left: 0;
+        position: fixed;
+        box-sizing:border-box;
+    }
+
     // .app-header
     // {
     //     background: rgba(182, 255, 231, 0.48); 
@@ -108,7 +170,7 @@
         top: 0px;
         left: 0px;
 
-        z-index: 100;
+        z-index: 10;
 
 
         &__container
