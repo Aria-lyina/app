@@ -3,22 +3,6 @@ defineProps({
     video:Object,
 })
 
-// onMounted(() =>
-// {
-//     const btn =
-//     {
-//         diametr:"100px",
-//         color1: "white",
-//         color2: "green"
-//     }
-// })
-const btn =
-    {
-        diametr:"100px",
-        color1: "red",
-        color2: "green"
-    }
-
 </script>
 
 <template>
@@ -31,9 +15,7 @@ const btn =
                     </svg>
                 </div>
             </div>
-            <img :src="video.preview" style="width: 100%;"/>
-            <!-- <img src="img/apple-iphone-11-green.jpeg" style="width: 100%;"/> -->
-            <!-- <img src="img/apple-iphone-11-green.jpeg" style="width: 100%; object-fit: contain;"/> -->
+            <img :src="video.preview" style="width: 100%;" class="zoom"/>
         </div>
         <div class="date" v-html="video.date"></div>
         <div class="description" v-html="video.description"></div>
@@ -52,8 +34,15 @@ const btn =
         cursor: pointer;
 
         .button-play{
-            color: #fff;
-            background: #05a148;
+            // color: #fff;
+            // background: #05a148;
+            color: var(--color1-btn-play);
+            background: var(--color2-btn-play);
+        }
+
+        .zoom 
+        {
+             transform: scale(1.1);
         }
     }
 
@@ -66,7 +55,6 @@ const btn =
         overflow: hidden;
         position: relative;
         // background-color: rebeccapurple;
-
         display: flex;
         justify-content: center;
         align-items: center;
@@ -76,6 +64,7 @@ const btn =
 .bt
 {
     position: absolute;
+    z-index: 2;
     // top:50%;
     // transform: translateY(-50%);
 }
@@ -106,8 +95,12 @@ const btn =
 }
 
 .button-play {
-    background: #fff;
-    color: #05a148;
+    // background: #fff;
+    // color: #05a148;
+
+    color: var(--color2-btn-play);
+    background: var(--color1-btn-play);
+    
     border-radius: 100%;
     width: 64px;
     height: 64px;
@@ -124,4 +117,11 @@ const btn =
         }
     }
 }
+
+.zoom
+    {
+        transition: transform 0.5s;
+        z-index: 1;
+    }
+
 </style>

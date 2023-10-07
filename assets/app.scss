@@ -7,6 +7,8 @@
 
     --fontsize-default: 20px;
     --fontsize-text-video: 14px;
+
+    --fontsize-medium: 15px;
     --fontsize-small-default: 13px;
     --fontsize-light-small-default: 11px;
     font-family: Roboto,Arial,sans-serif;
@@ -17,7 +19,8 @@
 
 
     --color1-btn-play: white;
-    --color2-btn-play: green;
+    // --color2-btn-play: #05a148;
+    --color2-btn-play: rgb(0, 184, 187);
 
     }
 
@@ -36,28 +39,14 @@ a
     text-decoration: none;
     // text-align: left;
 }
-
-.default 
+button
 {
-//   border: 1px solid #b9e39e;
-  /* padding: 100px; */
-  /* position: relative; */
-
-  /* position: absolute; */
-//   height: 100%;
-  /* width: 99%; */
-
-//   height: 3000px;
-//   background-color: #3df5ff46;
-  display: flex;
-  flex-direction: column;
-
-  margin-left: 2%;
-  margin-right: 2%;
-  margin-top: 0.5%;
-  position: relative;
-  /* top: 11%; */
-}
+    background-color:#ffffff00;
+    border: none;
+    font-size: var(--fontsize-default);
+    font-weight:100;
+    cursor: pointer;
+}   
 
 .center
 {
@@ -73,18 +62,34 @@ a
         height: 15px;
     }
 
-.icon-in-text
+
+img
 {
     width: auto;
-    height: 10px;
 }
 
-.icon-in-text2
+.icon 
 {
-    width: auto;
-    height: 13px;
-}
+    &-in-text
+    {
+        height: 10px;
+    }
 
+    &-in-text2
+    {
+        height: 13px;
+    }
+    &-in-text3
+    {
+        height: 7px;
+        padding-top: -4px;
+    }
+
+    &-large 
+    {
+        height: 20px;
+    }
+}    
 
 #last-text-head
 {
