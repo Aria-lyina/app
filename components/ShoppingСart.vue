@@ -13,7 +13,7 @@ const count_price = () =>
 
     if(items!=undefined)
     for (const key in items) {
-        if (Object.hasOwnProperty.call(items, key)) 
+        if (Object.hasOwnProperty.call(items, key))
         {
             const element = items[key];
             sum+=element.count*element.price;
@@ -38,8 +38,8 @@ const count = ()=>
 const price = ref(count_price());
 
 
-const DecProduct = (index) => 
-{ 
+const DecProduct = (index) =>
+{
     if(items[index].count!=1&&items[index].count!=undefined)
     {
         // alert(index);
@@ -54,8 +54,8 @@ const DecProduct = (index) =>
     price.value = count_price();
 };
 
-const DelProduct = (index) => 
-{ 
+const DelProduct = (index) =>
+{
     var parent = document.getElementById('content');
     var child = document.getElementById('product'+index);
     parent.removeChild(child);
@@ -65,8 +65,8 @@ const DelProduct = (index) =>
     price.value = count_price();
 };
 
-const IncProduct = (index) => 
-{ 
+const IncProduct = (index) =>
+{
     if(items[index].count!=undefined)
     {
         // alert(index);
@@ -93,7 +93,7 @@ const IncProduct = (index) =>
 
 <template>
   <div class="container">
-    
+
     <div class="header">
         <span class="header-name">Корзина</span>
         <span class="header-count">{{count()}}&nbsp;товаров</span>
@@ -102,7 +102,7 @@ const IncProduct = (index) =>
 
         <div class="product" v-for="(item, index) in items" :key="item.title"
         :id="'product'+item.id">
-            
+
             <div class="product-content">
                 <div class="product-img-container">
                     <img class="product-img" :src="item.img">
@@ -114,15 +114,15 @@ const IncProduct = (index) =>
                     {{item.title}}
                     </div>
                     <div class="product-text-seller">
-                        <span class="product-text-seller1">Продавец:&emsp;</span> 
-                        <span class="product-text-seller2">{{item.seller_title}}&ensp;</span> 
+                        <span class="product-text-seller1">Продавец:&emsp;</span>
+                        <span class="product-text-seller2">{{item.seller_title}}&ensp;</span>
                         <img class="icon-large ic_" :src="item.seller_logo">
                     </div>
-                </div> 
+                </div>
 
                 <div class="product-counter">
                     <div class="product-counter-btns">
-                        <button class="product-counter-btn" 
+                        <button class="product-counter-btn"
                         @click="DecProduct(index)" >–</button>
                         <span :id="'count'+index">
                             {{ item.count }}
@@ -139,7 +139,7 @@ const IncProduct = (index) =>
 
                 <div class="product-delete">
                     <button class="product-delete-btn" @click="DelProduct(index)">
-                        <img class="icon-in-text2" src="img/icon/fi-rr-cross.svg"/>
+                        <img class="icon-in-text2" src="/img/icon/fi-rr-cross.svg"/>
                     </button>
                 </div>
 
@@ -147,7 +147,7 @@ const IncProduct = (index) =>
                 <!-- <img class="product-img" src="img/puma-rs-x3.png"> -->
             </div>
         </div>
-    
+
     </div>
     <div class="footer">
         <div class="footer-sum-price">
@@ -180,11 +180,11 @@ const IncProduct = (index) =>
     height: 160px;
     border-bottom: 1px solid;
 
-    // background-color:aquamarine; 
+    // background-color:aquamarine;
     display: flex;
     align-items: center;
 
-    &-delete 
+    &-delete
     {
         // width: 5.5%;
         width: 35px;
@@ -195,7 +195,7 @@ const IncProduct = (index) =>
         // justify-content: center;
         // align-items:center;
 
-        &-btn 
+        &-btn
         {
             // position: fixed;
             top:0;
@@ -207,7 +207,7 @@ const IncProduct = (index) =>
         }
     }
 
-    &-price 
+    &-price
     {
         font-weight: bold;
         font-size: var(--fontsize-medium);
@@ -226,19 +226,19 @@ const IncProduct = (index) =>
         align-items:center;
         text-align: center;
 
-        &-btns 
+        &-btns
         {
             // background-color:rgb(4, 138, 255);
             border-bottom: 1px solid;
             font-size: var(--fontsize-small-default);
         }
 
-        &-btn 
+        &-btn
         {
             font-family: 'Courier New', Courier, monospace;
         }
     }
-    &-text 
+    &-text
     {
         height: 100%;
         width:40%;
@@ -253,13 +253,13 @@ const IncProduct = (index) =>
         // background-color:aqua;
         flex-direction: column;
 
-        &-name 
+        &-name
         {
             font-size: var(--fontsize-medium);
             line-height: 1.5;
         }
 
-        &-seller 
+        &-seller
         {
             // background-color:rgb(207, 255, 255);
             font-size: var(--fontsize-medium);
@@ -294,11 +294,11 @@ const IncProduct = (index) =>
         align-items:center;
     }
 
-    &-img-container 
+    &-img-container
     {
         height: 119px;
         width: 119px;
-        width: 18.5%; 
+        width: 18.5%;
         height: 100%;
 
         background-color: var(--background-product);
@@ -308,7 +308,7 @@ const IncProduct = (index) =>
         // overflow: hidden;
     }
 
-    &-img 
+    &-img
     {
         // height: 90px;
         height: 75%;
@@ -348,7 +348,7 @@ const IncProduct = (index) =>
     padding-left: 35px;
     padding-right: 35px;
     // overflow: auto;
-    &-name 
+    &-name
     {
         font-size: var(--fontsize-big-default);
         width: 145px;
@@ -378,7 +378,7 @@ const IncProduct = (index) =>
     justify-content: flex-end;
     // overflow: auto;
 
-    &-button 
+    &-button
     {
         background-color: var(--color2-btn-play);
         width: 220px;
@@ -403,7 +403,7 @@ const IncProduct = (index) =>
 }
 
 
-// @media screen and (min-height: 600px) 
+// @media screen and (min-height: 600px)
 // {
 //   .content
 //   {
@@ -474,7 +474,7 @@ const IncProduct = (index) =>
     }
 }
 
-@media screen and (max-width: 1200px) 
+@media screen and (max-width: 1200px)
 {
     .footer
     {
@@ -489,7 +489,7 @@ const IncProduct = (index) =>
             margin-right: 40px;
         }
 
-        &-button 
+        &-button
         {
             height: 55px;
             margin-bottom: 20px;

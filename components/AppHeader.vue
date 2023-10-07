@@ -14,12 +14,12 @@
     const countInCart = ref(0);
 
     const currentLang = ref(DEFAULT_LANG);
-    
+
     const buttonMenu = ref();
 
     const showMenu = ref(false);
     const showShopCart = ref(false);
-    
+
     // const showMenu = computed(() =>
     //  {
     // return false
@@ -35,7 +35,7 @@
 
     // const Sh = () =>
     // {
-    //     if (showMenu) showMenu = false; 
+    //     if (showMenu) showMenu = false;
     //     else showComponent = true
     // }
 
@@ -51,19 +51,19 @@
     // }
 </script>
 
-<template >
+<template>
     <header class="app-header" ref="buttonMenu">
         <div class="app-header__container">
-            <header-button icon="img/icon/fi-rr-apps.svg" 
+            <header-button icon="/img/icon/fi-rr-apps.svg"
              @click="showMenu = !showMenu"
              margin="20px">{{ nameCatalog }}</header-button>
             <link-logo class="center"/>
-            <header-button class="header-right-buttons" icon="img/icon/fi-rr-search.svg">Поиск</header-button>
-            <header-button icon="img/icon/fi-rr-user.svg"/>
-            <header-button icon="img/icon/fi-rr-arrows-retween-re.svg">0</header-button>
-            <header-button icon="img/icon/heart-3.svg">0</header-button>
+            <header-button class="header-right-buttons" icon="/img/icon/fi-rr-search.svg">Поиск</header-button>
+            <header-button icon="/img/icon/fi-rr-user.svg"/>
+            <header-button icon="/img/icon/fi-rr-arrows-retween-re.svg">0</header-button>
+            <header-button icon="/img/icon/heart-3.svg">0</header-button>
             <header-button @click="showShopCart = true"
-            icon="img/icon/fi-rr-shopping-bag.svg">{{ countInCart }} </header-button>
+            icon="/img/icon/fi-rr-shopping-bag.svg">{{ countInCart }} </header-button>
             <header-button id="last-text-head" @click="changeLang" margin="0px">{{ currentLang }}</header-button>
         </div>
     </header>
@@ -71,7 +71,7 @@
     <div v-if="showShopCart" class="container-shops">
         <shopping-сart>
             <button class="button-exit" @click="showShopCart = false">
-                <img class="icon-large" src="img/icon/fi-rr-cross.svg"/>
+                <img class="icon-large" src="/img/icon/fi-rr-cross.svg"/>
             </button>
             <button class="button-continue" @click="showShopCart = false">
                 <img class="icon-in-text" src="/img/icon/arrow-2-2.svg">
@@ -84,7 +84,7 @@
 </template>
 
 <style lang="scss" scoped>
-    
+
     .button
     {
         &-exit
@@ -135,7 +135,7 @@
 
     // .app-header
     // {
-    //     background: rgba(182, 255, 231, 0.48); 
+    //     background: rgba(182, 255, 231, 0.48);
     //     height: 50px;
     //     margin-left: 2%;
     //     display: flex;
@@ -154,12 +154,12 @@
     //     }
     // }
 
- 
+
 
     .app-header
     {
-        background: white;  
-        // background: rgba(0, 8, 8, 0.296); 
+        background: white;
+        // background: rgba(0, 8, 8, 0.296);
         height: 70px;
         // margin-left: 0px;
         // margin-left: 2%;
@@ -177,7 +177,7 @@
         {
             display: flex;
             flex-direction: row;
-            // background-color:rgb(106, 248, 255); 
+            // background-color:rgb(106, 248, 255);
             width:100%;
             height:100%;
             margin-right: 2.5%;
