@@ -3,6 +3,7 @@
     import LinkLogo from '@/components/Logo.vue';
     import MenuCast from '@/components/MenuCast.vue';
     import ShoppingСart from '@/components/ShoppingСart.vue';
+    import Register from '@/components/Register.vue';
 
     const DEFAULT_LANG = "Ru";
 
@@ -19,11 +20,7 @@
 
     const showMenu = ref(false);
     const showShopCart = ref(false);
-
-    // const showMenu = computed(() =>
-    //  {
-    // return false
-    // });
+    const showReg = ref(false);
 
     const changeLang = () => {
         if (currentLang.value == DEFAULT_LANG) {
@@ -58,10 +55,11 @@
              @click="showMenu = !showMenu"
              margin="20px">{{ nameCatalog }}</header-button>
             <link-logo class="center"/>
-            <header-button class="header-right-buttons" icon="/img/icon/fi-rr-search.svg">Поиск</header-button>
-            <header-button icon="/img/icon/fi-rr-user.svg"/>
-            <header-button icon="/img/icon/fi-rr-arrows-retween-re.svg">0</header-button>
-            <header-button icon="/img/icon/heart-3.svg">0</header-button>
+            <header-button class="header-right-buttons" icon="img/icon/fi-rr-search.svg">Поиск</header-button>
+            <header-button  @click="showReg = true" 
+            icon="img/icon/fi-rr-user.svg"/>
+            <header-button icon="img/icon/fi-rr-arrows-retween-re.svg">0</header-button>
+            <header-button icon="img/icon/heart-3.svg">0</header-button>
             <header-button @click="showShopCart = true"
             icon="/img/icon/fi-rr-shopping-bag.svg">{{ countInCart }} </header-button>
             <header-button id="last-text-head" @click="changeLang" margin="0px">{{ currentLang }}</header-button>
@@ -78,23 +76,27 @@
                 Продолжить покупки
             </button>
         </shopping-сart>
-
     </div>
+
+    <div v-if="showReg" class="container-shops">
+        <register>
+            <button class="button-exit" @click="showReg = false">
+                <img class="icon-large" src="img/icon/fi-rr-cross.svg"/>
+            </button>
+        </register>
+    </div>
+
     <!-- <menu-cast class="menu-style"></menu-cast> -->
 </template>
 
 <style lang="scss" scoped>
+    
 
     .button
     {
         &-exit
         {
             position: absolute;
-            // color: var(--primary-color-text);
-            background-color:rgba(255, 255, 255, 0);
-            border:0px;
-            padding-left: 0px;
-            cursor: pointer;
             margin-right: 20px;
 
             top: 30px;
@@ -105,14 +107,10 @@
         &-continue
         {
             position: absolute;
-            color: black;
-            background-color:rgba(255, 255, 255, 0);
-            border:0px;
+
             padding-left: 0px;
-            cursor: pointer;
             margin-right: 20px;
 
-            font-size: var(--fontsize-medium);
             bottom: 55px;
             left: 40px;
             z-index: 13;

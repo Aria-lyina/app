@@ -17,10 +17,8 @@
 
     --background-product:#f4f4f4;
 
-
-    --color1-btn-play: white;
-    // --color2-btn-play: #05a148;
-    --color2-btn-play: rgb(0, 184, 187);
+    --btn-color1: white;
+    --btn-color2: rgb(0, 184, 187);
 
     }
 
@@ -39,11 +37,12 @@ a
     text-decoration: none;
     // text-align: left;
 }
+
 button
 {
     background-color:#ffffff00;
     border: none;
-    font-size: var(--fontsize-default);
+    font-size: var(--fontsize-medium);
     font-weight:100;
     cursor: pointer;
 }   
@@ -56,13 +55,6 @@ button
     transform: translateX(-50%);
 }
 
-.ic
-    {
-        width: auto;
-        height: 15px;
-    }
-
-
 img
 {
     width: auto;
@@ -70,6 +62,12 @@ img
 
 .icon 
 {
+    &-btn 
+    {
+        width: auto;
+        height: 15px;
+    }
+
     &-in-text
     {
         height: 10px;
@@ -108,4 +106,19 @@ img
 {
     color:var(--light-color-text);
     font-size: var(--fontsize-light-small-default);
+}
+
+.btn
+{
+    &-1
+    {
+        color:var(--btn-color1);
+        background-color: var(--btn-color2);
+        font-size: var(--fontsize-medium);
+
+        // width: 220px;
+        height: 55px;
+        border-radius: 3px;
+        // margin-right: 35px;
+    }
 }

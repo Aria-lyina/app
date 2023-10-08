@@ -33,11 +33,10 @@ defineProps({
     &:hover{
         cursor: pointer;
 
-        .button-play{
-            // color: #fff;
-            // background: #05a148;
-            color: var(--color1-btn-play);
-            background: var(--color2-btn-play);
+        .button-play
+        {
+            color: var(--btn-color1);
+            background: var(--btn-color2);
         }
 
         .zoom 
@@ -95,11 +94,9 @@ defineProps({
 }
 
 .button-play {
-    // background: #fff;
-    // color: #05a148;
 
-    color: var(--color2-btn-play);
-    background: var(--color1-btn-play);
+    color: var(--btn-color2);
+    background: var(--btn-color1);
     
     border-radius: 100%;
     width: 64px;

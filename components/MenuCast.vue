@@ -51,7 +51,7 @@ const activateItem = (index) =>
                     @mouseover="activateItem(index)"
                     >
                         <NuxtLink :to="item.manual_url" class="left-link">
-                            {{ item.title }}<img class="icon-in-text arrow-in-ul" src="/img/icon/arrow-2.svg">
+                           <div class="li-div">{{ item.title }}</div>  <img class="icon-in-text" src="/img/icon/arrow-2.svg">
                         </NuxtLink>
                     </li>
                 </ul>
@@ -114,11 +114,20 @@ li
     // padding-left: 0px;
 }
 
+.li-div
+{
+    // background-color:aqua;
+    width: 88%;
+}
+
 .left
 {
     &-link 
     {
         color:black;
+        display: flex;
+        align-items: center;
+        // background-color:beige;
     }
 
     &-container
@@ -263,17 +272,6 @@ li
 {
     background-color:rgb(255, 255, 255);
 }
-
-.arrow-in-ul
-{
-    float: right;
-
-    display: block;
-    margin: 0 auto;  
-    margin-right: 25px;
-    margin-top: 4px;
-}
-
 .container
 {  
     // //стили для контейнера с полями

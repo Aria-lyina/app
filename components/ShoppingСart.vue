@@ -159,7 +159,7 @@ const IncProduct = (index) =>
                 {{price}} {{valuta}}
             </span>
         </div>
-        <button class="footer-button">Оформить заказ</button>
+        <button class="btn-1 footer-button">Оформить заказ</button>
     </div>
     <!-- <slot class="style-slot"></slot> -->
     <slot/>
@@ -188,7 +188,7 @@ const IncProduct = (index) =>
     {
         // width: 5.5%;
         width: 35px;
-            height: 35px;
+        height: 35px;
         // background-color:red;
         position: relative;
         display: flex;
@@ -312,7 +312,6 @@ const IncProduct = (index) =>
     {
         // height: 90px;
         height: 75%;
-        // background-color:aqua;
     }
 }
 
@@ -380,20 +379,13 @@ const IncProduct = (index) =>
 
     &-button
     {
-        background-color: var(--color2-btn-play);
         width: 220px;
-        height: 55px;
-        border-radius: 5px;
         margin-right: 35px;
-        color:var(--color1-btn-play);
-        font-size: var(--fontsize-medium);
-        // margin-left: 35px;
     }
 
     &-sum-price
     {
        width: 23%;
-    //    background-color:red;
         &-pr
         {
             font-weight: bold;
@@ -402,45 +394,21 @@ const IncProduct = (index) =>
     }
 }
 
-
-// @media screen and (min-height: 600px)
-// {
-//   .content
-//   {
-//     height: 50%;
-//   }
-// }
-
 .content
 {
     position: relative;
     // background-color:rgb(255, 176, 176);
     height: 72%;
-    // width: 84%;
-    margin-left: 35px;
-    margin-right: 35px;
-
-    // margin-top: 140px;
     margin-bottom: 140px;
-
-    // display: flex;
-
-    // margin-right: 50px;
-    // height: auto;
-
     // padding-bottom: 80px;
     // margin-bottom: 80px;
 
     border-top: 1px solid;
-    // border-bottom: solid;
-
     overflow: auto;
-
-    // overflow: hidden;
 }
 
-.content::-webkit-scrollbar {
-
+.content::-webkit-scrollbar 
+{
     // margin-right: -30px;
     display: none;
 }

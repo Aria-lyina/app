@@ -45,7 +45,7 @@ defineProps ({
 <template>
     <button class="button-header">
         <div class="content-button">
-                <img v-if="icon" :src ="icon" class="ic">
+                <img v-if="icon" :src ="icon" class="icon-btn">
                 <div class="text-head" :style="{ marginLeft: margin }">
                     <slot/>
                 </div>
