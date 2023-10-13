@@ -528,7 +528,7 @@ const IncProduct = (index) =>
     .product-comp
     {
         flex-direction: column;
-        align-items:end;
+        align-items: flex-end;
         height: 100%;
         width: 20%;
     }
@@ -539,7 +539,7 @@ const IncProduct = (index) =>
         height: 33%;
         display: flex;
         align-items:center;
-        justify-content: end;
+        justify-content: flex-end;
 
     }
 
@@ -554,7 +554,7 @@ const IncProduct = (index) =>
     .footer
     {
         flex-direction: column;
-        align-items:end;
+        align-items: flex-end;
 
         &-sum-price
         {

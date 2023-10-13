@@ -116,7 +116,7 @@ import ButtonImg from '@/components/ButtonImg.vue';
         width: 100%;
         height: 40%;
         display: flex;
-        align-items:end;
+        align-items: flex-end;
         justify-content: space-between;
         // bottom:0px;
     }

@@ -37,6 +37,20 @@
     margin-bottom: 40px;
 }
 
+
+.header-button-colors
+{
+    // fill: var(--primary-color-text);
+    // fill: red;
+    // fill: #5046e5;
+
+    fill:rgb(0, 255, 157);
+    &:hover
+    {
+        fill:rgb(255, 0, 0);
+    }
+}
+
 a
 {
     color:var(--primary-color-text);
