@@ -14,7 +14,8 @@ export default defineNuxtConfig({
   // }
   //}
   css: [
-    '@/assets/app.scss'
+    '@/assets/app.scss',
+    '@/assets/marg.scss'
   ]
 })
 

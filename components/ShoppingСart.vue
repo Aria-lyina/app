@@ -16,7 +16,8 @@ const count_price = () =>
         if (Object.hasOwnProperty.call(items, key)) 
         {
             const element = items[key];
-            sum+=element.count*element.price;
+
+            sum+=element.count*element.price.replace(/\s/g, "");
         }
     }
     return sum;
@@ -95,8 +96,12 @@ const IncProduct = (index) =>
   <div class="container">
     
     <div class="header">
-        <span class="header-name">Корзина</span>
-        <span class="header-count">{{count()}}&nbsp;товаров</span>
+        <div class="header-text">
+            <!-- <div class="header-name">Корзина</div>
+            <div class="header-count">{{count()}}&nbsp;товаров</div> -->
+            <span class="header-name">Корзина&emsp;&emsp;</span>
+            <span class="header-count">{{count()}}&nbsp;товаров</span>
+        </div>
     </div>
     <div class="content" id="content">
 
@@ -104,9 +109,10 @@ const IncProduct = (index) =>
         :id="'product'+item.id">
             
             <div class="product-content">
-                <div class="product-img-container">
-                    <img class="product-img" :src="item.img">
-                </div>
+            
+            <div class="product-img-container">
+                <img class="product-img" :src="item.img">
+            </div>
 
              <div class="product-text">
                 <div class="product-text-name" :v-html="item.title">
@@ -120,7 +126,37 @@ const IncProduct = (index) =>
                     </div>
                 </div> 
 
-                <div class="product-counter">
+
+                <div class="product-comp">
+
+                    <div class="product-counter">
+                        <div class="product-counter-btns">
+                            <button class="product-counter-btn" 
+                            @click="DecProduct(index)" >–</button>
+                            <span :id="'count'+index">
+                                {{ item.count }}
+                            </span>
+                            <button class="product-counter-btn"
+                            @click="IncProduct(index)" >+</button>
+                        </div>
+
+                    </div>
+
+                    <div class="product-price">
+                        {{item.price}}{{ valuta }}
+                    </div>
+
+                    <div class="product-del">
+                    <div class="product-delete">
+                        <button class="product-delete-btn" @click="DelProduct(index)">
+                            <img class="icon-in-text2 ic_1" src="img/icon/fi-rr-cross.svg"/>
+                        </button>
+                    </div>
+                    </div>
+
+                </div>
+
+                <!-- <div class="product-counter">
                     <div class="product-counter-btns">
                         <button class="product-counter-btn" 
                         @click="DecProduct(index)" >–</button>
@@ -131,17 +167,17 @@ const IncProduct = (index) =>
                         @click="IncProduct(index)" >+</button>
                     </div>
 
-                </div>
+                </div> -->
 
-                <div class="product-price">
+                <!-- <div class="product-price">
                     {{item.price}}{{ valuta }}
-                </div>
-
+                </div> -->
+<!-- 
                 <div class="product-delete">
                     <button class="product-delete-btn" @click="DelProduct(index)">
                         <img class="icon-in-text2" src="img/icon/fi-rr-cross.svg"/>
                     </button>
-                </div>
+                </div> -->
 
 
                 <!-- <img class="product-img" src="img/puma-rs-x3.png"> -->
@@ -173,6 +209,11 @@ const IncProduct = (index) =>
 {
     position: absolute;
     bottom: 0px;
+
+    &1 
+    {
+        margin-top: 4px;
+    }
 }
 .product
 {
@@ -184,15 +225,34 @@ const IncProduct = (index) =>
     display: flex;
     align-items: center;
 
+    &-comp 
+    {
+        display: flex;
+        // justify-content: center;
+        align-items:center;
+        // background-color: rgb(255, 173, 173);
+        position: relative;
+        width:45%;
+    }
+
+
+    &-del
+    {
+        width:17%;
+        // background-color: rgb(173, 184, 255);
+    }
+
+
     &-delete 
     {
         // width: 5.5%;
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         // background-color:red;
         position: relative;
         display: flex;
-        // justify-content: center;
+        justify-content: center;
+        float: right;
         // align-items:center;
 
         &-btn 
@@ -202,8 +262,8 @@ const IncProduct = (index) =>
             margin-left: auto;
             border-radius: 50%;
             background-color:var(--background-product);
-            width: 35px;
-            height: 35px;
+            width: 30px;
+            height: 30px;
         }
     }
 
@@ -211,21 +271,28 @@ const IncProduct = (index) =>
     {
         font-weight: bold;
         font-size: var(--fontsize-medium);
-        // background-color:antiquewhite;
-        width: 18%;
+        
+        // width: 18%;
         text-align: center;
+
+        //new
+        width: 35%;
+        // background-color:antiquewhite;
     }
 
     &-counter
     {
         // background-color:aliceblue;
         font-size: var(--fontsize-small-default);
-        width: 18%;
+        // width: 18%;
         display: flex;
         justify-content: center;
         align-items:center;
         text-align: center;
+        // background-color:rgb(4, 138, 255);
 
+        //new
+        width: 48%;
         &-btns 
         {
             // background-color:rgb(4, 138, 255);
@@ -236,12 +303,16 @@ const IncProduct = (index) =>
         &-btn 
         {
             font-family: 'Courier New', Courier, monospace;
+            font-size: var(--fontsize-default);
+            padding-right: 9px;
+            padding-left: 9px;
         }
     }
     &-text 
     {
         height: 100%;
-        width:40%;
+        // width:35%;
+        width:36.5%;
 
         // padding-left: 30px;
         padding-left: 4%;
@@ -255,7 +326,8 @@ const IncProduct = (index) =>
 
         &-name 
         {
-            font-size: var(--fontsize-medium);
+            // font-size: var(--fontsize-medium);
+            font-size: var(--fontsize-small-default);
             line-height: 1.5;
         }
 
@@ -298,8 +370,12 @@ const IncProduct = (index) =>
     {
         height: 119px;
         width: 119px;
-        width: 18.5%; 
-        height: 100%;
+        // width: 18.5%; 
+        // height: 100%;
+
+
+        min-width: 70px;
+
 
         background-color: var(--background-product);
         display: flex;
@@ -312,6 +388,7 @@ const IncProduct = (index) =>
     {
         // height: 90px;
         height: 75%;
+        // min-width: 50px;
     }
 }
 
@@ -322,7 +399,8 @@ const IncProduct = (index) =>
 .container
 {
     background-color:rgb(255, 255, 255);
-    width: 50vw;
+    // background-color:aqua;
+    width: 51vw;
     height: 100vh;
     z-index:12;
 
@@ -330,6 +408,7 @@ const IncProduct = (index) =>
     right: 0;
     position: fixed;
     box-sizing:border-box;
+    min-width: 450px
     // float: right;
 }
 
@@ -338,15 +417,24 @@ const IncProduct = (index) =>
     position: relative;
     // background-color:rgb(176, 244, 255);
     background-color:rgb(255, 255, 255);
-    height: 80px;
+    
+    min-height: 70px;
+
+    height: 14%;
 
     display: flex;
     // justify-content: center;
-    align-items: center;
+    align-items:center;
     box-sizing:border-box;
-    padding-left: 35px;
-    padding-right: 35px;
+
+    padding-top: 15px;
+    padding-left: var(--marg-show-comp);
+    padding-right: var(--marg-show-comp);
     // overflow: auto;
+
+    // margin-left: var(--marg-show-comp);
+    // margin-right: var(--marg-show-comp);
+
     &-name 
     {
         font-size: var(--fontsize-big-default);
@@ -356,7 +444,7 @@ const IncProduct = (index) =>
     &-count
     {
         font-size: var(--fontsize-small-default);
-        color:var(--primary-color-text)
+        color:var(--primary-color-text);
     }
 }
 
@@ -400,6 +488,13 @@ const IncProduct = (index) =>
     // background-color:rgb(255, 176, 176);
     height: 72%;
     margin-bottom: 140px;
+
+    // padding-left: var(--marg-show-comp);
+    // padding-right: var(--marg-show-comp);
+
+    margin-left: var(--marg-show-comp);
+    margin-right: var(--marg-show-comp);
+
     // padding-bottom: 80px;
     // margin-bottom: 80px;
 
@@ -417,7 +512,6 @@ const IncProduct = (index) =>
     .content {
         height: 60%;
     }
-
 }
 
 @media screen and (max-width: 950px) {
@@ -425,15 +519,32 @@ const IncProduct = (index) =>
         height: 200px;
     }
 
-    .product-img
+    // .product-img
+    // {
+    //     height: 50%;
+    // }
+
+    .product-text
     {
-        height: 50%;
+        width:50%;
     }
 
-    .product-counter-btn
+    .product-comp
     {
-        padding-left: 2px;
-        padding-right: 2px;
+        flex-direction: column;
+        align-items:end;
+        height: 100%;
+        width: 20%;
+    }
+
+    .product-del, .product-counter, .product-price
+    {
+        width: 100%;
+        height: 33%;
+        display: flex;
+        align-items:center;
+        justify-content: end;
+
     }
 
     .footer-button
@@ -465,4 +576,11 @@ const IncProduct = (index) =>
     }
 }
 
+ @media screen and (max-width: 850px) 
+{
+    .container
+    {
+        width: 70vw;
+    }
+ }
 </style>

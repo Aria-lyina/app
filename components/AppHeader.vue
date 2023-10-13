@@ -97,10 +97,22 @@
         &-exit
         {
             position: absolute;
-            margin-right: 20px;
+            // background-color:red;
 
-            top: 30px;
-            right: 20px;
+            width: 30px;
+            height: 30px;
+            // display: flex;
+            // align-items:center;
+            // margin-right: 20px;
+
+            // top: 30px;
+            // right: 20px;
+
+            top: var(--marg-show-comp);
+            right: var(--marg-show-comp);
+
+            // right: var(--marg-hor-show-comp);
+
             z-index: 13;
         }
 
