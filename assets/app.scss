@@ -17,6 +17,14 @@
 
     --background-product:#f4f4f4;
 
+    --background-show-comp:white;
+
+    // --background-show-comp:rgb(194, 255, 253);
+
+    // --background-header-show-comp:rgb(135, 255, 251);
+
+    // --background-footer-show-comp:rgb(27, 255, 247);
+
     --btn-color1: white;
     --btn-color2: rgb(0, 184, 187);
 
@@ -121,4 +129,21 @@ img
         border-radius: 3px;
         // margin-right: 35px;
     }
+
+    &-2
+    {
+        color:var(--dark-color-text);
+        background-color: var(--btn-color1);
+        font-size: var(--fontsize-medium);
+
+        // width: 220px;
+        height: 55px;
+        border-radius: 3px;
+        // margin-right: 35px;
+    }
+}
+
+.h50p
+{
+    height: 50%;
 }

@@ -373,9 +373,7 @@ const IncProduct = (index) =>
         // width: 18.5%; 
         // height: 100%;
 
-
         min-width: 70px;
-
 
         background-color: var(--background-product);
         display: flex;
@@ -398,8 +396,8 @@ const IncProduct = (index) =>
 }
 .container
 {
-    background-color:rgb(255, 255, 255);
-    // background-color:aqua;
+    background-color:var(--background-show-comp);
+
     width: 51vw;
     height: 100vh;
     z-index:12;
@@ -415,8 +413,7 @@ const IncProduct = (index) =>
 .header
 {
     position: relative;
-    // background-color:rgb(176, 244, 255);
-    background-color:rgb(255, 255, 255);
+    background-color:var(--background-show-comp);
     
     min-height: 70px;
 
@@ -451,8 +448,7 @@ const IncProduct = (index) =>
 .footer
 {
     position: absolute;
-    background-color:rgb(255, 255, 255);
-    // background-color:rgb(255, 58, 58);
+    background-color:var(--background-show-comp);
 
     display: flex;
     align-items:center;
