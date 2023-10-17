@@ -147,23 +147,35 @@ import ButtonImg from '@/components/ButtonImg.vue';
     // margin-top: 30px;
     // margin-top: 7%;
 
-    min-height: 30px;
-    height: 40%;
-    
+    // min-height: 30px;
+
+    // min-height: 15px;
+    // height: 40%;
+    height: 20%;
 
     // font-size: var(--fontsize-medium);
 
     background-color:var(--background-show-comp);
+    // background-color: red;
+    // text-align: end;
+
+    vertical-align: bottom;
+
     font-size: var(--fontsize-default);
+
+    // padding-top: 15px;
+
 
     &::placeholder 
     {
         font-size: var(--fontsize-small-default);
+
+        padding-top: 0px;
     }
 
     &-ident 
     {
-        height: 20%;
+        height: 40%;
     }
 
     &s

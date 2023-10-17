@@ -535,12 +535,11 @@ const IncProduct = (index) =>
 
     .product-del, .product-counter, .product-price
     {
-        width: 100%;
+        width: 110%;
         height: 33%;
         display: flex;
-        align-items:center;
+        align-items: center;
         justify-content: flex-end;
-
     }
 
     .footer-button
@@ -572,7 +571,7 @@ const IncProduct = (index) =>
     }
 }
 
- @media screen and (max-width: 850px) 
+@media screen and (max-width: 850px) 
 {
     .container
     {

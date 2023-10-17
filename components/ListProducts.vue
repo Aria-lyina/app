@@ -55,6 +55,29 @@ const { modules } = {
     modules: [Navigation, Pagination, Mousewheel, Keyboard],
 };
 
+const Swip = ref(null);
+const slideCount = ref(3.3);
+
+
+onMounted(()=>
+{
+
+    window.onresize = function()
+    {
+        if (window.innerWidth < 768) 
+        {
+            slideCount.value = 1.3; 
+        } else if (window.innerWidth < 992) {
+            slideCount.value = 2.3;
+        } else {
+            slideCount.value = 3.3;
+            
+        }
+    }
+})
+
+
+
 </script>
 
 <template>
@@ -69,10 +92,11 @@ const { modules } = {
             snapOnRelease: true,
             scrollbarClickable: true
         }"
-        :slidesPerView="3.3"
+        :slidesPerView="slideCount"
         :spaceBetween="15"
         :modules="modules"
         class="mySwiper"
+        ref="Swip"
         >
 
         <swiper-slide v-for="(item, index) in products" >
@@ -106,5 +130,10 @@ const { modules } = {
     align-items: center;
     }
 }
+
+// @media screen and (max-width: 950px) 
+// {
+//     .swiper:slidesPerView:1.5;
+// }
 
 </style>

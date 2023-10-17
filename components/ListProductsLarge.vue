@@ -56,6 +56,25 @@ const { modules } = {
     modules: [Navigation, Pagination, Mousewheel, Keyboard],
 };
 
+const slideCount = ref(1.7);
+
+onMounted(()=>
+{
+
+    window.onresize = function()
+    {
+        if (window.innerWidth < 700) 
+        {
+            slideCount.value = 1; 
+        } else if (window.innerWidth < 992) {
+            slideCount.value = 1.3;
+        } else {
+            slideCount.value = 1.7;
+            
+        }
+    }
+})
+
 </script>
 
 <template>
@@ -70,7 +89,7 @@ const { modules } = {
             snapOnRelease: true,
             scrollbarClickable: true
         }"
-        :slidesPerView="1.7"
+        :slidesPerView="slideCount"
         :spaceBetween="15"
         :modules="modules"
         class="mySwiper"
@@ -102,7 +121,6 @@ const { modules } = {
     // background-color:blueviolet;  
 }
 
-
 .swiper {
   width: 100%;
 //   background-color:aqua;  
@@ -120,5 +138,8 @@ const { modules } = {
         align-items: center;
       }
 }
+@media screen and (max-width: 950px) 
+{
 
+}
 </style>
