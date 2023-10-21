@@ -196,10 +196,6 @@ import ButtonImg from '@/components/ButtonImg.vue';
 
 }
 
-input:focus {
-    outline: none;
-    }
-
 .content
 {
     // background-color:violet;

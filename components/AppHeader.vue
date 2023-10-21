@@ -25,6 +25,8 @@
 
     const changeColor = ref(false);
 
+    const SeachIc = ref(false);
+
 
     const changeLang = () => {
         if (currentLang.value == DEFAULT_LANG) {
@@ -160,7 +162,13 @@
         </register> -->
         <!-- ПОИСК -->
         <div class="seach-content" :class="{ change_color: changeColor}">
-            f
+          
+            <input v-if="changeColor" type="text" class="seach-field" placeholder="Я ищу..." id="seachField" name="seachField" @mouseover="SeachIc = true" @mouseout="SeachIc = false">
+              
+            <svg class="seach-btn" :class="{ seach_h: SeachIc}" xmlns="http://www.w3.org/2000/svg" id="Outline" :viewBox=icSeach.viewBox @mouseover="SeachIc = true" @mouseout="SeachIc = false">
+                    <path v-for="item in icSeach.d" :d="item"/>  
+            </svg>
+
         </div>
     </div>
 
@@ -169,7 +177,7 @@
 </template>
 
 <style lang="scss" scoped>
-    
+
 
     .button
     {
@@ -276,21 +284,95 @@
         background-color:var(--background-show-comp);
     }
 
-    .seach-content
+    .seach
     {
         // background-color:white;
         // background-color:var(--background-product);
         // background-color: white;
         // background-color: red;
 
-        width: 100%;
+        &-btn  
+        {
+            width: auto;
 
-        margin-left: 2.5%;
-        margin-right: 2.5%;
-        margin-bottom: 7.5%;
+            // height: 5%;
 
-        // transition: background-color 1s ease;
+            min-height: 15px;
+            height: 2vh;
 
+            // height: 12vh;
+
+            fill:var(--primary-color-text);
+
+
+            position: absolute;
+            top: 50%;
+            left: 68%;
+            transform: translate(-50%, -50%);
+
+            // fill:rad;
+        }
+
+        
+        &-content
+        {        
+            width: 100%;
+
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+
+
+
+            height: 86.5vh;
+
+            // margin-bottom: 7.5%;
+
+            display: flex;
+
+            position: relative;
+
+            opacity: 0;
+            transition: opacity 1s ease;
+
+            // justify-content: center;
+            // align-items: center;
+
+            // transition: background-color 1s ease;
+        }
+
+
+        &-field 
+        {
+            border: none;
+            height: 8%;
+            width: 39%;
+            // width: 33%;
+
+            box-sizing:border-box;
+
+            padding-left: 1vw;
+            // padding-right: 50px;
+            padding-right: 3vw;
+
+
+            margin: auto;
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+
+
+            &::placeholder
+            {
+                color:var(--light-color-text);
+            }
+        }
+        &_h
+        {
+            fill:var(--btn-color2);
+        }
     }
 
     .animated 
@@ -307,8 +389,10 @@
 
     .change_color 
     {
-        transition: background-color 1s ease;
+        // transition: background-color 1s ease; 
         background-color:var(--background-product);
+        opacity: 1;
+
     }
 
     // .app-header

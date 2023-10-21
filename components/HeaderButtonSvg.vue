@@ -93,11 +93,11 @@ defineProps ({
     //     // margin-top: auto;
     //     // margin-bottom: auto;
         padding-left: 5px;
-        font-size: 100%;
+        font-size: 90%;
 
         // font-size: 200%;
 
-        padding-left: 0.5vw;
+        padding-left: 0.1vw;
 
         // background-color:red; 
     //     font-size: var(--fontsize-small-default);
