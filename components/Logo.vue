@@ -11,13 +11,18 @@ defineProps({
             type: String,
             default: "35px",
     },
+    minHeight: 
+    {
+          type: String,
+          default: "35px",
+    },
   })
 </script>
 
 
 <template>
     <NuxtLink :to="link">
-        <img src="/img/rozetka-logo_1.png" :style="{height: height}">
+        <img src="/img/rozetka-logo_1.png" :style="{height: height, minHeight: minHeight}">
     </NuxtLink>
 </template>
 

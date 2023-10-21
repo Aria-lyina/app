@@ -21,7 +21,7 @@ defineProps ({
         <div class="content-button">
                 <!-- <img v-if="icon" :src="icon" class="icon-btn"> -->
 
-                <svg v-if="svgProps" class="icon-btn" xmlns="http://www.w3.org/2000/svg" id="Outline" :viewBox=svgProps.viewBox>
+                <svg v-if="svgProps" class="icon-btn-header" xmlns="http://www.w3.org/2000/svg" id="Outline" :viewBox=svgProps.viewBox>
                     <path v-for="item in svgProps.d" :d="item"/>  
                 </svg>
 
@@ -38,8 +38,23 @@ defineProps ({
         padding-left: 0px;
         padding-right: 0px;
         
-        margin-right: 20px;
-        // background-color:aqua;
+
+        margin-right: 1.5vw;
+        // margin-right: 2.5vh;
+        // margin-right: 20px;
+
+
+        // background-color:rgb(0, 0, 255);
+    }
+
+    .icon-btn-header
+    {
+        width: auto;
+
+        // height: 5%;
+
+        min-height: 15px;
+        height: 2vh;
     }
 
     .content-button
@@ -47,7 +62,15 @@ defineProps ({
         display: flex;
         justify-content: space-between;
         // background-color:rgb(0, 21, 255);
-        font-size: var(--fontsize-small-default);
+        position: relative;
+        align-items:center;
+
+        // font-size:1.7vh;
+        // font-size: 0.8rem;
+
+        // font-size: 3em;
+
+        // font-size: var(--fontsize-small-default);
 
         &>svg
         {
@@ -70,6 +93,12 @@ defineProps ({
     //     // margin-top: auto;
     //     // margin-bottom: auto;
         padding-left: 5px;
+        font-size: 100%;
+
+        // font-size: 200%;
+
+        padding-left: 0.5vw;
+
         // background-color:red; 
     //     font-size: var(--fontsize-small-default);
     //     // font-family: Roboto,Arial,sans-serif;

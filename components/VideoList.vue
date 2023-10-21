@@ -42,7 +42,6 @@ const slideCount = ref(3.5);
 
 onMounted(()=>
 {
-
     window.onresize = function()
     {
         if (window.innerWidth < 700) 
@@ -51,9 +50,10 @@ onMounted(()=>
         } else if (window.innerWidth < 992) {
             slideCount.value = 2.5;
         } else {
-            slideCount.value = 3.5;
-            
+            slideCount.value = 3.5;  
         }
+        // console.log("WHY NO????");
+        // console.log(slideCount.value); 
     }
 })
 

@@ -21,6 +21,10 @@
     const showMenu = ref(false);
     const showShopCart = ref(false);
     const showReg = ref(false);
+    const showSeach = ref(false);
+
+    const changeColor = ref(false);
+
 
     const changeLang = () => {
         if (currentLang.value == DEFAULT_LANG) {
@@ -84,19 +88,31 @@
     }
         // const icSeach = ["M23.707,22.293l-5.969-5.969a10.016,10.016,0,1,0-1.414,1.414l5.969,5.969a1,1,0,0,0,1.414-1.414ZM10,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,10,18Z"];
 
+
+    function DisableMenu()
+    {
+
+            if(changeColor.value) changeColor.value = false;
+
+            setTimeout(() => {
+            showMenu.value = false;
+            if(!changeColor.value) changeColor.value = true;
+            }, 500);
+    }
+
 </script>
 
 <template >
     <header class="app-header" ref="buttonMenu">
         <div class="app-header__container">
-             <header-button-svg :svg-props="icCatalog" 
-             @click="showMenu = !showMenu" :text="nameCatalog"
-             margin="20px" />
+            <header-button-svg :svg-props="icCatalog" 
+            @click="showMenu = !showMenu; showSeach=false" :text="nameCatalog"
+            margin="20px" />
             
-             <link-logo class="center"/>
+            <link-logo  height="4.5vh" class="center"/>
 
             <header-button-svg class="header-right-buttons" 
-            :svg-props=icSeach text="Поиск" />
+            :svg-props=icSeach @click="showSeach = !showSeach; DisableMenu();" text="Поиск" />
 
             <header-button-svg @click="showReg = true" 
             :svg-props=icUser />
@@ -115,6 +131,7 @@
 
 
     <menu-cast v-if="showMenu"></menu-cast>
+
     <div v-if="showShopCart" class="container-shops">
         <shopping-сart>
             <button class="button-exit" @click="showShopCart = false">
@@ -134,6 +151,19 @@
             </button>
         </register>
     </div>
+
+    <div class="container-seach animated" :class="{ animated_click: showSeach}">
+        <!-- <register>
+            <button class="button-exit" @click="showReg = false">
+                <img class="icon-large" src="img/icon/fi-rr-cross.svg"/>
+            </button>
+        </register> -->
+        <!-- ПОИСК -->
+        <div class="seach-content" :class="{ change_color: changeColor}">
+            f
+        </div>
+    </div>
+
 
     <!-- <menu-cast class="menu-style"></menu-cast> -->
 </template>
@@ -192,6 +222,95 @@
         box-sizing:border-box;
     }
 
+    .container-seach
+    {
+        // background-color:rgba(0, 0, 0, 0.641);
+        // width: 101vw;
+        // height: 100vh;
+        // z-index:11;
+
+        // top: 0;
+        // left: 0;
+        // position: fixed;
+        // box-sizing:border-box;
+
+        //стили для контейнера с полями
+        // width: 95.6%;
+
+        
+
+        // margin-left: 1.9%;
+        // margin-top: -0.6%;
+
+
+        // width: 101vw;
+        left: 0;
+        // margin-left: -0.5%;
+
+        //обязательные стили
+        position: fixed;
+        box-sizing:border-box;
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        z-index: 9;
+
+        width: 100%;
+        // width: 95%;
+        // margin-left: 2.5%;
+        // margin-right: 2.5%;
+
+
+        // padding-left: 2.5%;
+        // padding-right: 2.5%;
+
+        // margin-left: 2%;
+        // margin-right: 2%;
+
+        // // margin-top: 50px;
+        // margin-top: 70px;
+        // // margin-top: 0.5%;
+        // position: relative;
+
+        // background-color:rgba(255, 0, 0, 0.306);
+        background-color:var(--background-show-comp);
+    }
+
+    .seach-content
+    {
+        // background-color:white;
+        // background-color:var(--background-product);
+        // background-color: white;
+        // background-color: red;
+
+        width: 100%;
+
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        margin-bottom: 7.5%;
+
+        // transition: background-color 1s ease;
+
+    }
+
+    .animated 
+    {
+        transform: translateY(-100%);
+        transition: transform 0.5s linear;
+        // animation: my-animation 1s;
+    }
+
+    .animated_click 
+    {
+        transform: translateY(0);
+    }
+
+    .change_color 
+    {
+        transition: background-color 1s ease;
+        background-color:var(--background-product);
+    }
+
     // .app-header
     // {
     //     background: rgba(182, 255, 231, 0.48); 
@@ -217,9 +336,16 @@
 
     .app-header
     {
-        background: white;  
+        background: var(--background-header-show-comp);  
         // background: rgba(0, 8, 8, 0.296); 
-        height: 70px;
+        // background-color:red;
+        background: white;  
+        // height: 70px;
+
+        height: 9vh;
+        min-height: 70px;
+
+
         // margin-left: 0px;
         // margin-left: 2%;
         display: flex;
@@ -228,13 +354,16 @@
         width: 100%;
         top: 0px;
         left: 0px;
-
+        resize: none;
         z-index: 10;
+
+        // min-height: 70px;
 
 
         &__container
         {
             display: flex;
+            position: relative;
             flex-direction: row;
             // background-color:rgb(106, 248, 255); 
             width:100%;
@@ -243,6 +372,8 @@
             margin-left: 2.5%;
             /* justify-content: center; */
             align-items: center;
+
+            resize: none;
         }
     }
 

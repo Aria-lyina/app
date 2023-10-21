@@ -51,6 +51,20 @@
     }
 }
 
+body
+{
+    // background-color: aqua;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 a
 {
     color:var(--primary-color-text);
@@ -75,6 +89,7 @@ button
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    // resize: none;
 }
 
 img

@@ -70,7 +70,8 @@ onMounted(()=>
             slideCount.value = 1.3;
         } else {
             slideCount.value = 1.7;
-            
+           
+            // console.log("wtf");
         }
     }
 })

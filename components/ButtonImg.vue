@@ -26,7 +26,7 @@ defineProps({
     display: flex;
 
     justify-content: center;
-    width: 160px;
+    width: 155px;
 
     border: 1px solid;
     /* border: 1px solid var(--primary-color-text); */

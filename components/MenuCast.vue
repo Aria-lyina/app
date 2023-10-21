@@ -136,6 +136,8 @@ li
         padding-top: 30px;
         padding-bottom: 35px;
         background-color:var(--background-product);
+
+        // background-color:rgba(102, 51, 153, 0.215);
         width: 21%;
         height: 90%;
         height: auto;
@@ -281,7 +283,7 @@ li
 
     //стили для полного заполнения
     width: 101vw;
-    left: 0;
+    // left: 0;
     // margin-left: -0.5%;
 
     //обязательные стили
@@ -289,10 +291,12 @@ li
     box-sizing:border-box;
     display: flex;
     flex-direction: row;
-    height: 93vh;
+    height: 91vh;
+
+    // height: 100vh;
     z-index: 9;
 
-    // background-color:rgb(255, 65, 65);
+    // background-color:rgba(65, 255, 236, 0.424); 
     background-color:rgb(255, 255, 255);
 }
 

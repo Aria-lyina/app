@@ -117,6 +117,7 @@ import ButtonImg from '@/components/ButtonImg.vue';
         height: 40%;
         display: flex;
         align-items: flex-end;
+        // background-color:red;
         justify-content: space-between;
         // bottom:0px;
     }
@@ -151,11 +152,11 @@ import ButtonImg from '@/components/ButtonImg.vue';
 
     // min-height: 15px;
     // height: 40%;
-    height: 20%;
+    height: 35%;
 
     // font-size: var(--fontsize-medium);
 
-    background-color:var(--background-show-comp);
+    // background-color:var(--background-show-comp);
     // background-color: red;
     // text-align: end;
 
@@ -170,12 +171,13 @@ import ButtonImg from '@/components/ButtonImg.vue';
     {
         font-size: var(--fontsize-small-default);
 
-        padding-top: 0px;
+        // padding-top: 0px;
     }
 
     &-ident 
-    {
-        height: 40%;
+    {    
+        // background-color:aqua;
+        height: 20%;
     }
 
     &s
@@ -212,7 +214,7 @@ input:focus {
 {
     position: relative;
     background-color:var(--background-show-comp);
-    // background-color:var(--background-show-comp);
+    // background-color:beige;
     height: 100px;
     display: flex;
     // justify-content: center;
@@ -221,6 +223,7 @@ input:focus {
 
     padding-left: var(--marg-show-comp);
     padding-right: var(--marg-show-comp);
+    padding-top: 15px;
 
     // overflow: auto;
     &-name 
@@ -232,7 +235,7 @@ input:focus {
 .container
 {
     background-color:var(--background-show-comp);
-    width: 420px;
+    width: 410px;
     height: 100vh;
     z-index:12;
 
