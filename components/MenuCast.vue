@@ -42,7 +42,7 @@ const activateItem = (index) =>
   <div class="container">
 
         <div class="left-container">
-            <div class="left-container-content">
+            <div class="left-container-content scroll-default">
                 <ul ul class="left-ul">
                     <li class="left-li" :id="item.id" 
                     v-for="(item, index) in items" :key="item.title" 
@@ -94,26 +94,6 @@ const activateItem = (index) =>
 
 <style scoped lang="scss">
 
-ul 
-{
-  padding-left: 0px;
-//   background-color:aqua; 
-  width: 100%; 
-  height: 100%;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-li 
-{
-    list-style-type: none;
-    // padding-bottom: 15px;
-    // padding-top: 15px;
-    // background-color:bisque;
-    // width: 700px;
-    // padding-left: 0px;
-}
-
 .li-div
 {
     // background-color:aqua;
@@ -148,9 +128,41 @@ li
             // background-color:rgb(0, 255, 26);
             // overflow-y: scroll;
             overflow-y: auto;
+             
+            // overflow-y: hidden;
+
             display: flex;
             width: 100%;
             height: 100%;
+
+
+            // &::-webkit-scrollbar {
+            //     width: 5px;
+            // }
+
+            // &::-webkit-scrollbar-track {
+            //     background-color: #f1f1f1;
+            // }
+
+            // &::-webkit-scrollbar-thumb {
+            //     background-color: green;
+            // }
+
+            // scrollbar-width: thin;
+            // scrollbar-color: green #f1f1f1;
+
+            // &::-webkit-scrollbar {
+            //     width: 5px;
+            // }
+
+            // &::-webkit-scrollbar-track {
+            //     background-color: #f1f1f1;
+            // }
+
+            // &::-webkit-scrollbar-thumb {
+            //     background-color: green;
+            // }
+
         }
     }
 
@@ -176,7 +188,7 @@ li
         &:hover
         {
             // background-color:bisque;
-            color:aqua;
+            color:var(--light-color-text);
         }
     }
 

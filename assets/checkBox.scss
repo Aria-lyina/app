@@ -1,0 +1,81 @@
+
+.li_checkbox
+{
+    // padding-top:7px;
+    // padding-bottom:7px;
+    &:hover
+    {
+        background-color: rgba(0, 255, 255, 0.095);
+
+        >div
+        {   
+            >input 
+            {border: 1px solid black; }
+
+            >input[type="checkbox"]:checked 
+            {
+            border: 1px solid var(--btn-color2);
+            }
+        }
+    }
+}
+
+.checkboxSt
+{
+    // background-color:red;
+    display: flex;
+    align-items: center;
+
+    &-lbl
+    {
+        padding-top:12px;
+        padding-bottom:12px;
+        padding-left: 10px;
+
+        // background-color:red;
+        width:100%;
+    }
+}
+
+.check_1
+{
+    height:18px;
+    // width:19px;
+    width:20px;
+}
+
+input[type="checkbox"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    //   width: 20px;
+    //   height: 20px;
+      border: 1px solid var(--light-color-text); 
+      border-radius: 4px;
+
+      margin-left: 0;
+    //   cursor: pointer;
+    }
+
+    // /* Стилизация отмеченного чекбокса */
+    input[type="checkbox"]:checked 
+    {
+      background-color: var(--btn-color2);
+      border: 1px solid var(--btn-color2);
+
+    }
+
+    // input[type="checkbox"]:hover 
+    // {
+    //     border: 1px solid black; 
+    // }
+
+    input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Юникод символ галочки */
+    font-family:system-ui;
+    display: block;
+    text-align: center;
+    font-size: 13px; /* размер галочки */
+    color: var(--btn-color1); /* цвет галочки */
+
+    }

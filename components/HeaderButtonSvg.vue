@@ -1,23 +1,27 @@
 <script setup>
 //    @TODO если спользуешь composition api в других, тогда используй его везде
 defineProps ({
-      svgProps: 
-      {
-        type: Object
-      },
-      text:
-      {
-        type: String,
-      },
-      margin: {
-          type: String,
-          default: "5px",
-          },
+        svgProps: 
+        {
+            type: Object
+        },
+        text:
+        {
+            type: String,
+        },
+        marginL: {
+            type: String,
+            default: "5px",
+            },
+        marginR: {
+            type: String,
+            default: "1.5vw",
+            },
   })
 </script>
 
 <template>
-    <button class="button-header">
+    <button class="button-header" :style="{ marginRight: marginR }">
         <div class="content-button">
                 <!-- <img v-if="icon" :src="icon" class="icon-btn"> -->
 
@@ -25,7 +29,7 @@ defineProps ({
                     <path v-for="item in svgProps.d" :d="item"/>  
                 </svg>
 
-                <div v-if="text" v-html="text" class="text-head" :style="{ marginLeft: margin }"/>
+                <div v-if="text" v-html="text" class="text-head" :style="{ marginLeft: marginL }"/>
         </div>
     </button>
 </template>
@@ -39,7 +43,7 @@ defineProps ({
         padding-right: 0px;
         
 
-        margin-right: 1.5vw;
+        // margin-right: ;
         // margin-right: 2.5vh;
         // margin-right: 20px;
 

@@ -23,7 +23,7 @@
 <template>
     <div class="container">
         <header-products :title="title"/>
-        <div class="product-carts" :style="{height: heightGrid}">
+        <div class="product-carts scroll-default" :style="{height: heightGrid}">
              <div v-for="(item, index) in products" class="product">
                 <product :key="index" :item="item"/>
             </div>
@@ -34,6 +34,11 @@
 
 <style lang="scss" scoped>
 
+    // .container 
+    // {
+    //     // background-color:aquamarine;
+    //     // border-bottom: 1px solid;
+    // }
     .test
     {
         background-color:aquamarine;
@@ -55,7 +60,10 @@
         grid-column-gap: 15px;
         grid-row-gap: 15px;
         overflow: auto;
+        padding-bottom: 40px;
+        
         // height: 400px;
+        // border-bottom: 0.5px solid;
         // background-color:blue;
     }
 </style>

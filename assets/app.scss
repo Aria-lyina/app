@@ -27,8 +27,68 @@
 
     --btn-color1: white;
     --btn-color2: rgb(0, 184, 187);
+    --btn-color1-hover:#e8e8e8;
 
+
+    --link-color:rgb(0, 101, 103);
+    --link-color-hover: rgb(0, 215, 201);
+
+    --scroll-color1: rgba(255, 255, 255, 0)ite;
+    --scroll-color2: rgb(0, 184, 187);
+
+
+
+
+    //стили для слайдера
+    --slider-handle-width: 15px;
+    --slider-handle-height: 15px;
+
+    --slider-height:1px;
+    // --slider-vertical-height: 50px;
+    --slider-bg: black;
+
+    --slider-connect-bg: var(--btn-color2);
+    --slider-handle-border: 1px solid var(--btn-color2);
+
+    --slider-handle-shadow: 0.5px 0.5px 2px 1px rgba(0, 49, 48, 0.057);
+
+    // --slider-tooltip-bg: rgba(0, 0, 0, 0);
+    // --slider-tooltip-color: rgba(0, 0, 0, 0);
     }
+
+
+@media screen and (max-width: 850px) 
+{
+    :root {
+
+        // --fontsize-big-default: 25px;
+
+        // --fontsize-default: 20px;
+        // --fontsize-text-video: 14px;
+    
+        // --fontsize-medium: 15px;
+        // --fontsize-small-default: 13px;
+        // --fontsize-light-small-default: 11px;
+
+        // --margin-slider: 50px;
+
+  //      --background-show-comp:rgb(187, 227, 255);
+
+        // --fontsize-big-default: 20px;
+
+        // --fontsize-default: 18px;
+        // --fontsize-text-video: 12px;
+    
+        // --fontsize-medium: 13px;
+        // --fontsize-small-default: 11px;
+        // --fontsize-light-small-default: 9px;
+
+        --margin-slider: 30px;
+
+        }
+    
+ }
+
 
 input:focus {
     outline: none;
@@ -39,6 +99,66 @@ input:focus {
     margin-bottom: 40px;
 }
 
+.scroll-default 
+{
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--btn-color2) var(--scroll-color1);
+
+    &::-webkit-scrollbar {
+        width: 3px;
+        height:3px;
+        // border-bottom: 0.5px solid black;
+
+        // border-top: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--scroll-color1);
+        // background-color: black;
+        width: 1px;
+        height: 1px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--btn-color2);
+        width: 3px;
+        height:3px;
+        // background-color: black;
+    }
+
+
+    &::-webkit-scrollbar:vertical 
+    {
+        // Стили для вертикального скроллбара
+        // border-left: 0.5px solid black;
+    }
+
+    &::-webkit-scrollbar:horizontal {
+        // Стили для горизонтального скроллбара
+        border-bottom: 0.5px solid black;
+    }
+}
+
+ul 
+{
+  padding-left: 0px;
+//   background-color:aqua; 
+  width: 100%; 
+//   height: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+li 
+{
+    list-style-type: none;
+    // padding-bottom: 15px;
+    // padding-top: 15px;
+    // background-color:bisque;
+    // width: 700px;
+    // padding-left: 0px;
+}
 
 .header-button-colors
 {

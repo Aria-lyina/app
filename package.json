@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@flaticon/flaticon-uicons": "^2.4.0",
+    "@vueform/slider": "^2.1.9",
     "nuxt-swiper": "^1.2.2",
     "swiper": "^10.2.0"
   }

@@ -90,7 +90,8 @@ onMounted(()=>
         :scrollbar="{
             draggable: true,
             snapOnRelease: true,
-            scrollbarClickable: true
+            scrollbarClickable: true,
+           
         }"
         :slidesPerView="slideCount"
         :spaceBetween="15"
@@ -129,6 +130,15 @@ onMounted(()=>
     justify-content: center;
     align-items: center;
     }
+
+    // &-scrollbar-drag {
+    // background-color: #ff0000; /* Замените #ff0000 на желаемый цвет */
+    // }
+
+    // &-scrollbar 
+    // {
+    //     // background-color: red;
+    // }
 }
 
 // @media screen and (max-width: 950px) 
