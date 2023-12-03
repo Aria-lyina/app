@@ -80,7 +80,7 @@ onMounted(()=>
 
 <template>
 
-    <div class="container" :style="{height: heightList}">
+    <div  :style="{height: heightList}">
 
         <header-products :title="title" style="height: 7%; font-size: 30px;"/>
 

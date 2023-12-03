@@ -28,6 +28,7 @@
     --btn-color1: white;
     --btn-color2: rgb(0, 184, 187);
     --btn-color1-hover:#e8e8e8;
+    --btn-color2-hover: rgb(0, 215, 201);
 
 
     --link-color:rgb(0, 101, 103);
@@ -90,6 +91,32 @@
  }
 
 
+ .grayDivBtn
+{
+    background-color: var(--background-product);
+    border: 1px solid var(--background-product);
+
+    &:hover 
+    {
+        background-color: var(--btn-color1-hover);
+    }
+}
+
+.whiteDivBtn
+{
+    background-color: var(--btn-color1);
+    border: 1px solid black;
+
+    &:hover 
+    {
+        background-color: var(--btn-color2-hover);
+        color: var(--btn-color1);
+    }
+}
+
+
+
+
 input:focus {
     outline: none;
     }
@@ -128,11 +155,11 @@ input:focus {
     }
 
 
-    &::-webkit-scrollbar:vertical 
-    {
-        // Стили для вертикального скроллбара
-        // border-left: 0.5px solid black;
-    }
+    // &::-webkit-scrollbar:vertical 
+    // {
+    //     // Стили для вертикального скроллбара
+    //     // border-left: 0.5px solid black;
+    // }
 
     &::-webkit-scrollbar:horizontal {
         // Стили для горизонтального скроллбара
@@ -291,6 +318,24 @@ img
         height: 55px;
         border-radius: 3px;
         // margin-right: 35px;
+    }
+
+    &-filtr 
+    {
+        min-width: 40px;
+
+        height: 30px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        cursor:default;
+    
+        font-size: var(--fontsize-small-default);
+        padding-left:var(--pad-item-tile);
+        padding-right: var(--pad-item-tile);
+        margin-right: var(--marg-item-tile);
     }
 }
 

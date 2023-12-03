@@ -31,7 +31,7 @@
 </script>
 
 <template>
-    <div v-if="show" v-for="(item, index) in items" class="tile">
+    <div v-if="show" v-for="(item, index) in items.option_values" class="tile">
         <div class="item" :id="item.option_value_id" 
         @click="Click(item.option_value_id)" 
         :name="item.option_value_name" 
@@ -74,6 +74,7 @@
     }
 
     display: inline-block;
+
     padding-top: var(--marg-item-tile);
 
 }

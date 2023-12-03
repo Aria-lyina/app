@@ -1,5 +1,4 @@
 <script setup>
-import {ref} from 'vue'
 
 const props = defineProps ({
         items: 
@@ -9,143 +8,88 @@ const props = defineProps ({
         show: 
         {
             type: Boolean
-        }
+        },
+        // selected:
+        // {
+        //     type: Array 
+        // }
   })
 
   const itemsSort = ref(new Map());
 
   const selected = ref([]);
-//   const items = props.items.map(child=>child);
-//   console.log(props.items);
 
-// const properties = ['apple', 'banana', 'car', 'dog', 'elephant', 'cat', 'fish'];
+    for (const item of props.items.option_values) 
+    {
+    // Получаем первую букву свойства
+        const firstLetter = item.option_value_title.charAt(0);
 
-// // Создаем массивы для каждой буквы алфавита
-// const alphabetArrays = Array(26).fill().map(() => []);
-
-// Проходим по всем свойствам
-for (const item of props.items.option_values) {
-  // Получаем первую букву свойства
-  const firstLetter = item.option_value_title.charAt(0);
-//   console.log(firstLetter);
-
-  if (!itemsSort.value.has(firstLetter)) itemsSort.value.set(firstLetter, new Array());
-    itemsSort.value.get(firstLetter).push(item);
-
-  // Получаем индекс этой буквы в алфавите
-//   const index = firstLetter.charCodeAt(0) - 97;
-
-//   console.log(index);
-  
-
-//   console.log(alphabetArrays);
-//   // Добавляем свойство в соответствующий массив
-//   alphabetArrays[index].push("item");
-
-    // contact.lastName.toLowerCase().includes(searchQuery.toLowerCase())
-}
-
-// users.sort(function (a, b) 
-//     {
-//         if (a.name < b.name) {
-//         return -1;
-//         }
-//         if (a.name > b.name) {
-//         return 1;
-//         }
-//         return 0
-//   };)
-
-// // Выводим результат
-// for (let i = 0; i < alphabetArrays.length; i++) {
-//   const letter = String.fromCharCode(i + 97);
-//   console.log(`${letter}: ${alphabetArrays[i]}`);
-// }
-    // itemsSort.value = new Map([...itemsSort.entries()].sort(function (a, b) 
-    //     {
-    //         if (a.key < b.key) {
-    //         return -1;
-    //         }
-    //         if (a.key > b.key) {
-    //         return 1;
-    //         }
-    //         return 0
-    //     };));
-
-    // console.log(itemsSort.value);
-
-    // if () {
-        
-    // }    
+        if (!itemsSort.value.has(firstLetter)) itemsSort.value.set(firstLetter, new Array());
+        itemsSort.value.get(firstLetter).push(item);
+    }
 
     itemsSort.value = new Map([...itemsSort.value.entries()].sort());
-
-    const searchInput = ref();
-
-    onMounted(() => 
+    itemsSort.value.forEach((value, key) => 
     {
-    // Получаем доступ к значению поля ввода
-        console.log(searchInput); // Выводит текущее значение поля ввода
+        value.hide = false;
+    });
 
+    const searchInput = ref(null);
 
-        setInterval(l, 1500);
-        // console.log("wjhj?");
-        // Можно связать значение поля с константой
-        // const searchValue = ref('123456789');
-        // searchInput.value = "56789";
-
-
-        // let s = document.getElementById("seach");
-
-        // // console.log(s);
-        // console.log(s);
-        // if(s!=null || s!=undefined)
-        // {
-        //     console.log(s);
-        //     console.log("YESS");
-        // }
-
-        function l ()
+    const ChangeInput = () => 
+    { 
+        // console.log("change");
+        if(searchInput.value!=null&&searchInput.value.value!="") 
         {
-            console.log(searchInput);
+            props.items.short_list.forEach((v)=>
+            {
+                v.disabled = true;
+            });
         }
-         });
+        else 
+        {
+            props.items.short_list.forEach((v)=>
+            {
+                v.disabled = false;
+            });
+        }
 
-    // console.log(itemsSort.value);
+        itemsSort.value.forEach((value, key) => 
+        {
+            let count = 0;
+            value.forEach((v)=>
+            {
+                //console.log(v);
+                v.disabled = !v.option_value_name.toLowerCase().includes(searchInput.value.value.toLowerCase());
+                
+                if(!v.disabled)
+                count++;
+            })
+            // console.log("hide ", key, " ", count);
+            // console.log(value.hide);
 
-    
+            if(count==0)
+            value.hide = true;
+            else value.hide = false;
 
+        });
+    };
 
 </script>
 
-<!-- <style src="@/assets/checkBox.scss"></style>  -->
+<style src="@/assets/checkBox.scss"></style> 
 
 <template>
+    <div v-if="show" class="cont">
 
-<div v-if="show" class="cont">
+        <input ref="searchInput" class="seach-li fontFiltrName" @input="ChangeInput()" type="text" placeholder="Поиск..." value="">
 
-    <input ref="searchInput" id="seach" class="seach-li fontFiltrName" type="text" placeholder="Поиск..." value="gfd">
-
-    <div class="bord">
-        <div class="cont-list scroll-default">
-            <ul>
-                <li v-for="(item, index) in items.short_list" class="li_checkbox">
-                    <div class="checkboxSt fontFiltr">
-                        <input class="check_1" type="checkbox" :id="item.option_value_id" 
-                        :name="item.option_value_name" :value='item.option_value_id' v-model="selected"/>
-                        <label class="checkboxSt-lbl" :for="item.option_value_id">  {{ item.option_value_title }}
-                                <span class="fontLightGrey font13">({{ item.products_quantity }})</span> 
-                        </label>
-                    </div>
-                </li>
-            </ul>
-
-            <div v-for="[key, value] of itemsSort" :key="key">
-                <div class="name-section">{{ key }}</div>
+        <div class="bord">
+            <div class="cont-list scroll-default">
                 <ul>
-                    <li v-for="(item, index) in value" class="li_checkbox">
-                        <div class="checkboxSt fontFiltr">
-                            <input class="check_1" type="checkbox" :id="item.option_value_id" 
+                    <li  v-for="(item, index) in items.short_list" class="li_checkbox">
+                        <div v-if="!item.disabled" class="checkboxSt fontFiltr">
+                            <input class="check_1" type="checkbox"
                             :name="item.option_value_name" :value='item.option_value_id' v-model="selected"/>
                             <label class="checkboxSt-lbl" :for="item.option_value_id">  {{ item.option_value_title }}
                                     <span class="fontLightGrey font13">({{ item.products_quantity }})</span> 
@@ -153,13 +97,26 @@ for (const item of props.items.option_values) {
                         </div>
                     </li>
                 </ul>
-                <!-- Ключ: {{ key }}, Значение: {{ value }} -->
+
+                <div v-for="[key, value] of itemsSort" :key="key">
+                    <div v-if="!value.hide" class="name-section" >{{ key }}</div>
+                    <ul>
+                        <li v-for="(item, index) in value" class="li_checkbox">
+                            <div v-if="!item.disabled" class="checkboxSt fontFiltr">
+                                <input class="check_1" type="checkbox" :id="item.option_value_id" 
+                                :name="item.option_value_name" :value='item.option_value_id' v-model="selected"/>
+                                <label class="checkboxSt-lbl" :for="item.option_value_id">  {{ item.option_value_title }}
+                                        <span class="fontLightGrey font13">({{ item.products_quantity }})</span> 
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Ключ: {{ key }}, Значение: {{ value }} -->
+                </div>
             </div>
         </div>
+
     </div>
-
-
-</div>
 </template>
 
 <style lang="scss" scoped>

@@ -1,5 +1,3 @@
-
-import { mergeProps } from 'nuxt/dist/app/compat/capi';
 <script setup>
 
 import Slider from '@vueform/slider'
@@ -15,13 +13,7 @@ const props = defineProps ({
         }
   });
 
-// const min = 59;
-//   const max = 400000;
-
   const value = ref([props.item.chosen_values.min,props.item.chosen_values.max]);
-
-  
-//   const value = ref(Object.values(item.value.chosen_values));
 
 </script>
 

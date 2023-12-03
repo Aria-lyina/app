@@ -26,7 +26,7 @@ defineProps ({
 
 <template>
 
-<div class="container">
+<div class="containe">
 
     <HeaderButtonSvg  :svg-props=icHome marginR="0px"/>
     <div v-for="item in pathProps.path">
@@ -40,7 +40,7 @@ defineProps ({
 </template>
 
 <style scoped lang="scss">
-.container 
+.containe
 {   
     display: flex;
 }
