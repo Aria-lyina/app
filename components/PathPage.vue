@@ -1,6 +1,7 @@
 <script setup>
     import HeaderButtonSvg from '@/components/HeaderButtonSvg.vue';
-    import MiniArrow from '@/components/icons/miniArrow.vue';
+    import MiniArrow from '@/components/icons/miniArrRight.vue';
+
 
     const icHome = 
     {
@@ -46,8 +47,8 @@ defineProps ({
 }
 .item 
 {
-    margin-left: 5px;
-    margin-right: 7px;
+    margin-left: 7px;
+    margin-right: 5px;
 }
 
 // .text 

@@ -180,6 +180,7 @@
         height: 30%;
         */
 
+        padding-top: 20px;
         height: 420px;
 
         margin-left: 2%;
