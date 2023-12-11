@@ -1,7 +1,8 @@
 <script setup>
     import 'swiper/css';
     import 'swiper/css/pagination';
-    // import './style.css';
+    import Rating from '@/components/Rating.vue';
+    import Comment from '@/components/Comment.vue';
 
     import { Swiper, SwiperSlide } from 'swiper/vue';
     import { Pagination } from 'swiper/modules';
@@ -32,22 +33,28 @@
 
     const Logo = "/img/logo/rozetka-logo.png";
 
+    const links = ['Всё о товаре','Характеристики','Отзывы(58)','Обзор и видео','Фото','Покупают вместе'];
+
+    const attributes = [
+        {name: "Подошва", value: "Резина 100%"},
+        {name: "Наружный материал", value: "Кожа 100%, Нейлон 100%"},
+        {name: "Подкладка", value: "Полиэстер 100%"},
+        {name: "Артикул", value: "123345673"},
+    ];
+
+
 </script>
 
 <template>
 <div class="container">
+
     <div class="content-first">
 
         <div class="left">
             <swiper :pagination="true" :modules="modules" class="mySwiper">
-                <swiper-slide>Slide 1</swiper-slide>
-                <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
-                <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
-                <swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide>
-                <swiper-slide>Slide 8</swiper-slide><swiper-slide>Slide 9</swiper-slide>
+                <swiper-slide v-for="i in 5"><img class="image2" src="img/puma-rs-x3.png"/></swiper-slide>
             </swiper>
         </div>
-
 
         <div class="right">
             <Back :nameLink="nameLink" color="black"/>
@@ -99,7 +106,6 @@
 
             </div>
 
-
             <div class="to-shop">
                 <div class="left2">
                     <div class="price">3 065 ₴</div>
@@ -117,10 +123,51 @@
 
         </div>
         
-
-
     </div>
 
+    <div class="link-line fontSmall">
+        <div v-for="item in links" class="item">
+            <div> {{ item }}</div>
+            <div> {{ item }}</div>
+        </div>
+    </div>
+
+    <div class="content-second">
+
+        <div class="left">
+            <div v-for="i in 5">
+                <img class="image" src="img/puma-rs-x3.png"/>
+            </div>
+        </div>
+
+        <div class="right">
+                <div class="top-text"> <div>Характеристики</div>  <LinkGo class="go-look" color="black" nameLink="Смотреть все"/></div>
+
+                <div class="attributs">
+                    <div v-for="item in attributes" class="item fontSmall">
+                        <div>{{ item.name }}:</div>
+                        <div>{{ item.value }}</div>
+                    </div>
+                </div>
+
+                <div class="text">
+                    <div>Описание</div>  
+                    <div>{{ description }}</div>
+                </div>
+
+                <div class="comments">
+                    <div class="top-text"> 
+                        <div>Отзывы 58</div>  
+                        <div><rating class="rating" :stars="4" color-active='#00ffff'/></div>
+                        <LinkGo class="go-look" color="black" nameLink="Смотреть все"/>
+                    </div>
+
+                    <Comment class="comment" v-for="i in 3"/>
+                </div>
+
+
+            </div>
+        </div>
     <!-- <swiper :pagination="true" :modules="modules" class="mySwiper">
         <swiper-slide>Slide 1</swiper-slide>
         <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
@@ -134,7 +181,182 @@
 
 <style lang="scss" scoped>
 
+.comment 
+{
+    border-bottom: 1px solid black;
+    padding-top: 20px;
+    padding-bottom: 10px;
 
+}
+.rating 
+{
+    font-size: var(--fontsize-small-default);
+    // background-color: green;
+    width: 155px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.image
+    {
+        height: 85%;
+        // width: 80%;
+        display: flex;
+        position: relative;
+        object-fit: contain;
+    }
+
+.content-second
+{
+    display: flex;
+    width: 100%;
+    position: relative;
+    // height:1600px; 
+
+    .left
+    {
+        // background-color: violet;
+        display: flex;
+        flex-wrap:wrap;
+        // align-items:flex-start;
+        justify-content: space-between;
+     
+        >div
+        {
+            width: 310px;
+            height: 310px;
+
+            // width: 210px;
+            // height: 210px;
+
+            background-color: var(--background-product);
+            margin-bottom: 40px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .right
+    {
+        padding-top: 50px;
+
+        .go-look
+        {
+            display: flex;
+            align-items: center;
+            // background-color: blueviolet;
+            // margin-left: auto;
+        }
+
+        .attributs
+        {
+            min-height: 300px;
+        }
+
+        .top-text
+        {
+            font-size: var(--fontsize-big-default);
+            display: flex;
+            // align-items: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid black;
+            justify-content: space-between;
+            // background-color: red;
+        }
+
+        .text 
+        {
+            min-height: 250px;
+
+            >div:first-child
+            {
+                font-size: var(--fontsize-big-default);
+                display: flex;
+                align-items: center;
+                padding-bottom: 30px;
+                margin-top: 30px;
+            }
+
+            >div
+            {
+                width: 50%;
+                font-size: var(--fontsize-small-default);
+            }
+        }
+
+        .item 
+        {
+            height: 60px;
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            // background-color: aqua;
+        }
+    }
+
+}
+
+.link-line
+    {
+        display: flex;
+        background-color: var(--background-product);
+        position: sticky;
+        top:0px;
+        margin-top: 35px;
+        height: 45px;
+        margin-bottom: 35px;
+        width: 100%;
+
+        .item
+        {
+            // background-color:red;
+            padding-top: 3px;
+            display: flex;
+            align-items: center;
+            padding-right: 20px;
+            padding-left: 20px;
+            justify-content: center;
+            border-bottom: 2px solid var(--background-product);
+            cursor: pointer;
+            // transition: all 0.3s ease; 
+
+            >div:first-child 
+            {
+                font-weight: bold;
+                margin-left: 2px;
+                opacity: 0;
+            }
+
+            >div:nth-child(2) 
+            {
+                position: absolute;            
+            }
+
+            &:hover 
+            {
+                border-color: var(--btn-color2);
+                color:var(--link-color);
+
+                >div:first-child 
+                {
+                    opacity: 1;
+                }
+
+                >div:nth-child(2) 
+                {
+                    opacity: 0;
+                }
+                
+                // font-weight: bold;
+                // transform: scale(0.9);
+            }
+        }
+
+    }
 .to-shop 
 {
     // background-color:red;
@@ -143,7 +365,7 @@
     justify-content: space-between;
     display: flex;
     position: absolute;
-    width: 47.5%;
+    width: 47%;
     bottom: 0;
 
     .left2
@@ -263,10 +485,10 @@
             min-width: 30px;
             margin-right: 5px;
 
-            .pay
-            {
+            // .pay
+            // {
 
-            }
+            // }
         }
     }
 }
@@ -275,7 +497,7 @@
 {
     &-name
     {
-        margin-top: 20px;
+        margin-top: 30px;
         display: flex;
         justify-content: space-between;
         position: relative;
@@ -283,7 +505,7 @@
 
         // .text 
         // {
-        //     width: ;
+        //     background-color:red;
         // }
 
         .status
@@ -345,35 +567,42 @@
     width: 100%;
     display: flex;
     position: relative;
+}
 
-    .left 
-    {
-        background-color: blue;
-        width: 50%;
-        // padding-right: 2%;
-        // box-sizing: border-box;
-        // display: flex;
+.left 
+{
+    // background-color: blue;
+    width: 49.5%;
+    // padding-right: 2%;
+    // box-sizing: border-box;
+    // display: flex;
 
-    }
+}
 
-    .right 
-    {
-        // background-color: aqua;
-        width: 50%;
-        padding-top: 35px;
-        padding-left: 35px;
-    }
-
+.right 
+{
+    // background-color: aqua;
+    width: 50.5%;
+    padding-top: 35px;
+    padding-left: 45px;
+    box-sizing:border-box;
 }
 
 .container
 {
     display: flex;
     // justify-content:flex-start;
-    // justify-content: ;
+    // justify-content: space-between;
     align-items:flex-start;
     position: relative;
-    // background-color: red;
+
+
+    width: 100%;
+    flex-direction: column;
+    // background-color: rgb(255, 202, 202);
+
+    // background-color: rgb(255, 238, 238);
+
 }
 
 .mySwiper {
@@ -394,8 +623,8 @@
 
 .swiper-slide img {
   display: block;
-  width: 100%;
-  height: 100%;
+  height: 90%;
+  max-width: 90%;
   object-fit: cover;
 }
 

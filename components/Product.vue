@@ -39,7 +39,8 @@
             <div class="container-class" :style="{fontSize: fontSizeLight}" style="height: 15%;">{{ item.classification }}</div>
             <div style="height: 40%; display: flex; align-items: center;">{{ item.nameProduct }} </div>
             <div v-if="item.rating" style="height: 25%;" class="container-rating" :style="{fontSize: fontSizeLight}">
-                <rating :stars="item.rating" color-active='#00ffff'/> &ensp; {{ item.countRevievs }}  отзывов</div>
+                <rating :stars="item.rating" color-active='#00ffff'/> &ensp; {{ item.countRevievs }}  отзывов
+            </div>
             
             <div v-else style=""></div>
             <div class="container-price" style="height: 10%; margin-top: auto; ">{{ item.price }}&nbsp;{{ item.valuta }}
