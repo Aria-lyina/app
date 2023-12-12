@@ -135,8 +135,10 @@
     <div class="content-second">
 
         <div class="left">
-            <div v-for="i in 5">
-                <img class="image" src="img/puma-rs-x3.png"/>
+            <div class="content">
+                <div class="cont-img" v-for="i in 5">
+                    <img class="image" src="img/puma-rs-x3.png"/>
+                </div>
             </div>
         </div>
 
@@ -216,12 +218,21 @@
     .left
     {
         // background-color: violet;
-        display: flex;
-        flex-wrap:wrap;
-        // align-items:flex-start;
-        justify-content: space-between;
+        // display: flex;
+        // flex-wrap:wrap;
+        // // align-items:flex-start;
+        // justify-content: space-between;
+
+        .content
+        {
+            display: flex;
+            flex-wrap:wrap;
+            margin-left: -47px;
+            // align-items:flex-start;
+            // justify-content: space-between;
+        }
      
-        >div
+        .cont-img
         {
             width: 310px;
             height: 310px;
@@ -230,7 +241,9 @@
             // height: 210px;
 
             background-color: var(--background-product);
-            margin-bottom: 40px;
+            margin-bottom: 47px;
+            margin-left: 47px;
+            
 
             display: flex;
             justify-content: center;
