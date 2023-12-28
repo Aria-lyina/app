@@ -42,7 +42,7 @@
         {name: "Артикул", value: "123345673"},
     ];
 
-
+    const zoom = ref(false);
 </script>
 
 <template>
@@ -51,7 +51,8 @@
     <div class="content-first">
 
         <div class="left">
-            <swiper :pagination="true" :modules="modules" class="mySwiper">
+            <swiper :pagination="true" :modules="modules" 
+            @click="zoom = !zoom; console.log(zoom)" class="mySwiper" :class="{IsZoom: zoom}" >
                 <swiper-slide v-for="i in 5"><img class="image2" src="img/puma-rs-x3.png"/></swiper-slide>
             </swiper>
         </div>
@@ -182,6 +183,32 @@
 </template>
 
 <style lang="scss" scoped>
+.IsZoom 
+{ 
+    background-color: red;
+
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    // width: 50vw;
+    // height: 50vh;
+
+    width: 100vw !important;
+    height: 91vh !important;
+    
+    z-index: 90;
+        // margin-left: -0.5%;
+
+        //обязательные стили
+        // position: fixed;
+        // box-sizing:border-box;
+        // display: flex;
+        // flex-direction: row;
+        // height: 100vh;
+        // z-index: 9;
+
+        // width: 100%;
+}
 
 .comment 
 {
@@ -621,6 +648,9 @@
 .mySwiper {
   width: 100%;
   height: 100%;
+
+  transition: transform 0.5s ease;
+
 }
 
 .swiper-slide {
