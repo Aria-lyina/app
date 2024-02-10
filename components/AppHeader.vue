@@ -422,7 +422,7 @@
     {
         background: var(--background-header-show-comp);  
         // background: rgba(0, 8, 8, 0.296); 
-        // background-color:red;
+        background-color:red;
         background: white;  
         // height: 70px;
 

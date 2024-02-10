@@ -35,6 +35,14 @@
 
     const links = ['Всё о товаре','Характеристики','Отзывы(58)','Обзор и видео','Фото','Покупают вместе'];
 
+    const delivery  = [
+        {img: "/img/logo/rozetka-logo-bw.png", name: "Самовывоз из наших магазинов", date: "Забрать с 4 июня с 12:00", price:"Бесплатно"},
+        {img: "/img/logo/rozetka-logo-bw.png", name: "Самовывоз из Новой Почты", date: "Отправим завтра", price:"Бесплатно"},
+        {img: "/img/logo/rozetka-logo-bw.png", name: "Самовывоз из Justin", date: "Отправим завтра", price:"Бесплатно"},
+        {img: "/img/logo/rozetka-logo-bw.png", name: "Самовывоз из Украины", date: "Отправим завтра", price:"Бесплатно"},
+        {img: "/img/logo/rozetka-logo-bw.png", name: "Курьер Новая почта", date: "Отправим завтра", price:"60 ₴"}
+    ];
+
     const attributes = [
         {name: "Подошва", value: "Резина 100%"},
         {name: "Наружный материал", value: "Кожа 100%, Нейлон 100%"},
@@ -43,14 +51,72 @@
     ];
 
     const zoom = ref(false);
+
+    const show_delivery = ref(false);
+
+    const pay = "Наличная, Картой онлайн, Google Play, Оплата через Masterpass, Безналичными для юридических лиц, Безналичными для физических лиц, PrivatPay, Кредит, Оплата частями";
+
+    const exchange = "Обмен/возврат товара в течение 14 дней. Продавец гарантирует упаковку заказанного товара, которая обеспечит целостность и сохранность его товарного вида.";
+
 </script>
 
 <template>
 <div class="container">
 
+
+    <div class="delivery" v-if="show_delivery"> 
+        
+        <div class="delivery-space"  @click="show_delivery=false">
+
+        </div>
+        
+        <div class="delivery-content">
+            <div class="div-exit">
+                <button class="button-exit" @click="show_delivery = false">
+                    <img class="icon-large" src="img/icon/fi-rr-cross.svg"/>
+                </button>
+            </div>
+
+            <div class="mid">
+                <div class="top-text"> <div>Доставка в Одессу</div><LinkGo class="go-look" color="black" nameLink="Выбрать другой город"/></div>
+                
+                <div v-for="item in delivery" class="item fontSmall">
+                    <div class="three" ><img class="icon-large" :src="item.img"/> {{ item.name }}:</div>
+                    <div class="three" >{{ item.date }}</div>
+                    <div class="three" >{{ item.price }}</div>
+                </div>
+                
+                <div class="txt">
+                    <div class="text">
+                        <div>Оплата</div>  
+                        <div>{{ pay }}</div>
+                    </div>
+                    
+                    <div class="text">
+                        <div>Гарантия</div>  
+                        <div>{{ exchange }}</div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        
+    </div>
+
     <div class="content-first">
 
         <div class="left">
+            <div v-if="zoom" class="IsZoom-header">
+                {{ nameProduct }}
+                
+                <div class="div-exit">
+                <button class="button-exit" @click="zoom = false">
+                    <img class="icon-large" src="img/icon/fi-rr-cross.svg"/>
+                </button>
+            </div>
+            </div>
             <swiper :pagination="true" :modules="modules" 
             @click="zoom = !zoom; console.log(zoom)" class="mySwiper" :class="{IsZoom: zoom}" >
                 <swiper-slide v-for="i in 5"><img class="image2" src="img/puma-rs-x3.png"/></swiper-slide>
@@ -87,9 +153,9 @@
                 </div>
                 <div class="pay-info">
                     <div class="pay">
-                        <div class="item">
+                        <div class="item" @click="show_delivery=true">
                             Доставка и оплата
-                            <LinkGo nameLink="" color="black"/>
+                            <LinkGo link="" nameLink="" color="black"/>
                         </div>
                         <div class="seller">
                             Продавец товара:
@@ -183,20 +249,204 @@
 </template>
 
 <style lang="scss" scoped>
-.IsZoom 
-{ 
-    background-color: red;
 
-    position:fixed;
+.delivery
+{
+    position: fixed;
+
     bottom: 0;
     left: 0;
-    // width: 50vw;
-    // height: 50vh;
 
-    width: 100vw !important;
-    height: 91vh !important;
+    // width: 100dvw;
+    // height: 91vh;
+    width: 100%;
+
+    height: 100%;
+    // z-index: 9;
+    z-index: 12;
+    background-color: #0000008f;
+    display: flex;
+
+    &-space
+    {
+        height: 100%;
+        // background-color: #ff00008f;
+        width: 49.5%;
+    }
+
+    &-content
+    {
+        // background-color: #ffffff;
+        // padding-top: 9vh;
+
+        background-color: #ffffff;
+        height: 100%;
+        // width: 710px;
+        width: 50.5%;
+
+        position: absolute;
+        // display: flex;
+        right: 0;
+
+        .mid
+        {
+            position: relative;
+            // display: flex;
+            // background-color: #fff;
+
+            margin-top: 5%;
+            margin-right: 5%;
+            margin-left: 5%;
+
+            // width: 100%;
+
+            // .top-text
+            // {
+            //     // background-color: blue;
+            //     // width: 100%;
+            // }
+
+            .item 
+            {
+                height: 60px;
+                border-bottom: 1px solid black;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                // background-color: aqua;
+
+                .three
+                {
+                    // background-color: red;
+                    &:nth-child(1) 
+                    {
+                        width: 45%;
+
+                        // background: rgb(38, 0, 255);
+
+                        display: flex;
+
+                        img 
+                        {
+                            margin-right: 15px;
+                        }
+                        //align-content: center;
+                        // text-align: center; 
+                    }
+
+                    &:nth-child(2) 
+                    {
+                        // background: rgb(174, 160, 255);
+                        //align-content: center;
+                        // text-align: center; 
+                         width: 30%;
+
+                    }
+
+                    &:nth-child(3) 
+                    {
+                        // background: rgb(47, 255, 0);
+                        //align-content: center;
+                        width: 25%;
+                        text-align: end; 
+                    }
+                }
+            }
+
+            .txt 
+            {
+                // background-color: aqua;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+
+
+            .text 
+            {
+                min-height: 250px;
+                // background-color: red;
+                width: 48%;
+
+
+                >div:first-child
+                {
+                    font-size: var(--fontsize-big-default);
+                    display: flex;
+                    align-items: center;
+                    padding-bottom: 30px;
+                    margin-top: 30px;
+                    // background-color: violet;
+
+                }
+
+                >div
+                {
+                    font-size: var(--fontsize-small-default);
+                    line-height: 1.5em;                
+                }
+            }
+
+        }
+        .div-exit
+        {
+            height: 9vh;
+            // background-color: rgba(98, 255, 255, 0.257);
+            position: relative;
+            width: 100%;
+
+            .button-exit
+            {
+                position: absolute;
+                // background-color:rgba(255, 74, 74, 0.086);
+
+                margin-right: 5%;
+                // width: 30px;
+                // height: 30px;
+                // // display: flex;
+                // // align-items:center;
+                // // margin-right: 20px;
+
+                // // top: 30px;
+                // // right: 20px;
+
+                // top: var(--marg-show-comp);
+                // right: var(--marg-show-comp);
+
+                // // right: var(--marg-hor-show-comp);
+
+                // z-index: 13;
+                bottom: 0;
+                right: 0;
+            }
+
+
+        }
+    }
+}
+
+.IsZoom 
+{ 
+    background-color: var(--background-product);
+
+    position:fixed;
+
+    bottom: 0;
+    left: 0;
+    // width: 100vw;
+    // height: 100vh;
+
+    // width: 100vw !important;
+    // height: 91vh !important;
     
-    z-index: 90;
+    z-index: 14;
+
+    padding-top: 2%;
+
+    // padding-bottom: -5%;
+
+    box-sizing: border-box;
+
         // margin-left: -0.5%;
 
         //обязательные стили
@@ -208,6 +458,19 @@
         // z-index: 9;
 
         // width: 100%;
+
+        &-header
+        {
+            position: fixed;
+            z-index: 16;
+            width: 95%;
+            top: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            // background-color: red;
+            height: 9vh;
+        }
 }
 
 .comment 
@@ -233,6 +496,25 @@
         display: flex;
         position: relative;
         object-fit: contain;
+    }
+
+.top-text
+    {
+        font-size: var(--fontsize-big-default);
+        display: flex;
+        // align-items: center;
+        padding-bottom: 30px;
+        border-bottom: 1px solid black;
+        justify-content: space-between;
+        // background-color: red;
+
+        .go-look
+        {
+            display: flex;
+            align-items: center;
+            // background-color: blueviolet;
+            // margin-left: auto;
+        }
     }
 
 .content-second
@@ -282,28 +564,9 @@
     {
         padding-top: 50px;
 
-        .go-look
-        {
-            display: flex;
-            align-items: center;
-            // background-color: blueviolet;
-            // margin-left: auto;
-        }
-
         .attributs
         {
             min-height: 300px;
-        }
-
-        .top-text
-        {
-            font-size: var(--fontsize-big-default);
-            display: flex;
-            // align-items: center;
-            padding-bottom: 30px;
-            border-bottom: 1px solid black;
-            justify-content: space-between;
-            // background-color: red;
         }
 
         .text 
@@ -333,7 +596,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-
             // background-color: aqua;
         }
     }
@@ -613,6 +875,8 @@
 {
     // background-color: blue;
     width: 49.5%;
+    // width: 735px;
+
     // padding-right: 2%;
     // box-sizing: border-box;
     // display: flex;
@@ -650,23 +914,28 @@
   height: 100%;
 
   transition: transform 0.5s ease;
-
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
+
+//   background: red;
   background: var(--background-product);
 
   /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
+
+
 }
 
 .swiper-slide img {
+
+//   background-color: blue;
   display: block;
-  height: 90%;
+  height: 80%;
   max-width: 90%;
   object-fit: cover;
 }

@@ -55,6 +55,7 @@ import AppFooter from '@/components/AppFooter.vue';
   display: flex;
   flex-direction: column;
 
+  // background-color: red;
   margin-left: 2.5%;
   margin-right: 2.5%;
 
