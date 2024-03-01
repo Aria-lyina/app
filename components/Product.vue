@@ -1,5 +1,5 @@
 <script setup>
- import Rating from '@/components/Rating.vue';
+ import Rating from '@/components/SupComp/Rating.vue';
  defineProps({
     item: Object,
     fontSizeLarge:

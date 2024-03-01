@@ -32,7 +32,7 @@
 </template>
 
 <!-- <style src="@vueform/slider/themes/default.scss"></style>  -->
-<style src="@/assets/checkBox.scss"></style> 
+<!-- <style src="@/assets/checkBox.scss"></style>  -->
 <!-- <style src="@/assets/cast-rang.scss"></style> -->
 
 <!-- <style lang="scss" scoped>

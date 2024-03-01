@@ -1,5 +1,5 @@
 <script setup>
-    import LinkLogo from '@/components/Logo.vue';
+    import LinkLogo from '@/components/SupComp/Logo.vue';
 </script>
 
 <template>

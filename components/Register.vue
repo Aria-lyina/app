@@ -1,5 +1,5 @@
 <script setup>
-import ButtonImg from '@/components/ButtonImg.vue';
+import ButtonImg from '@/components/SupComp/ButtonImg.vue';
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script setup>
     import HeaderButtonSvg from '@/components/HeaderButtonSvg.vue';
-    import LinkLogo from '@/components/Logo.vue';
+    import LinkLogo from '@/components/SupComp/Logo.vue';
     import MenuCast from '@/components/MenuCast.vue';
     import ShoppingСart from '@/components/ShoppingСart.vue';
     import Register from '@/components/Register.vue';

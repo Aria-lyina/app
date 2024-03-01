@@ -10,18 +10,22 @@
     }
 //нужно передать ссылку и название
 defineProps ({
-      pathProps: 
-      {
+    pathProps: 
+    {
         type: Object
-      },
-      text:
-      {
+    },
+    text:
+    {
         type: String,
-      },
-      margin: {
-          type: String,
-          default: "5px",
-          },
+    },
+    margin: {
+        type: String,
+        default: "5px",
+        },
+    Home:
+    {
+        type: Boolean
+    }
   })
 </script>
 
@@ -29,7 +33,7 @@ defineProps ({
 
 <div class="containe">
 
-    <HeaderButtonSvg  :svg-props=icHome marginR="0px"/>
+    <HeaderButtonSvg v-if="defineProps!=false" :svg-props=icHome marginR="0px"/>
     <div v-for="item in pathProps.path">
         <MiniArrow class="item"/>
         <NuxtLink  :to="item.link">{{ item.name }}</NuxtLink>

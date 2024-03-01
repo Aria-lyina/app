@@ -16,7 +16,9 @@ export default defineNuxtConfig({
   css: [
     '@/assets/app.scss',
     '@/assets/marg.scss',
-    '@/assets/fonts.scss'
+    '@/assets/fonts.scss',
+    '@/assets/checkBox.scss',
+    '@/assets/simple.scss',
   ]
 })
 

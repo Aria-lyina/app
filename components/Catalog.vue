@@ -1,5 +1,5 @@
 <script setup>
-import PathPage from '@/components/PathPage.vue'; 
+import PathPage from '@/components/SupComp/PathPage.vue'; 
 import filtr from '@/components/FiltrCategory/FiltrSection.vue'; 
 import data from '@/src/getFilters.json';
 import cross from '@/components/icons/cross.vue'; 
@@ -189,6 +189,12 @@ const pathTest =
 {
     margin-left: 10px;
     margin-right: 4px;
+
+    // &>svg
+    // {
+    //     fill: red;
+    //     height: 10px;
+    // }
 
 }
     .param-line

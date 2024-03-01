@@ -1,8 +1,10 @@
 <script setup>
     import 'swiper/css';
     import 'swiper/css/pagination';
-    import Rating from '@/components/Rating.vue';
+
+    import Rating from '@/components/SupComp/Rating.vue';
     import Comment from '@/components/Comment.vue';
+    import cross from '@/components/icons/cross.vue'; 
 
     import { Swiper, SwiperSlide } from 'swiper/vue';
     import { Pagination } from 'swiper/modules';
@@ -66,14 +68,14 @@
 
     <div class="delivery" v-if="show_delivery"> 
         
-        <div class="delivery-space"  @click="show_delivery=false">
+        <div class="delivery-space"  @click="show_delivery=false"/>
 
-        </div>
         
         <div class="delivery-content">
             <div class="div-exit">
                 <button class="button-exit" @click="show_delivery = false">
                     <img class="icon-large" src="img/icon/fi-rr-cross.svg"/>
+                    <!-- <cross color="black" height="20px"/>  -->
                 </button>
             </div>
 
