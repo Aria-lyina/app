@@ -5,15 +5,17 @@ import AppFooter from '@/components/AppFooter.vue';
 </script>
 
 <template>
- 
- <div>
+ <div class="f">
+
+    <div class="marg"></div>
     <AppHeader class="header-style"/>
+
     <div class="default">
       <slot />
     </div>
     <AppFooter/>
  </div>
-  </template>
+</template>
 
 <style scoped lang="scss">
 // .header-style
@@ -23,6 +25,20 @@ import AppFooter from '@/components/AppFooter.vue';
 //     // position: absolute;
 //     // background-color:aquamarine;
 // }
+
+// .f
+// {
+//   // background-color: red;
+// }
+
+.marg 
+{
+  height: 9vh;
+  width: 100%;
+  min-height: 70px;
+  // background-color:red;
+}
+
 
 .default 
 {
@@ -39,10 +55,21 @@ import AppFooter from '@/components/AppFooter.vue';
   display: flex;
   flex-direction: column;
 
-  margin-left: 2%;
-  margin-right: 2%;
+  // background-color: red;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+
+  // margin-left: 0px;
+  // margin-right: 0px;
+
+  // padding-left: 0px;
+  // padding-right: 0px;
+
   // margin-top: 50px;
-  margin-top: 70px;
+  // margin-top: 70px;
+
+  // margin-top: 9vh;
+
   // margin-top: 0.5%;
   position: relative;
   /* top: 11%; */

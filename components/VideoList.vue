@@ -35,6 +35,28 @@ const components = {
 const { modules } = {
     modules: [Navigation, Pagination, Mousewheel, Keyboard, Scrollbar],
 };
+
+
+const slideCount = ref(3.5);
+
+
+onMounted(()=>
+{
+    window.onresize = function()
+    {
+        if (window.innerWidth < 700) 
+        {
+            slideCount.value = 1.5; 
+        } else if (window.innerWidth < 992) {
+            slideCount.value = 2.5;
+        } else {
+            slideCount.value = 3.5;  
+        }
+        // console.log("WHY NO????");
+        // console.log(slideCount.value); 
+    }
+})
+
 </script>
 
 <template>
@@ -47,7 +69,7 @@ const { modules } = {
             draggable: true,
             snapOnRelease: true,
             scrollbarClickable: true
-        }" :slidesPerView="3.5" :spaceBetween="15" :modules="modules" class="mySwiper">
+        }" :slidesPerView="slideCount" :spaceBetween="15" :modules="modules" class="mySwiper">
 
             <swiper-slide v-for="(item) in videos">
                 <video-box :video="item" />

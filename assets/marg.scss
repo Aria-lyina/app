@@ -1,0 +1,32 @@
+:root {
+
+    --marg-show-comp: 45px;
+
+    --marg-item-tile: 10px;
+    --pad-item-tile: 5px;
+
+    // --marg-hor-show-comp: 65px;
+}
+
+.marg-left-def
+{
+    margin-left: 15px;
+}
+
+.marg-right-def
+{
+    margin-right: 15px;
+}
+
+.marg-left-big
+{
+    margin-left: var(--marg-show-comp);
+    // margin-left: 15px;
+}
+
+.marg-right-big
+{
+    margin-right: var(--marg-show-comp);
+    // margin-left: 15px;
+}
+

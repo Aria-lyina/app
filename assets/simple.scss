@@ -1,0 +1,46 @@
+.flex 
+{
+    display: flex;
+}
+
+.FlexCenter
+{
+    align-items:center;
+    // justify-content: center;
+}
+
+.space-between
+{
+    justify-content: space-between;
+}
+
+.absolute 
+{
+    position: absolute;
+}
+
+.w30
+{
+    width: 30%;
+}
+
+.w33
+{
+    width: 33%;
+}
+
+.w50px
+{
+    width: 50px;
+}
+
+.w250px
+{
+    width: 250px;
+    min-width: 250px;
+}
+
+.bred
+{
+    background-color: red;
+}

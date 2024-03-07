@@ -1,0 +1,56 @@
+h1,h2,h3,h4,h5,h6 
+{
+    font-family: Roboto,Arial,sans-serif;
+    // font-weight: lighter;
+    font-weight: normal;
+}
+
+.font13
+{
+    font-size: 13px;
+}
+
+.fontDark
+{
+    color: var(--dark-color-text);
+}
+
+.font16
+{
+    font-size: 16px;
+}
+
+.fontBigName 
+{
+    font-size: 35px;
+}
+
+.fontSmall
+{
+    font-size: var(--fontsize-small-default);
+}
+
+.fontFiltr
+{
+    font-size: 14px;
+}
+
+.fontFiltrName
+{
+    font-size: 15px;
+}
+
+.font12
+{
+    font-size: 12px;
+}
+
+.font11
+{
+    font-size: 11px;
+}
+
+.fontLightGrey 
+{
+    color:var(--light-color-text);
+}

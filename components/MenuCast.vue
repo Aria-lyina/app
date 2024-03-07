@@ -42,7 +42,7 @@ const activateItem = (index) =>
   <div class="container">
 
         <div class="left-container">
-            <div class="left-container-content">
+            <div class="left-container-content scroll-default">
                 <ul ul class="left-ul">
                     <li class="left-li" :id="item.id" 
                     v-for="(item, index) in items" :key="item.title" 
@@ -94,26 +94,6 @@ const activateItem = (index) =>
 
 <style scoped lang="scss">
 
-ul 
-{
-  padding-left: 0px;
-//   background-color:aqua; 
-  width: 100%; 
-  height: 100%;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-li 
-{
-    list-style-type: none;
-    // padding-bottom: 15px;
-    // padding-top: 15px;
-    // background-color:bisque;
-    // width: 700px;
-    // padding-left: 0px;
-}
-
 .li-div
 {
     // background-color:aqua;
@@ -136,6 +116,8 @@ li
         padding-top: 30px;
         padding-bottom: 35px;
         background-color:var(--background-product);
+
+        // background-color:rgba(102, 51, 153, 0.215);
         width: 21%;
         height: 90%;
         height: auto;
@@ -146,9 +128,41 @@ li
             // background-color:rgb(0, 255, 26);
             // overflow-y: scroll;
             overflow-y: auto;
+             
+            // overflow-y: hidden;
+
             display: flex;
             width: 100%;
             height: 100%;
+
+
+            // &::-webkit-scrollbar {
+            //     width: 5px;
+            // }
+
+            // &::-webkit-scrollbar-track {
+            //     background-color: #f1f1f1;
+            // }
+
+            // &::-webkit-scrollbar-thumb {
+            //     background-color: green;
+            // }
+
+            // scrollbar-width: thin;
+            // scrollbar-color: green #f1f1f1;
+
+            // &::-webkit-scrollbar {
+            //     width: 5px;
+            // }
+
+            // &::-webkit-scrollbar-track {
+            //     background-color: #f1f1f1;
+            // }
+
+            // &::-webkit-scrollbar-thumb {
+            //     background-color: green;
+            // }
+
         }
     }
 
@@ -174,7 +188,7 @@ li
         &:hover
         {
             // background-color:bisque;
-            color:aqua;
+            color:var(--light-color-text);
         }
     }
 
@@ -281,7 +295,7 @@ li
 
     //стили для полного заполнения
     width: 101vw;
-    left: 0;
+    // left: 0;
     // margin-left: -0.5%;
 
     //обязательные стили
@@ -289,10 +303,12 @@ li
     box-sizing:border-box;
     display: flex;
     flex-direction: row;
-    height: 93vh;
+    height: 91vh;
+
+    // height: 100vh;
     z-index: 9;
 
-    // background-color:rgb(255, 65, 65);
+    // background-color:rgba(65, 255, 236, 0.424); 
     background-color:rgb(255, 255, 255);
 }
 

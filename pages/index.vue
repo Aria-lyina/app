@@ -161,7 +161,7 @@ class Video
 
 </template>
   
-<style>
+<style lang="scss" scoped>
 
 .menu-style
 {

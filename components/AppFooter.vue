@@ -1,5 +1,5 @@
 <script setup>
-    import LinkLogo from '@/components/Logo.vue';
+    import LinkLogo from '@/components/SupComp/Logo.vue';
 </script>
 
 <template>
@@ -69,14 +69,27 @@
         <!-- <hr style="{color:black; size:10px}"/> -->
         <div class="bot-footer">
 
-            <div class="container-info"><link-logo/></div>
-            <div class="container-info"><p class="light-text">ⓒ Интернет-магазин Розетка 2001-2020</p></div>
-            <div class="container-info"></div>
-            <div class="container-info"><NuxtLink>Устанавливайте наши приложения&ensp; ––––– </NuxtLink></div>
-            <div class="container-info">
-                <NuxtLink to="/"><img class="link-img" src="/img/icon/google-play.png"></NuxtLink>
-                <NuxtLink to="/"><img class="link-img" src="/img/icon/Download_on_the_App_Store_Badge_RU_RGB_blk_100317.svg"></NuxtLink>
+            <div class="container-info1"><link-logo/></div>
+            <div class="container-info2"><p class="light-text">ⓒ Интернет-магазин Розетка 2001-2020</p></div>
+            <div class="container-info3">
+
+                <div class="c1"><NuxtLink>Устанавливайте наши приложения</NuxtLink></div>
+                <div class="c2">⎯⎯⎯</div>
+                <div class="c3">
+                    <NuxtLink to="/"><img class="link-img" src="/img/icon/google-play.png"></NuxtLink>
+                    <NuxtLink to="/"><img class="link-img" src="/img/icon/app-store.svg"></NuxtLink>
+                </div>
+
+                    <!-- <div><NuxtLink to="/"><img class="link-img" src="/img/icon/google-play.png"></NuxtLink></div>
+                    <div><NuxtLink to="/"><img class="link-img" src="/img/icon/app-store.svg"></NuxtLink></div> -->
             </div>
+
+            <!-- <div class="container-info3"><NuxtLink>Устанавливайте наши приложения</NuxtLink></div>
+            <div class="container-info4"> ––––– </div>
+            <div class="container-info5">
+                <NuxtLink to="/"><img class="link-img" src="/img/icon/google-play.png"></NuxtLink>
+                <NuxtLink to="/"><img class="link-img" src="/img/icon/app-store.svg"></NuxtLink>
+            </div> -->
 
 
         </div>
@@ -84,6 +97,27 @@
 </template>
 
 <style lang="scss" scoped>
+
+    .c 
+    {
+        &1 
+        {
+            //background-color:aqua;
+            width: 20%;
+        }
+
+        &2
+        {
+            //background-color:rgb(255, 214, 214);
+            width: 10%;
+        }        
+        
+        &3
+        {
+            //background-color:violet;
+            width: 40%;
+        }
+    }
 
     a
     {
@@ -105,6 +139,11 @@
         justify-content: flex-start;
         margin-left: 0px;
         margin-right:10px;
+
+        // margin-right: 0px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        // background-color:azure;
     }
 
     .bot-footer
@@ -141,6 +180,7 @@
         height: 30%;
         */
 
+        padding-top: 20px;
         height: 420px;
 
         margin-left: 2%;
@@ -163,6 +203,54 @@
     {
         width:20%;
         display: flex;
+        // background-color:aqua;
+        padding-right: 5px;
+
+        &1
+        {
+            width:20%;
+            min-width: 220px;
+            display: flex;
+        }       
+        &2
+        {
+            width:40%;
+            // background-color:red;
+            display: flex;
+        }
+        // &3
+        // {
+        //     // justify-self: flex-end;
+        //     min-width: 220px;
+        //     // width:16%;
+        //     display: flex;
+        //     // background-color:aquamarine;
+        // }
+        // &4
+        // {       
+        //     justify-content: center;
+        //     width:5%;
+        //     // background-color:bisque;
+        //     display: flex;
+        // }
+        // &5
+        // {   
+        //     // width:20%;
+        //     // justify-content: space-between;    
+        //     // background-color:bisque;
+        //     display: flex;
+        // }
+
+
+        &3
+        {
+            width:40%;
+            display: flex;
+            //background-color: red;
+            align-items:center;
+            justify-content: space-between;
+            position: relative;
+        }
     }
 
     .info-list
@@ -171,4 +259,52 @@
         padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
         height: 100%
     }
+
+    
+    
+    @media screen and (max-width: 950px) {
+    
+        .container-info5
+        {
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items:flex-end;
+        }
+
+        .container-info3
+        {
+            min-width: 10%;
+        }
+
+        .container-info2
+        {
+            width:25%;
+        }
+
+        .c1
+        {
+            width: 20%;
+        }
+        .c2
+        {
+            width: 10%;
+        }
+        .c3
+        {
+            width: 40%;
+        }
+
+        .container-info4
+        {
+            min-width: 90px;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .container-info2
+        {
+            width:13%;
+        }
+    }
+
 </style>
