@@ -88,6 +88,7 @@ const pathTest =
             </div>
         </div>
         <div class="content-data">
+            
             <div class="left-container">
                 <filtr v-for="(item, index) in items" :key="index" :Data="item"/>
             </div>

@@ -56,7 +56,7 @@ const delivery  = [
         </div>
 
         <div class="fontSmall flex FlexCenter bot3"> 
-            <mapImg height="20px" color="black"/>
+            <mapImg height="20px" color="black" style="min-width: 15px; min-height: 15px;" />
             Карта
         </div>
             <!-- <input type="text" placeholder="Город" id="city" name="city"> -->
@@ -189,5 +189,56 @@ const delivery  = [
     //     // background-color: violet;
     // }
 }
+
+
+@media screen and (max-width: 950px)
+{
+
+    .field
+    {
+        flex-direction: column;
+        margin-top: 0px;
+    }
+
+
+    .bot 
+{
+    &1
+    {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    &2
+    {
+        width: 100%;
+        justify-content: flex-end;
+        padding-left: 15px;
+        padding-top: 20px;
+
+    }
+
+
+    &3
+    {
+        width: 100%;
+        justify-content: flex-end;
+        padding-left: 15px;
+        margin-top: 20px;
+
+        svg
+        {
+            margin-right: 10px;
+        }
+    }
+}
+
+    .checkboxSt
+    {
+        flex-direction: row;
+    }
+
+    
+} 
 
 </style>

@@ -45,13 +45,13 @@
         <!-- <Delivery class="page" :class="{hidden : stage!=2}"/>
         <Payment class="page" :class="{hidden : stage!=3}"/> -->
 
-        <div>
+        <div class="FlexCenter" :class="{flex : stage==3}" >
             <button class="btn-1 w250px" @click="if(stage!=3) stage++; else stage = 1;">
                 <span v-if="stage!=3">Далее</span>
                 <span v-else>Заказ подтверждаю</span>
             </button>
 
-            <span v-if="stage==3" class="fontSmall marg-left-big">Подтверждая заказ я принимаю условия пользовательского соглашения </span>
+            <span v-if="stage==3" class="fontSmall marg-left-big" :class="{min : stage==3}" >Подтверждая заказ я принимаю условия пользовательского соглашения </span>
 
         </div>
 
@@ -61,6 +61,7 @@
 </template>
 
 <style lang="scss" scoped>
+
 
     .pay 
     {
@@ -97,6 +98,18 @@
     {
         margin-left: 7px;
         margin-right: 5px;
+    }
+
+    // @media screen and (max-width: 1050px)
+    
+    .min{
+        margin-top: 40px;
+        // background-color: red;
+        // .radio
+        // {
+        //     grid-template-columns: 1fr 1fr;
+        // }
+        // flex-direction: ;
     }
 
 </style>

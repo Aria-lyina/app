@@ -89,15 +89,50 @@
     position: relative;
     justify-content: space-between;
     margin-top: 40px;
+
+    // flex-direction: column;
+
     // width: 90%;
     // box-sizing: border-box;
 
     >div
     {
         width: 48%;
+        
         // height: 250px;
         // background-color: violet;
     }
 }
+
+@media screen and (max-width: 950px)
+{
+    .radio
+    {
+        margin-top: 15px;
+        margin-bottom: 20px;
+
+    }
+    .field
+    {
+        flex-direction: column;
+        margin-top: 0px;
+
+        >div
+        {
+            width: 100%;
+            margin-top: 20px;
+
+            // height: 250px;
+            // background-color: violet;
+        }
+    }
+
+    .checkboxSt
+    {
+        flex-direction: row;
+    }
+
+    
+} 
 
 </style>

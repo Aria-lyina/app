@@ -103,4 +103,23 @@ const pays  = [
     // }
 }
 
+
+// @media screen and (max-width: 1000px)
+// {
+//     .radio
+//     {
+//         grid-template-columns: 1fr 1fr;
+//     }
+// }
+
+@media screen and (max-width: 1050px)
+{
+    .radio
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    
+}
+
 </style>
