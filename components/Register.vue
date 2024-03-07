@@ -36,8 +36,8 @@ import ButtonImg from '@/components/SupComp/ButtonImg.vue';
                 </div>
 
                 <div class="btns-authorize">
-                    <ButtonImg img="img/logo/facebook-logo.png">Facebook</ButtonImg>
-                    <ButtonImg img="img/logo/google-logo.png">Google</ButtonImg>
+                    <ButtonImg img="/img/logo/facebook-logo.png">Facebook</ButtonImg>
+                    <ButtonImg img="/img/logo/google-logo.png">Google</ButtonImg>
                 </div>
             </div>
 

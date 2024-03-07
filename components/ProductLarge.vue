@@ -46,7 +46,7 @@
             <div v-if="item.rating" class="container-rating" :style="{fontSize: fontSizeLight}"><rating :stars="item.rating" color-active='#00ffff'/> &ensp; {{ item.countRevievs }}  отзывов</div>
             <div v-else style=""></div>
             <div class="container-price" style="font-size: 20px;">{{ item.price }}&nbsp;{{ item.valuta }}
-                <!-- <NuxtLink v-if="!item.rating" class="go-buy" :style="{fontSize: fontSizeLight}" :to="link">Купить&nbsp;&nbsp;<img class="icon-in-text2" src="img/icon/long-arrow.svg"></NuxtLink> -->
+                <!-- <NuxtLink v-if="!item.rating" class="go-buy" :style="{fontSize: fontSizeLight}" :to="link">Купить&nbsp;&nbsp;<img class="icon-in-text2" src="/img/icon/long-arrow.svg"></NuxtLink> -->
                 <NuxtLink v-if="sizeImage > '200px'" class="go-buy" :style="{fontSize: fontSizeLight}" :to="link">Купить&nbsp;&nbsp;<img class="icon-in-text2" src="/img/icon/long-arrow.svg"></NuxtLink>
             </div>
         </div>

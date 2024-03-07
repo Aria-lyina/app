@@ -149,7 +149,7 @@ const IncProduct = (index) =>
                     <div class="product-del">
                     <div class="product-delete">
                         <button class="product-delete-btn" @click="DelProduct(index)">
-                            <img class="icon-in-text2 ic_1" src="img/icon/fi-rr-cross.svg"/>
+                            <img class="icon-in-text2 ic_1" src="/img/icon/fi-rr-cross.svg"/>
                         </button>
                     </div>
                     </div>
@@ -180,7 +180,7 @@ const IncProduct = (index) =>
                 </div> -->
 
 
-                <!-- <img class="product-img" src="img/puma-rs-x3.png"> -->
+                <!-- <img class="product-img" src="/img/puma-rs-x3.png"> -->
             </div>
         </div>
 

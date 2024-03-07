@@ -149,7 +149,7 @@
     <div v-if="showReg" class="container-shops">
         <register>
             <button class="button-exit" @click="showReg = false">
-                <img class="icon-large" src="img/icon/fi-rr-cross.svg"/>
+                <img class="icon-large" src="/img/icon/fi-rr-cross.svg"/>
             </button>
         </register>
     </div>
@@ -157,7 +157,7 @@
     <div class="container-seach animated" :class="{ animated_click: showSeach}">
         <!-- <register>
             <button class="button-exit" @click="showReg = false">
-                <img class="icon-large" src="img/icon/fi-rr-cross.svg"/>
+                <img class="icon-large" src="/img/icon/fi-rr-cross.svg"/>
             </button>
         </register> -->
         <!-- ПОИСК -->

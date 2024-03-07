@@ -74,7 +74,7 @@
         <div class="delivery-content">
             <div class="div-exit">
                 <button class="button-exit" @click="show_delivery = false">
-                    <img class="icon-large" src="img/icon/fi-rr-cross.svg"/>
+                    <img class="icon-large" src="/img/icon/fi-rr-cross.svg"/>
                     <!-- <cross color="black" height="20px"/>  -->
                 </button>
             </div>
@@ -115,13 +115,13 @@
                 
                 <div class="div-exit">
                 <button class="button-exit" @click="zoom = false">
-                    <img class="icon-large" src="img/icon/fi-rr-cross.svg"/>
+                    <img class="icon-large" src="/img/icon/fi-rr-cross.svg"/>
                 </button>
             </div>
             </div>
             <swiper :pagination="true" :modules="modules" 
             @click="zoom = !zoom; console.log(zoom)" class="mySwiper" :class="{IsZoom: zoom}" >
-                <swiper-slide v-for="i in 5"><img class="image2" src="img/puma-rs-x3.png"/></swiper-slide>
+                <swiper-slide v-for="i in 5"><img class="image2" src="/img/puma-rs-x3.png"/></swiper-slide>
             </swiper>
         </div>
 
@@ -206,7 +206,7 @@
         <div class="left">
             <div class="content">
                 <div class="cont-img" v-for="i in 5">
-                    <img class="image" src="img/puma-rs-x3.png"/>
+                    <img class="image" src="/img/puma-rs-x3.png"/>
                 </div>
             </div>
         </div>

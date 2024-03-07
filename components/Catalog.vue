@@ -42,7 +42,7 @@ const pathTest =
         }
     }
 
-    let image="img/headphones_PNG7638.png"
+    let image="/img/headphones_PNG7638.png"
     let classification="Наушники" 
     let countRevievs=25 
     let rating=2 
@@ -50,25 +50,25 @@ const pathTest =
     let nameProduct="HayuHnKM HyperX Cloud Core (KHX-HSCC-BK)"
     let price=2000 
     let valuta="р"
-    let statusIcon="img/icon/star-2.svg"
+    let statusIcon="/img/icon/star-2.svg"
 
     let items2 = [];
 
     for(let i = 0; i < 5; i++) {
         items2.push(new ProductItem(image, statusIcon, classification, nameProduct, rating, price, countRevievs, valuta));
-        items2.push(new ProductItem(image, "img/icon/new-1.svg", classification, nameProduct, rating, price, countRevievs, valuta));
+        items2.push(new ProductItem(image, "/img/icon/new-1.svg", classification, nameProduct, rating, price, countRevievs, valuta));
         items2.push(new ProductItem(image, "", classification, nameProduct, rating, price, countRevievs, valuta));
 
-        items2.push(new ProductItem("img/asus.png", statusIcon, classification, nameProduct, rating, price, countRevievs, valuta));
+        items2.push(new ProductItem("/img/asus.png", statusIcon, classification, nameProduct, rating, price, countRevievs, valuta));
         items2.push(new ProductItem(image, statusIcon, classification, nameProduct, rating, price, countRevievs, valuta));
         
-        items2.push(new ProductItem("img/asus.png", "", classification, nameProduct, "", price, "", valuta));
+        items2.push(new ProductItem("/img/asus.png", "", classification, nameProduct, "", price, "", valuta));
         items2.push(new ProductItem(image, "", classification, nameProduct, "", price, "", valuta));
 
-        items2.push(new ProductItem("img/Apple-iphone-se.png", "", 'Мобильные телефоны',
+        items2.push(new ProductItem("/img/Apple-iphone-se.png", "", 'Мобильные телефоны',
                                     "Apple iPhone SE 64GB", rating, '14 999', countRevievs, '₴'));
 
-        items2.push(new ProductItem("img/totw_promo.png", "", 'Мобильные телефоны',
+        items2.push(new ProductItem("/img/totw_promo.png", "", 'Мобильные телефоны',
                                     "Apple iPhone SE 64GB", rating, '14 999', countRevievs, '₴'));
     }    
 
@@ -88,7 +88,7 @@ const pathTest =
             </div>
         </div>
         <div class="content-data">
-            
+
             <div class="left-container">
                 <filtr v-for="(item, index) in items" :key="index" :Data="item"/>
             </div>
