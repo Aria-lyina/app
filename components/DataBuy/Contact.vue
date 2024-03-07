@@ -41,9 +41,9 @@
     </div>
 
     <div class="field checkboxSt">
-        <input type="checkbox" :id="IsCall" 
-        :name="IsCall"/>
-        <label class="checkboxSt-lbl" :for="IsCall">  Не перезванивайте мне, я уверен в заказе  </label>
+        <input type="checkbox" id="IsCall" 
+        name="IsCall"/>
+        <label class="checkboxSt-lbl" for="IsCall">  Не перезванивайте мне, я уверен в заказе  </label>
     </div>
 
     <!-- </div> -->
